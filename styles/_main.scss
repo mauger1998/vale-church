@@ -1,0 +1,30 @@
+@use "./variables";
+
+main {
+    background-image: linear-gradient(to top, #000000cd, #00000000 100%), url(../public/images/vale-church-hero.png);
+    background-size:cover;
+    background-position:center;
+    
+    .wrapper {
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-block-end:2rem;
+        height:95vh;
+        max-height:1000px;
+
+        p {
+            color:white;
+            align-self:flex-end;
+            max-width:52%;
+            margin-block-end:-6rem;
+        }
+
+        h1 {
+            max-width:101%;
+            width:101%;
+
+        }
+    }
+}

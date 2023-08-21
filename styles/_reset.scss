@@ -1,0 +1,80 @@
+@use "./variables";
+
+
+*,
+*::before,
+*::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:variables.$helvetica;
+    font-weight:400;
+}
+
+// Images & Icons
+
+img {
+    width:100%;
+
+    &.icon {
+        width:2rem;
+    }
+}
+// Images & Icons End
+
+// Links
+a {
+    text-decoration: none;
+}
+
+// Links End
+
+// List
+ul {
+    list-style:none;
+}
+// List End
+
+// Section Layout
+
+section,
+main,
+header,
+footer {
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper {
+        width:100%;
+        max-width:1440px;
+        padding:8rem 4rem;
+
+        &.wrapper-narrow {
+            padding:8rem 8rem;
+        }
+    }
+
+   
+
+    @media (max-width:700px) {
+        .wrapper {
+            padding-inline:2rem;
+
+            &.wrapper-narrow {
+                padding-inline:2rem;
+            }
+        }
+    }
+    @media (max-width:500px) {
+        .wrapper {
+            padding-inline:1rem;
+
+            &.wrapper-narrow {
+                padding-inline:1rem;
+            }
+        }
+    }
+}
+

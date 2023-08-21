@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+img {
+  width: 100%;
+}
+img.icon {
+  width: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section,
+main,
+header,
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .wrapper,
+main .wrapper,
+header .wrapper,
+footer .wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 8rem 4rem;
+}
+section .wrapper.wrapper-narrow,
+main .wrapper.wrapper-narrow,
+header .wrapper.wrapper-narrow,
+footer .wrapper.wrapper-narrow {
+  padding: 8rem 8rem;
+}
+@media (max-width: 700px) {
+  section .wrapper,
+  main .wrapper,
+  header .wrapper,
+  footer .wrapper {
+    padding-inline: 2rem;
+  }
+  section .wrapper.wrapper-narrow,
+  main .wrapper.wrapper-narrow,
+  header .wrapper.wrapper-narrow,
+  footer .wrapper.wrapper-narrow {
+    padding-inline: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  section .wrapper,
+  main .wrapper,
+  header .wrapper,
+  footer .wrapper {
+    padding-inline: 1rem;
+  }
+  section .wrapper.wrapper-narrow,
+  main .wrapper.wrapper-narrow,
+  header .wrapper.wrapper-narrow,
+  footer .wrapper.wrapper-narrow {
+    padding-inline: 1rem;
+  }
+}
+
+h1 {
+  font-size: clamp(48px, 6.5vw, 96px);
+  line-height: 1.2;
+  color: white;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 60px;
+  line-height: 1.2;
+  color: #081841;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 1.2;
+  color: #081841;
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 200 !important;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+button svg {
+  margin-inline-start: -2rem;
+  width: 32px;
+}
+
+header {
+  position: absolute;
+  background-color: transparent;
+}
+header .header-wrapper {
+  padding: 1.5rem 4rem;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid white;
+}
+header .header-wrapper nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+header .header-wrapper nav ul li {
+  color: white;
+}
+
+main {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 100%), url(../public/images/vale-church-hero.png);
+  background-size: cover;
+  background-position: center;
+}
+main .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-block-end: 2rem;
+  height: 95vh;
+  max-height: 1000px;
+}
+main .wrapper p {
+  color: white;
+  align-self: flex-end;
+  max-width: 52%;
+  margin-block-end: -6rem;
+}
+main .wrapper h1 {
+  max-width: 101%;
+  width: 101%;
+}/*# sourceMappingURL=style.css.map */

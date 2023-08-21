@@ -1,0 +1,30 @@
+@use "./variables";
+
+header {
+    position:absolute;
+    background-color:transparent;
+    .header-wrapper {
+        padding: 1.5rem 4rem;
+        display:flex;
+        width:100%;
+        max-width:1440px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom:0.5px solid white;
+
+        .logo-container {
+        }
+
+        nav {
+            ul {
+                display:flex;
+                align-items: center;
+                gap:4rem;
+
+                li {
+                    color:white;
+                }
+            }
+        }
+    }
+}
