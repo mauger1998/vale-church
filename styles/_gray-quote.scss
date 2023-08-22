@@ -1,0 +1,26 @@
+@use "./variables";
+
+.gray-quote {
+    background-color:variables.$gray;
+    color:white;
+
+    .wrapper {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p:nth-of-type(1) {
+            font-size:variables.$tag;
+            font-weight:500;
+            letter-spacing:0.25rem;
+        }
+
+        h2 {
+            text-align:center;
+            color:white;
+            max-width:30ch;
+            margin-block:0rem 2rem;
+        }
+    }
+}

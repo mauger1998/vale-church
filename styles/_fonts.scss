@@ -9,7 +9,7 @@ h1 {
 
 h2 {
     font-size:variables.$h2;
-    line-height:1.2;
+    line-height:1;
     color:variables.$blue;
     font-weight:400;
 }
@@ -22,5 +22,5 @@ h3 {
 p {
     font-size:variables.$text;
     line-height:1.6;
-    font-weight:200 !important;
+    font-weight:200;
 }

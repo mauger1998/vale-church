@@ -1,0 +1,33 @@
+@use "./variables";
+
+
+.mission-banner {
+    background-color:variables.$gray;
+    color:white;
+    .wrapper {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding-block:4rem;
+       
+
+        .mission-item {
+            display:flex;
+            align-items: center;
+            width:40%;
+            gap:2rem;
+
+            h3 {
+                color:white;
+            }
+            p {
+                margin-block:1rem;
+                max-width:32ch;
+            }
+            
+            img {
+                width:125px;
+            }
+        }
+    }
+}

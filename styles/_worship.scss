@@ -1,0 +1,47 @@
+@use "./variables";
+
+.worship-section {
+    .wrapper {
+        display:grid;
+        grid-template-columns: 1.5fr 2fr;
+        gap:6rem;
+
+        .worship-right {
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap:4rem;
+            .worship-content {
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                width:100%;
+                
+                .worship-text {
+                    p {
+                        max-width:32ch;
+                    }
+                    button {
+                        color:black;
+                        margin-block-start:2rem;
+                    }
+                }
+
+                .worship-content-images {
+                    display:grid;
+                    width:150px;
+                    gap:1rem;
+                }
+            }
+        }
+        .worship-left {
+            img {
+                height:calc(100% + 16rem);
+                width:calc(100% + 4rem);
+                object-fit:cover;
+                margin-top:-8rem;
+                margin-left:-4rem;
+            }
+        }
+    }
+}
