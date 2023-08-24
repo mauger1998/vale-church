@@ -1,0 +1,56 @@
+@use "../../styles/variables";
+
+.andrew-section {
+    .wrapper {
+        display:grid;
+        gap:6rem;
+        padding-right:0;
+        padding-bottom:2.5rem;
+        grid-template-columns: 2fr 0.75fr;
+
+        .andrew-left {
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap:6rem;
+            .andrew-left-top {
+                h2 {
+                    max-width:16ch;
+                }
+            }
+            .andrew-left-bottom {
+                display:flex;
+                align-items: center;
+                gap:4rem;
+
+                img {
+                    border-radius:240px 240px 0px 0px;
+                }
+                .andrew-left-bottom-right {
+                    p {
+                        &:not(:nth-of-type(2)) {
+                            margin-block:2rem 1rem;
+                        }
+                        &:not(:nth-of-type(1)) {
+                            margin-block:0rem 3rem;
+                            font-weight:500;
+                        }
+                    }
+                    button {
+                        color:black;
+                    }
+                }
+            }
+        }
+        .andrew-right {
+            width:100%;
+            height:calc(100% + 10rem);
+            margin-block:-8rem -2rem;
+
+            img {
+                height:calc(100% / 3);
+                object-fit:cover;
+            }
+        }
+    }
+}

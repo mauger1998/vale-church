@@ -83,7 +83,7 @@ h1 {
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 48px;
   line-height: 1;
   color: #081841;
   font-weight: 400;
@@ -111,7 +111,6 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  margin-inline-start: -0.25rem;
 }
 button svg {
   margin-inline-end: -0.25rem;
@@ -257,12 +256,14 @@ main .wrapper h1 {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.25rem;
+  color: #B4780A;
 }
 .gray-quote .wrapper h2 {
   text-align: center;
   color: white;
   max-width: 30ch;
   margin-block: 0rem 2rem;
+  line-height: 1.2;
 }
 
 .worship-section .wrapper {
@@ -301,4 +302,173 @@ main .wrapper h1 {
      object-fit: cover;
   margin-top: -8rem;
   margin-left: -4rem;
+}
+
+.services-section {
+  background-color: #393939;
+}
+.services-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6rem;
+}
+.services-section .wrapper .services-row {
+  width: 100%;
+}
+.services-section .wrapper .services-row:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.services-section .wrapper .services-row:nth-child(1) h3 {
+  color: white;
+  max-width: 26ch;
+}
+.services-section .wrapper .services-row:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8rem;
+}
+.services-section .wrapper .services-row:nth-child(2) .services-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.services-section .wrapper .services-row:nth-child(2) .services-row-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.services-section .wrapper .services-row:nth-child(2) .services-row-list .services-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.services-section .wrapper .services-row:nth-child(2) .services-row-list .services-list-item p {
+  color: white;
+}
+.services-section .wrapper .services-row:nth-child(3) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 25%), url(../public/images/big-service-image.png);
+  background-size: cover;
+  padding: 2rem;
+  padding-block-end: 40rem;
+}
+.services-section .wrapper .services-row:nth-child(3) p {
+  color: white;
+  font-size: 14px;
+}
+.services-section .wrapper .services-row:nth-child(3) h3 {
+  color: white;
+  max-width: 16ch;
+}
+
+.history-section .wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 6rem;
+}
+.history-section .wrapper .history-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+}
+.history-section .wrapper .history-left h2 {
+  max-width: 20ch;
+}
+.history-section .wrapper .history-left .history-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.history-section .wrapper .history-left .history-content .history-text p {
+  max-width: 32ch;
+  margin-block: 0rem 2rem;
+}
+.history-section .wrapper .history-left .history-content .history-text button {
+  color: black;
+}
+.history-section .wrapper .history-right img {
+  height: calc(100% + 16rem);
+  width: calc(100% + 4rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -8rem;
+  margin-right: -4rem;
+}
+
+.column-section:nth-child(odd) .wrapper {
+  flex-direction: row-reverse;
+}
+.column-section .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+.column-section .wrapper .column-right,
+.column-section .wrapper .column-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.column-section .wrapper .column-right h3,
+.column-section .wrapper .column-left h3 {
+  max-width: 30ch;
+}
+.column-section .wrapper .column-right > p,
+.column-section .wrapper .column-left > p {
+  margin-block: 1.5rem 2rem;
+  max-width: 60ch;
+}
+.column-section .wrapper .column-right button,
+.column-section .wrapper .column-left button {
+  color: black;
+}
+.column-section .wrapper .column-right .list,
+.column-section .wrapper .column-left .list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-block: 2rem 3rem;
+}
+.column-section .wrapper .column-right .list .list-item,
+.column-section .wrapper .column-left .list .list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.column-section .wrapper .column-right .list .list-item p,
+.column-section .wrapper .column-left .list .list-item p {
+  font-weight: 500;
+}
+.column-section .wrapper .column-right .list .list-item svg,
+.column-section .wrapper .column-left .list .list-item svg {
+  width: 32px;
+}
+
+.involved-section {
+  background-image: url(../public/images/involved-image.png);
+  background-size: cover;
+}
+.involved-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-block: 20rem !important;
+}
+.involved-section .wrapper h2 {
+  color: white;
+}
+.involved-section .wrapper p {
+  color: white;
+  max-width: 40ch;
+  margin-block: 2rem 3rem;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,25 @@
+@use "../../styles/variables";
+
+.organ-section {
+    background-image:linear-gradient(#00000061, #00000061), url(../../public/images/organ-image.png);
+    background-size:cover;
+
+    &.bell {
+        background-image:linear-gradient(#00000061, #00000061), url(../../public/images/bell.png);
+    }
+
+    .wrapper {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:2rem;
+        padding-block:16rem;
+
+        h2 {
+            color:white;
+            max-width:20ch;
+            text-align:center;
+        }
+    }
+}

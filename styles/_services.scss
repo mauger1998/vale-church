@@ -1,0 +1,68 @@
+@use "./variables";
+
+
+.services-section {
+    background-color:variables.$gray;
+    .wrapper {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap:6rem;
+        .services-row {
+            width:100%;
+            &:nth-child(1) {
+                display:flex;
+                align-items: center;
+                justify-content: flex-end;
+                h3 {
+                    color:white;
+                    max-width:26ch;
+                }
+            }
+            &:nth-child(2) {
+                display:flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap:8rem;
+
+                .services-row-grid {
+                    display:grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap:2rem;
+                }
+                .services-row-list {
+                    display:flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap:2.5rem;
+                    .services-list-item {
+                        display:flex;
+                        align-items: center;
+                        gap:0.5rem;
+
+                        p {
+                            color:white;
+                        }
+                    }
+                }
+            }
+            &:nth-child(3) {
+                background-image:linear-gradient(to bottom, #000000ad, #00000000 25%),url(../public/images/big-service-image.png);
+                background-size:cover;
+                padding:2rem;
+                padding-block-end:40rem;
+
+                p {
+                    color:white;
+                    font-size:variables.$tag;
+                }
+
+                h3 {
+                    color:white;
+                    max-width:16ch;
+                }
+            }
+        }
+    }
+}

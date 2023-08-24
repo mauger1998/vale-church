@@ -1,0 +1,46 @@
+@use "../../styles/variables";
+
+.welcome-section {
+    .wrapper {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:6rem;
+
+        .welcome-top {
+            h2 {
+                max-width:12ch;
+                text-align:center;
+                line-height:1;
+            }
+        }
+        .welcome-bottom {
+            display:flex;
+            align-items: center;
+            width:80%;
+            gap:8rem;
+
+            .welcome-bottom-right {
+                width:45%;
+                img {
+                    border-radius: 320px 320px 0px 0px;
+                }
+            }
+            .welcome-bottom-left {
+                width:55%;
+                h3 {
+                    max-width:40ch;
+                }
+                p {
+                    max-width:60ch;
+                    margin-block:2rem 1.5rem;
+                    font-weight:400;
+                }
+                button {
+                    color:black;
+                }
+            }
+        }
+    }
+}
