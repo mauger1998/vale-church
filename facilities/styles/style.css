@@ -349,4 +349,89 @@ main .wrapper h1 {
 .bell-section .wrapper .bell-content .bell-bottom .bell-pencil {
   flex: 1;
   opacity: 0.1;
+}
+
+.seekers-section {
+  background-image: url(../../public/images/sundaybg.png);
+  background-blend-mode: darken;
+  background-color: #393939;
+}
+.seekers-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+}
+.seekers-section .wrapper .seekers-top h2 {
+  color: white;
+  max-width: 10ch;
+  text-align: center;
+}
+.seekers-section .wrapper .seekers-content {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+.seekers-section .wrapper .seekers-content .seekers-left {
+  flex: 1;
+}
+.seekers-section .wrapper .seekers-content .seekers-left h3 {
+  color: white;
+  font-weight: 300;
+}
+.seekers-section .wrapper .seekers-content .seekers-left p {
+  margin-block: 2rem;
+  color: white;
+  font-weight: 500;
+}
+.seekers-section .wrapper .seekers-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem;
+}
+.seekers-section .wrapper .seekers-bottom .seekers-item h3 {
+  color: white;
+}
+.seekers-section .wrapper .seekers-bottom .seekers-item p {
+  color: white;
+  margin-block: 1rem 0rem;
+}
+
+.pastoral-section .wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12rem;
+}
+.pastoral-section .wrapper .pastoral-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+}
+.pastoral-section .wrapper .pastoral-top h2 {
+  text-align: center;
+  max-width: 10ch;
+}
+.pastoral-section .wrapper .pastoral-top h3 {
+  text-align: center;
+  max-width: 32ch;
+}
+.pastoral-section .wrapper .pastoral-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
+}
+.pastoral-section .wrapper .pastoral-grid .pastoral-item p {
+  margin-block: 1rem 0rem;
+}
+.pastoral-section .wrapper .pastoral-quote {
+  align-self: flex-start;
+}
+.pastoral-section .wrapper .pastoral-quote h3 {
+  max-width: 24ch;
+}
+.pastoral-section .wrapper .pastoral-quote button {
+  color: black;
+  margin-block: 2rem 0rem;
 }/*# sourceMappingURL=style.css.map */

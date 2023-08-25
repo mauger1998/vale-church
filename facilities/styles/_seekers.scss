@@ -1,0 +1,55 @@
+@use "../../styles/variables";
+
+.seekers-section {
+    background-image:url(../../public/images/sundaybg.png);
+    background-blend-mode:darken;
+    background-color:variables.$gray;
+    .wrapper {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:6rem;
+
+        .seekers-top {
+            h2 {
+                color:white;
+                max-width:10ch;
+                text-align:center;
+            }
+        }
+        .seekers-content {
+            display:flex;
+            align-items: center;
+            gap:6rem;
+
+            .seekers-left {
+                flex:1;
+                h3 {
+                    color:white;
+                    font-weight:300;
+                }
+                p {
+                    margin-block:2rem;
+                    color:white;
+                    font-weight:500;
+                }
+            }
+        }
+        .seekers-bottom {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:4rem;
+
+            .seekers-item {
+                h3 {
+                    color:white;
+                }
+
+                p {
+                    color:white;
+                    margin-block:1rem 0rem;
+                }
+            }
+        }
+    }
+}
