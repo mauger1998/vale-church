@@ -56,6 +56,24 @@ footer {
         }
     }
 
+    @media (max-width:1120px) {
+
+        .wrapper {
+            &.wrapper-narrow {
+                padding-inline:6rem;
+            }
+        }
+        
+    }
+    @media (max-width:1024px) {
+
+        .wrapper {
+            &.wrapper-narrow {
+                padding-inline:4rem;
+            }
+        }
+        
+    }
    
 
     @media (max-width:700px) {

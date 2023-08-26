@@ -12,6 +12,13 @@ header {
         justify-content: space-between;
         border-bottom:0.5px solid white;
 
+        @media (max-width:700px) {
+            padding-inline:2rem;
+        }
+        @media (max-width:500px) {
+            padding-inline:1rem;
+        }
+
         .logo-container {
         }
 
@@ -24,6 +31,9 @@ header {
                 li {
                     color:white;
                 }
+            }
+            @media (max-width:1024px) {
+                display:none;
             }
         }
     }

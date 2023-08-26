@@ -51,4 +51,55 @@
             }
         }
     }
+    @media (max-width:900px) {
+        .wrapper {
+            .bell-content {
+                align-items: center;
+
+                h3 {
+                    text-align:center;
+                }
+                .bell-bottom {
+                    flex-direction: column-reverse;
+
+                    .bell-pencil {
+                        width:40%;
+                    }
+
+                    .bell-grid {
+                        p {
+                            text-align:center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:550px) {
+        .wrapper {
+            .bell-content {
+                align-items: center;
+
+                h3 {
+                    text-align:center;
+                }
+                .bell-bottom {
+                    flex-direction: column-reverse;
+                    gap:2rem;
+
+                    .bell-pencil {
+                        width:70%;
+                    }
+
+                    .bell-grid {
+                        gap:4rem;
+                        grid-template-columns: 1fr;
+                        p {
+                            text-align:center;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

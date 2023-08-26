@@ -13,3 +13,14 @@
 @use "./history";
 @use "./columns";
 @use "./involved";
+
+
+.pencil {
+    opacity:0.075;
+    position:absolute;
+    width:60%;
+    left:0;
+    bottom:0;
+    z-index:-1;
+
+}

@@ -4,7 +4,35 @@
     .wrapper {
         display:grid;
         grid-template-columns: 1.5fr 2fr;
-        gap:6rem;
+        gap:4rem;
+        position:relative;
+
+       
+
+        .pencil {
+            right:0;
+            left:auto;
+            bottom:0;
+            top:auto;
+            width:70%;
+            opacity:0.045;
+        }
+        @media (max-width:1024px) {
+            gap:2rem;
+        }
+        @media (max-width:900px) {
+            grid-template-columns: 1fr;
+            gap:4rem;
+
+            .pencil {
+                width:100%;
+                top:75%;
+                left:50%;
+                bottom:auto;
+                right:auto;
+                transform:translate(-50%, -67.5%);
+            }
+        }
 
         .worship-right {
             display:flex;
@@ -16,6 +44,10 @@
                 align-items: center;
                 justify-content: space-between;
                 width:100%;
+
+                @media (max-width:900px) {
+                    gap:2rem;
+                }
                 
                 .worship-text {
                     p {
@@ -29,7 +61,7 @@
 
                 .worship-content-images {
                     display:grid;
-                    width:150px;
+                    width:125px;
                     gap:1rem;
                 }
             }
@@ -41,6 +73,37 @@
                 object-fit:cover;
                 margin-top:-8rem;
                 margin-left:-4rem;
+
+                @media (max-width:900px) {
+                    height:calc(100% + 8rem);
+                    height:auto;
+                    width:calc(100% + 8rem);
+
+                }
+            }
+        }
+    }
+    @media (max-width:375px) {
+        .wrapper {
+            .worship-right {
+                .worship-content {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap:4rem;
+
+                    .worship-text {
+                        p {
+                            max-width:100%;
+                        }
+                    }
+
+                    
+
+                    .worship-content-images {
+                        grid-template-columns: 1fr 1fr 1fr;
+                        width:100%;
+                    }
+                }
             }
         }
     }

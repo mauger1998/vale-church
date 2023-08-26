@@ -6,6 +6,14 @@
         align-items: center;
         flex-direction: column;
         gap:12rem;
+        position:relative;
+
+        .pencil {
+            opacity:0.05;
+            width:100%;
+            inset:0;
+            z-index:-1;
+        }
 
         .pastoral-top {
             display:flex;
@@ -27,6 +35,15 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap:4rem;
 
+            @media(max-width:900px) {
+                grid-template-columns: 1fr 1fr;
+                gap:2rem;
+            }
+            @media(max-width:550px) {
+                grid-template-columns: 1fr;
+                gap:4rem;
+            }
+
             .pastoral-item {
                 p {
                     margin-block:1rem 0rem;
@@ -35,14 +52,27 @@
         }
         .pastoral-quote {
             align-self:flex-start;
+            
+            @media(max-width:550px) {
+                align-self:center;
+                align-items:center;
+                display:flex;
+                flex-direction: column;
+            }
 
             h3 {
                 max-width:24ch;
+
+                @media(max-width:550px) {
+                    text-align:center;
+                }
             }
 
             button {
                 color:black;
                 margin-block:2rem 0rem;
+
+                
             }
         }
     }

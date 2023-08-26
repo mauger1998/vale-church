@@ -1,9 +1,8 @@
-@use "./variables";
+@use "../../styles/variables";
 
 .involved-section {
-    background-image:url(../public/images/involved-image.png);
+    background-image:url(../../public/images/involved-image.png);
     background-size:cover;
-    background-position:center;
 
     .wrapper {
         display:flex;

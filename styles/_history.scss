@@ -5,6 +5,13 @@
         display:grid;
         grid-template-columns: 2fr 1.5fr;
         gap:6rem;
+        position:relative;
+
+        .pencil {
+            width:225px;
+            opacity:0.1;
+            bottom:auto;
+        }
 
         .history-left {
             display:flex;
@@ -38,6 +45,37 @@
                 object-fit:cover;
                 margin-top:-8rem;
                 margin-right:-4rem;
+            }
+        }
+    }
+    @media (max-width:900px) {
+        .wrapper {
+            .history-left {
+                gap:4rem;
+
+                .history-content {
+                    gap:2rem;
+                }
+
+                
+            }
+        }
+    }
+    @media (max-width:550px) {
+        .wrapper {
+            grid-template-columns: 1fr;
+
+            .history-left {
+                
+            }
+
+            .history-right {
+
+                img {
+                    margin-top:0 !important;
+                    margin-inline:-2rem !important;
+                    height:auto;
+                }
             }
         }
     }

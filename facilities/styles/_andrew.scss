@@ -7,6 +7,15 @@
         padding-right:0;
         padding-bottom:2.5rem;
         grid-template-columns: 2fr 0.75fr;
+        position:relative;
+
+        .pencil {
+            opacity:0.05;
+            width:100%;
+            inset:0;
+            height:100%;
+            object-fit:cover;
+        }
 
         .andrew-left {
             display:flex;
@@ -25,8 +34,10 @@
 
                 img {
                     border-radius:240px 240px 0px 0px;
+                    flex:1;
                 }
                 .andrew-left-bottom-right {
+                    flex:1;
                     p {
                         &:not(:nth-of-type(2)) {
                             margin-block:2rem 1rem;
@@ -53,4 +64,85 @@
             }
         }
     }
+    @media (max-width:1024px) {
+        .wrapper {
+            grid-template-columns: 1fr;
+            padding-inline:4rem;
+            padding-block-start:0;
+
+            @media (max-width:700px) {
+                padding-inline:2rem;
+            }
+            @media (max-width:500px) {
+                padding-inline:1rem;
+            }
+
+           .andrew-left {
+            .andrew-left-top {
+             
+    
+                    h2 {
+                        text-align:center;
+                    }
+                
+            }
+           }
+
+            .andrew-right {
+                display:grid;
+                grid-row:1;
+                grid-template-columns: 1fr 1fr 1fr;
+                height:auto;
+                margin:auto;
+                width:calc(100% + 8rem);
+                margin-inline:-4rem;
+
+                @media (max-width:700px) {
+                    width:calc(100% + 4rem);
+                    margin-inline:-2rem;
+                }
+                @media (max-width:500px) {
+                    width:calc(100% + 1rem);
+                    margin-inline:-1rem;
+                }
+
+                img {
+                    height:auto;
+                }
+            }
+            
+        }
+    }
+    @media (max-width:900px) {
+        .wrapper {
+            .andrew-left {
+                align-items: center;
+                .andrew-left-bottom {
+                    display:flex;
+                    align-items: center;
+                    flex-direction: column;
+                    img {
+                        width:50%;
+                        border-radius:500px 500px 0px 0px;
+                    }
+                    .andrew-left-bottom-right {
+                        align-items: center;
+                        display:flex;
+                        flex-direction: column;
+                        h3 {
+                            text-align:center;
+                            max-width:28ch;
+                        }
+    
+                        p {
+                            text-align:center;
+                            // max-width:60ch;
+                        }
+                    }
+                }
+               
+            }
+        }
+    }
 }
+

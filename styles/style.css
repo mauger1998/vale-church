@@ -46,6 +46,22 @@ header .wrapper.wrapper-narrow,
 footer .wrapper.wrapper-narrow {
   padding: 8rem 8rem;
 }
+@media (max-width: 1120px) {
+  section .wrapper.wrapper-narrow,
+  main .wrapper.wrapper-narrow,
+  header .wrapper.wrapper-narrow,
+  footer .wrapper.wrapper-narrow {
+    padding-inline: 6rem;
+  }
+}
+@media (max-width: 1024px) {
+  section .wrapper.wrapper-narrow,
+  main .wrapper.wrapper-narrow,
+  header .wrapper.wrapper-narrow,
+  footer .wrapper.wrapper-narrow {
+    padding-inline: 4rem;
+  }
+}
 @media (max-width: 700px) {
   section .wrapper,
   main .wrapper,
@@ -75,25 +91,74 @@ footer .wrapper.wrapper-narrow {
   }
 }
 
+@font-face {
+  font-family: boost;
+  src: url("../BoostardSignature2.ttf");
+}
 h1 {
-  font-size: clamp(48px, 6.5vw, 96px);
-  line-height: 1.2;
+  font-size: 96px;
+  line-height: 105.6px;
   color: white;
   font-weight: 400;
+}
+h1 span {
+  font-family: boost;
+  font-size: 320px;
+  vertical-align: bottom;
+  color: #B4780A;
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 64px;
+    line-height: 70.4px;
+  }
+  h1 span {
+    font-size: 156px;
+  }
+}
+@media (max-width: 550px) {
+  h1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  h1 span {
+    font-size: 128px;
+  }
 }
 
 h2 {
   font-size: 48px;
-  line-height: 1;
+  line-height: 48px !important;
   color: #081841;
   font-weight: 400;
+}
+h2 span {
+  font-family: boost;
+  font-size: 128px;
+  vertical-align: bottom;
+  color: #B4780A;
+}
+@media (max-width: 800px) {
+  h2 {
+    font-size: 40px;
+    line-height: 44px !important;
+  }
+  h2 span {
+    font-size: 96px;
+  }
 }
 
 h3 {
   font-size: 32px;
-  line-height: 1.2;
+  line-height: 38.4px;
   color: #081841;
   font-weight: 400;
+}
+h3 span {
+  font-family: boost;
+  font-size: 96px;
+  vertical-align: bottom;
+  color: #B4780A;
 }
 
 p {
@@ -130,6 +195,16 @@ header .header-wrapper {
   justify-content: space-between;
   border-bottom: 0.5px solid white;
 }
+@media (max-width: 700px) {
+  header .header-wrapper {
+    padding-inline: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  header .header-wrapper {
+    padding-inline: 1rem;
+  }
+}
 header .header-wrapper nav ul {
   display: flex;
   align-items: center;
@@ -138,11 +213,21 @@ header .header-wrapper nav ul {
 header .header-wrapper nav ul li {
   color: white;
 }
+@media (max-width: 1024px) {
+  header .header-wrapper nav {
+    display: none;
+  }
+}
 
 main {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 100%), url(../public/images/vale-church-hero.png);
   background-size: cover;
   background-position: center;
+}
+@media (max-width: 800px) {
+  main {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0.0862745098) 100%), url(../public/images/vale-church-hero.png);
+  }
 }
 main .wrapper {
   display: flex;
@@ -153,11 +238,16 @@ main .wrapper {
   height: 95vh;
   max-height: 1000px;
 }
-main .wrapper p {
-  color: white;
-  align-self: flex-end;
-  max-width: 52%;
-  margin-block-end: -6rem;
+@media (max-width: 800px) {
+  main .wrapper {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-block: 14rem 22rem;
+  }
+  main .wrapper h1 {
+    text-align: center;
+  }
 }
 main .wrapper h1 {
   max-width: 101%;
@@ -170,16 +260,17 @@ main .wrapper h1 {
   align-items: center;
   justify-content: center;
   gap: 6rem;
+  position: relative;
 }
 .welcome-section .wrapper .welcome-top h2 {
   max-width: 12ch;
   text-align: center;
-  line-height: 1;
+  line-height: 48px !important;
 }
 .welcome-section .wrapper .welcome-bottom {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   gap: 8rem;
 }
 .welcome-section .wrapper .welcome-bottom .welcome-bottom-right img {
@@ -196,6 +287,44 @@ main .wrapper h1 {
   margin-block: 2rem 1.5rem;
   font-weight: 400;
 }
+@media (max-width: 1024px) {
+  .welcome-section .wrapper .welcome-bottom {
+    gap: 4rem;
+  }
+}
+@media (max-width: 900px) {
+  .welcome-section .wrapper .welcome-bottom {
+    gap: 4rem;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .welcome-section .wrapper .welcome-bottom .pencil {
+    width: 100%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .welcome-section .wrapper .welcome-bottom .welcome-bottom-right {
+    width: 50%;
+  }
+  .welcome-section .wrapper .welcome-bottom .welcome-bottom-right img {
+    border-radius: 500px 500px 0px 0px;
+  }
+  .welcome-section .wrapper .welcome-bottom .welcome-bottom-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome-section .wrapper .welcome-bottom .welcome-bottom-left h3 {
+    text-align: center;
+    max-width: 28ch;
+  }
+  .welcome-section .wrapper .welcome-bottom .welcome-bottom-left p {
+    text-align: center;
+  }
+}
 
 .mission-banner {
   background-color: #393939;
@@ -206,11 +335,12 @@ main .wrapper h1 {
   align-items: center;
   justify-content: center;
   padding-block: 4rem;
+  gap: 4rem;
 }
 .mission-banner .wrapper .mission-item {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 50%;
   gap: 2rem;
 }
 .mission-banner .wrapper .mission-item h3 {
@@ -222,6 +352,43 @@ main .wrapper h1 {
 }
 .mission-banner .wrapper .mission-item img {
   width: 125px;
+}
+@media (max-width: 900px) {
+  .mission-banner .wrapper {
+    gap: 2rem;
+  }
+  .mission-banner .wrapper .mission-item {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mission-banner .wrapper .mission-item p {
+    margin-block: 0.5rem;
+  }
+}
+@media (max-width: 411px) {
+  .mission-banner .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-banner .wrapper .mission-item {
+    width: 100%;
+    align-items: center;
+  }
+  .mission-banner .wrapper .mission-item img {
+    width: 100%;
+  }
+  .mission-banner .wrapper .mission-item p {
+    text-align: center;
+  }
+  .mission-banner .wrapper .mission-item h3 {
+    text-align: center;
+  }
+}
+@media (max-width: 315px) {
+  .mission-banner .wrapper .mission-item img {
+    width: 100%;
+  }
 }
 
 .faith-quote {
@@ -241,6 +408,9 @@ main .wrapper h1 {
   text-align: center;
   max-width: 18ch;
 }
+.faith-quote .wrapper h2 span {
+  color: white;
+}
 
 .gray-quote {
   background-color: #393939;
@@ -256,20 +426,57 @@ main .wrapper h1 {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.25rem;
-  color: #B4780A;
+}
+@media (max-width: 550px) {
+  .gray-quote .wrapper p:nth-of-type(1) {
+    font-size: 12px;
+  }
 }
 .gray-quote .wrapper h2 {
   text-align: center;
   color: white;
   max-width: 30ch;
   margin-block: 0rem 2rem;
-  line-height: 1.2;
+  line-height: 57.6px !important;
+}
+@media (max-width: 800px) {
+  .gray-quote .wrapper h2 {
+    line-height: 56px !important;
+  }
 }
 
 .worship-section .wrapper {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
-  gap: 6rem;
+  gap: 4rem;
+  position: relative;
+}
+.worship-section .wrapper .pencil {
+  right: 0;
+  left: auto;
+  bottom: 0;
+  top: auto;
+  width: 70%;
+  opacity: 0.045;
+}
+@media (max-width: 1024px) {
+  .worship-section .wrapper {
+    gap: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .worship-section .wrapper {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .worship-section .wrapper .pencil {
+    width: 100%;
+    top: 75%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -67.5%);
+  }
 }
 .worship-section .wrapper .worship-right {
   display: flex;
@@ -283,6 +490,11 @@ main .wrapper h1 {
   justify-content: space-between;
   width: 100%;
 }
+@media (max-width: 900px) {
+  .worship-section .wrapper .worship-right .worship-content {
+    gap: 2rem;
+  }
+}
 .worship-section .wrapper .worship-right .worship-content .worship-text p {
   max-width: 32ch;
 }
@@ -292,7 +504,7 @@ main .wrapper h1 {
 }
 .worship-section .wrapper .worship-right .worship-content .worship-content-images {
   display: grid;
-  width: 150px;
+  width: 125px;
   gap: 1rem;
 }
 .worship-section .wrapper .worship-left img {
@@ -303,73 +515,110 @@ main .wrapper h1 {
   margin-top: -8rem;
   margin-left: -4rem;
 }
+@media (max-width: 900px) {
+  .worship-section .wrapper .worship-left img {
+    height: calc(100% + 8rem);
+    height: auto;
+    width: calc(100% + 8rem);
+  }
+}
+@media (max-width: 375px) {
+  .worship-section .wrapper .worship-right .worship-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+  .worship-section .wrapper .worship-right .worship-content .worship-text p {
+    max-width: 100%;
+  }
+  .worship-section .wrapper .worship-right .worship-content .worship-content-images {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+  }
+}
 
 .services-section {
   background-color: #393939;
 }
 .services-section .wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 6rem;
+  gap: 4rem;
 }
 .services-section .wrapper .services-row {
-  width: 100%;
+  width: 60%;
 }
 .services-section .wrapper .services-row:nth-child(1) {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 40%;
 }
 .services-section .wrapper .services-row:nth-child(1) h3 {
   color: white;
   max-width: 26ch;
 }
-.services-section .wrapper .services-row:nth-child(2) {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8rem;
-}
-.services-section .wrapper .services-row:nth-child(2) .services-row-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-}
-.services-section .wrapper .services-row:nth-child(2) .services-row-list {
+.services-section .wrapper .services-row:nth-child(1) .services-row-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2.5rem;
 }
-.services-section .wrapper .services-row:nth-child(2) .services-row-list .services-list-item {
+.services-section .wrapper .services-row:nth-child(1) .services-row-list .services-list-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.services-section .wrapper .services-row:nth-child(2) .services-row-list .services-list-item p {
+.services-section .wrapper .services-row:nth-child(1) .services-row-list .services-list-item p {
   color: white;
 }
-.services-section .wrapper .services-row:nth-child(3) {
+.services-section .wrapper .services-row:nth-child(1) .services-row-list button {
+  margin-block-start: 1rem;
+}
+.services-section .wrapper .services-row:nth-child(2) {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 25%), url(../public/images/big-service-image.png);
   background-size: cover;
+  background-position: center;
   padding: 2rem;
   padding-block-end: 40rem;
 }
-.services-section .wrapper .services-row:nth-child(3) p {
+.services-section .wrapper .services-row:nth-child(2) p {
   color: white;
   font-size: 14px;
 }
-.services-section .wrapper .services-row:nth-child(3) h3 {
+.services-section .wrapper .services-row:nth-child(2) h3 {
   color: white;
   max-width: 16ch;
+}
+@media (max-width: 450px) {
+  .services-section .wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .services-section .wrapper .services-row {
+    width: 100% !important;
+  }
+  .services-section .wrapper .services-row:nth-child(2) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 50%), url(../public/images/big-service-image.png);
+    padding-block-end: 20rem;
+    padding-inline: 1rem;
+  }
 }
 
 .history-section .wrapper {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
   gap: 6rem;
+  position: relative;
+}
+.history-section .wrapper .pencil {
+  width: 225px;
+  opacity: 0.1;
+  bottom: auto;
 }
 .history-section .wrapper .history-left {
   display: flex;
@@ -400,6 +649,24 @@ main .wrapper h1 {
      object-fit: cover;
   margin-top: -8rem;
   margin-right: -4rem;
+}
+@media (max-width: 900px) {
+  .history-section .wrapper .history-left {
+    gap: 4rem;
+  }
+  .history-section .wrapper .history-left .history-content {
+    gap: 2rem;
+  }
+}
+@media (max-width: 550px) {
+  .history-section .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .history-section .wrapper .history-right img {
+    margin-top: 0 !important;
+    margin-inline: -2rem !important;
+    height: auto;
+  }
 }
 
 .column-section:nth-child(odd) .wrapper {
@@ -452,10 +719,43 @@ main .wrapper h1 {
 .column-section .wrapper .column-left .list .list-item svg {
   width: 32px;
 }
+@media (max-width: 900px) {
+  .column-section .wrapper {
+    flex-direction: column !important;
+  }
+  .column-section .wrapper .column-left,
+  .column-section .wrapper .column-right {
+    align-items: center;
+  }
+  .column-section .wrapper .column-left .list,
+  .column-section .wrapper .column-right .list {
+    align-items: center;
+    gap: 2rem;
+    margin-block-start: 3rem;
+  }
+  .column-section .wrapper .column-left .list .list-item,
+  .column-section .wrapper .column-right .list .list-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .column-section .wrapper .column-left h3,
+  .column-section .wrapper .column-right h3 {
+    text-align: center;
+    max-width: 28ch;
+  }
+  .column-section .wrapper .column-left p,
+  .column-section .wrapper .column-right p {
+    text-align: center;
+    max-width: 50ch;
+    margin-block: 0;
+  }
+}
 
 .involved-section {
   background-image: url(../public/images/involved-image.png);
   background-size: cover;
+  background-position: center;
 }
 .involved-section .wrapper {
   display: flex;
@@ -471,4 +771,18 @@ main .wrapper h1 {
   color: white;
   max-width: 40ch;
   margin-block: 2rem 3rem;
+}
+@media (max-width: 708px) {
+  .involved-section {
+    background-position: center;
+  }
+}
+
+.pencil {
+  opacity: 0.075;
+  position: absolute;
+  width: 60%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */

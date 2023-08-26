@@ -1,23 +1,77 @@
 @use "./variables";
 
+@font-face {
+    font-family:boost;
+    src:url("../BoostardSignature2.ttf");
+}
+
 h1 {
-    font-size:clamp(variables.$mobile-h1,6.5vw,variables.$h1);
-    line-height:1.2;
+    // font-size:clamp(variables.$mobile-h1,6.5vw,variables.$h1)
+    font-size:variables.$h1;
+    line-height:variables.$h1 * 1.1;
     color:white;
     font-weight:400;
+
+    span {
+        font-family:boost;
+        font-size:320px;
+        // font-size:clamp(256px,13vw,320px);
+        vertical-align:bottom;
+        color:variables.$gold;
+    }
+    @media (max-width:800px) {
+        font-size:variables.$mobile-h1;
+        line-height:variables.$mobile-h1 * 1.1;
+
+        span {
+            font-size:156px;
+        }
+    }
+    @media (max-width:550px) {
+        font-size:40px;
+        line-height:40px * 1.1;
+
+        span {
+            font-size:128px;
+        }
+    }
 }
 
 h2 {
     font-size:variables.$h2;
-    line-height:1;
+    line-height:variables.$h2 !important;
     color:variables.$blue;
     font-weight:400;
+
+    span {
+        font-family:boost;
+        font-size:128px;
+        vertical-align:bottom;
+        color:variables.$gold;
+    }
+
+    @media (max-width:800px) {
+        font-size:variables.$mobile-h2;
+        line-height:variables.$mobile-h2 * 1.1 !important;
+
+        span {
+            font-size:96px;
+        }
+    }
+  
 }
 h3 {
     font-size:variables.$h3;
-    line-height:1.2;
+    line-height:variables.$h3 * 1.2;
     color:variables.$blue;
     font-weight:400;
+
+    span {
+        font-family:boost;
+        font-size:96px;
+        vertical-align:bottom;
+        color:variables.$gold;
+    }
 }
 p {
     font-size:variables.$text;

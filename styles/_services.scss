@@ -5,31 +5,25 @@
     background-color:variables.$gray;
     .wrapper {
         display:flex;
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        gap:6rem;
+        gap:4rem;
+
+        
+        
         .services-row {
-            width:100%;
+            width:60%;
             &:nth-child(1) {
                 display:flex;
                 align-items: center;
-                justify-content: flex-end;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap:4rem;
+                width:40%;
                 h3 {
                     color:white;
                     max-width:26ch;
-                }
-            }
-            &:nth-child(2) {
-                display:flex;
-                align-items: center;
-                justify-content: flex-start;
-                gap:8rem;
-
-                .services-row-grid {
-                    display:grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    gap:2rem;
                 }
                 .services-row-list {
                     display:flex;
@@ -44,12 +38,18 @@
                         p {
                             color:white;
                         }
+                        
+                    }
+                    button {
+                        margin-block-start:1rem;
                     }
                 }
             }
-            &:nth-child(3) {
+            
+            &:nth-child(2) {
                 background-image:linear-gradient(to bottom, #000000ad, #00000000 25%),url(../public/images/big-service-image.png);
                 background-size:cover;
+                background-position:center;
                 padding:2rem;
                 padding-block-end:40rem;
 
@@ -61,6 +61,20 @@
                 h3 {
                     color:white;
                     max-width:16ch;
+                }
+            }
+        }
+        @media (max-width:450px) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+
+            .services-row {
+                width:100% !important;
+
+                &:nth-child(2) {
+                    background-image:linear-gradient(to bottom, #000000ad, #00000000 50%),url(../public/images/big-service-image.png);
+                    padding-block-end:20rem;
+                    padding-inline:1rem;
                 }
             }
         }
