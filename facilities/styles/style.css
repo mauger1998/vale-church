@@ -689,6 +689,9 @@ main .wrapper h1 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
 }
+.seekers-section .wrapper .seekers-bottom button {
+  margin-block-start: 2rem;
+}
 .seekers-section .wrapper .seekers-bottom .seekers-item h3 {
   color: white;
 }

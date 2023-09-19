@@ -43,6 +43,10 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap:4rem;
 
+            button {
+                margin-block-start:2rem;
+            }
+
             .seekers-item {
                 h3 {
                     color:white;
@@ -118,6 +122,8 @@
                 gap:2rem;
                 grid-template-columns: 1fr;
                 gap:4rem;
+
+                
             }
         }
     }
