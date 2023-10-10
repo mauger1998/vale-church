@@ -1,6 +1,6 @@
 @use '../../styles/variables';
 
-.andrew-section {
+.mike-section {
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -14,18 +14,18 @@
             height: 100%;
             object-fit: cover;
         }
-        .andrew-titles {
+        .mike-titles {
             h2 {
                 text-align: center;
                 max-width: 32ch;
             }
         }
-        .andrew-content {
+        .mike-content {
             display: flex;
             align-items: center;
             gap: 4rem;
 
-            .andrew-left {
+            .mike-left {
                 width: 50%;
                 display: flex;
                 flex-direction: column;
@@ -39,6 +39,23 @@
                 }
                 button {
                     color: black;
+                    margin-block-start: 2rem;
+                }
+            }
+        }
+        .mike-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+            .mike-bottom-left {
+                h3 {
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+
+            .mike-bottom-right {
+                p {
                     margin-block-start: 2rem;
                 }
             }

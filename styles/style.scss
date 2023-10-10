@@ -1,26 +1,25 @@
-@use "./variables";
-@use "./reset";
-@use "./fonts";
-@use "./button";
-@use "./header";
-@use "./main";
-@use "./welcome";
-@use "./mission";
-@use "./faith-quote";
-@use "./gray-quote";
-@use "./worship";
-@use "./services";
-@use "./history";
-@use "./columns";
-@use "./involved";
-
+@use './variables';
+@use './reset';
+@use './fonts';
+@use './button';
+@use './header';
+@use './main';
+@use './welcome';
+@use './mission';
+@use './faith-quote';
+@use './gray-quote';
+@use './worship';
+@use './services';
+@use './history';
+@use './columns';
+@use './involved';
+@use './footer';
 
 .pencil {
-    opacity:0.075;
-    position:absolute;
-    width:60%;
-    left:0;
-    bottom:0;
-    z-index:-1;
-
+    opacity: 0.075;
+    position: absolute;
+    width: 60%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
 }

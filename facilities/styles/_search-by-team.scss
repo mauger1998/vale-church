@@ -1,0 +1,80 @@
+@use '../../styles/variables';
+
+.search-by-team-section {
+    .wrapper {
+        swiper-container {
+            display: flex;
+            // align-items: stretch;
+            swiper-slide {
+                height: 100%;
+            }
+        }
+        swiper-container {
+            margin-block-start: 4rem;
+            height: auto;
+            gap: 0;
+            max-width: 1440px;
+            align-self: center;
+
+            swiper-slide {
+                height: 100%;
+                a {
+                    color: black;
+                    .swiper-image {
+                        height: 100%;
+                        object-fit: cover;
+                        aspect-ratio: 9/11;
+                        max-width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+.search-by-service-section {
+    .wrapper {
+        swiper-container {
+            display: flex;
+            // align-items: stretch;
+            swiper-slide {
+                height: 100%;
+            }
+        }
+        swiper-container {
+            margin-block-start: 4rem;
+            height: auto;
+            gap: 0;
+            max-width: 1440px;
+            align-self: center;
+
+            swiper-slide {
+                height: 100%;
+                a {
+                    color: black;
+                    .swiper-image {
+                        height: 100%;
+                        object-fit: cover;
+                        aspect-ratio: 9/11;
+                        max-width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.search-by-room-section {
+    .wrapper {
+        .search-by-room-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-block: 4rem;
+            .search-by-room-card {
+                h3 {
+                    margin-block: 0.5rem 0;
+                }
+            }
+        }
+    }
+}

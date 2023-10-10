@@ -1,93 +1,86 @@
-@use "../../styles/variables";
+@use '../../styles/variables';
 
 .welcome-section {
     .wrapper {
-        display:flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap:6rem;
-        position:relative;
+        gap: 6rem;
+        position: relative;
 
         .pencil {
-            opacity:0.1;
-            width:100%;
+            opacity: 0.05;
+            width: 100%;
 
-            @media (max-width:900px) {
-              
-                    width:100%;
-                    top:50%;
-                    bottom:auto;
-                    right:auto;
-                    left:50%;
-                    transform:translate(-50%, -50%);
-                
+            @media (max-width: 900px) {
+                width: 100%;
+                top: 50%;
+                bottom: auto;
+                right: auto;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
 
         .welcome-top {
             h2 {
-                max-width:12ch;
-                text-align:center;
-                line-height:1;
+                max-width: 12ch;
+                text-align: center;
+                line-height: 1;
             }
         }
         .welcome-bottom {
-            display:flex;
+            display: flex;
             align-items: center;
-            width:80%;
-            gap:8rem;
-
-           
+            width: 80%;
+            gap: 8rem;
 
             .welcome-bottom-right {
-                width:45%;
+                width: 45%;
                 img {
                     border-radius: 320px 320px 0px 0px;
                 }
             }
             .welcome-bottom-left {
-                width:55%;
+                width: 55%;
                 h3 {
-                    max-width:40ch;
+                    max-width: 40ch;
                 }
                 p {
-                    max-width:60ch;
-                    margin-block:2rem 1.5rem;
-                    font-weight:400;
+                    max-width: 60ch;
+                    margin-block: 2rem 1.5rem;
+                    font-weight: 400;
                 }
                 button {
-                    color:black;
+                    color: black;
                 }
             }
-            @media (max-width:900px) {
-                gap:4rem;
+            @media (max-width: 900px) {
+                gap: 4rem;
                 flex-direction: column-reverse;
                 align-items: center;
 
-               
-
                 .welcome-bottom-right {
-                    width:50%;
+                    width: 50%;
                     img {
-                        border-radius:500px 500px 0px 0px;
+                        border-radius: 500px 500px 0px 0px;
                     }
                 }
                 .welcome-bottom-left {
-                    display:flex;
+                    display: flex;
                     flex-direction: column;
                     align-items: center;
-                    width:100%;
+                    width: 100%;
 
                     h3 {
-                        text-align:center;
-                        max-width:28ch;
+                        text-align: center;
+                        max-width: 28ch;
                     }
 
                     p {
-                        text-align:center;
-                        max-width:60ch;
-
+                        text-align: center;
+                        max-width: 60ch;
                     }
                 }
             }

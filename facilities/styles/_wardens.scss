@@ -1,0 +1,39 @@
+@use '../../styles/variables';
+
+.wardens-section {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+        max-width: 1200px;
+
+        .wardens-title {
+            h2 {
+                max-width: 12ch;
+                text-align: center;
+            }
+        }
+
+        .wardens-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+
+            .wardens-item {
+                &:nth-child(even) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    p {
+                        text-align: center;
+                        margin-block-end: 2rem;
+                    }
+                }
+                h3 {
+                    margin-block-start: 0.5rem;
+                }
+            }
+        }
+    }
+}

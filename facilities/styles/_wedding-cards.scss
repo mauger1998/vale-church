@@ -1,0 +1,44 @@
+@use '../../styles/variables';
+
+.wedding-cards-section {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+        .wedding-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+
+            .pencil {
+                opacity: 0.05;
+                width: 100%;
+                inset: 0;
+            }
+
+            .wedding-card {
+                h3 {
+                    margin-block: 1rem 1.5rem;
+                }
+                button {
+                    color: black;
+                    margin-block-start: 2rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        .wrapper {
+            gap: 2rem;
+        }
+    }
+    @media (max-width: 700px) {
+        .wrapper {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+    }
+}

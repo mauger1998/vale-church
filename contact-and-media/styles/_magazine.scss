@@ -1,0 +1,14 @@
+@use '../../styles/variables';
+
+.magazine-section {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        iframe {
+            margin-block-start: 4rem;
+        }
+    }
+}

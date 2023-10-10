@@ -777,6 +777,53 @@ main .wrapper h1 {
   }
 }
 
+footer .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-end: 4rem;
+}
+footer .wrapper .footer-top {
+  padding-block-end: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .wrapper .footer-top .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer .wrapper .footer-top ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+footer .wrapper .footer-top ul a {
+  color: black;
+}
+footer .wrapper .footer-bottom {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-block-start: 4rem;
+  border-top: 0.5px solid black;
+}
+footer .wrapper .footer-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+footer .wrapper .footer-bottom a img {
+  width: 8rem;
+}
+
 .pencil {
   opacity: 0.075;
   position: absolute;
