@@ -6,9 +6,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @media (max-width: 312px) {
+            padding-inline: 0.5rem;
+        }
 
         iframe {
             margin-block-start: 4rem;
+            width: 100% !important;
+            max-width: 900px;
         }
     }
 }

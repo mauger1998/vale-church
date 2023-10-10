@@ -36,4 +36,24 @@
             }
         }
     }
+    @media (max-width: 900px) {
+        .wrapper {
+            .wardens-grid {
+                grid-template-columns: 1fr;
+
+                .wardens-item {
+                    &:nth-child(even) {
+                        align-items: flex-start;
+
+                        p {
+                            text-align: left;
+                        }
+                        h3 {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

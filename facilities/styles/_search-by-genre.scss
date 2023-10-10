@@ -21,7 +21,7 @@
                 align-self: flex-end;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
-                gap: 2rem;
+                gap: 0rem;
                 margin-block-start: 4rem;
                 .search-by-genre-card {
                     padding: 10rem 2rem 2rem 2rem;
@@ -41,9 +41,30 @@
                         h3 {
                             margin-block: 0.5rem 1.5rem;
                         }
+                        p {
+                            color: black;
+                        }
                     }
                     img {
                         width: 2rem !important;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 900px) {
+        .wrapper {
+            .search-by-genre-container {
+                width: 100%;
+                .search-by-genre-grid {
+                    grid-template-columns: 1fr;
+                    max-width: 100%;
+                    width: 100%;
+
+                    .search-by-genre-card {
+                        p {
+                            max-width: 40ch;
+                        }
                     }
                 }
             }

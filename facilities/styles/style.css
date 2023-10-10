@@ -128,7 +128,7 @@ h1 span {
 
 h2 {
   font-size: 48px;
-  line-height: 48px !important;
+  line-height: 62.4px !important;
   color: #081841;
   font-weight: 400;
 }
@@ -141,7 +141,7 @@ h2 span {
 @media (max-width: 800px) {
   h2 {
     font-size: 40px;
-    line-height: 44px !important;
+    line-height: 56px !important;
   }
   h2 span {
     font-size: 96px;
@@ -159,6 +159,12 @@ h3 span {
   font-size: 96px;
   vertical-align: bottom;
   color: #B4780A;
+}
+@media (max-width: 800px) {
+  h3 {
+    font-size: 24px;
+    line-height: 31.2px;
+  }
 }
 
 p {
@@ -180,6 +186,10 @@ button {
 button svg {
   margin-inline-end: -0.25rem;
   width: 32px;
+}
+
+body {
+  position: relative;
 }
 
 header {
@@ -213,9 +223,54 @@ header .header-wrapper nav ul {
 header .header-wrapper nav ul li {
   color: white;
 }
+header .header-wrapper nav img:not(.cross) {
+  width: 2rem;
+  display: none;
+}
+header .header-wrapper nav .cross {
+  width: 2rem;
+  display: none;
+}
 @media (max-width: 1024px) {
   header .header-wrapper nav {
-    display: none;
+    display: flex;
+    flex-direction: column;
+  }
+  header .header-wrapper nav ul {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-block-start: 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.3921568627);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 300px;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    left: 0;
+    top: -2rem;
+    transform: translateX(100%);
+    transition: transform 500ms ease;
+  }
+  header .header-wrapper nav ul.active {
+    transform: translateX(0%);
+    transition: transform 500ms ease;
+  }
+  header .header-wrapper nav ul li {
+    font-size: 24px;
+  }
+  header .header-wrapper nav img:not(.cross) {
+    display: block;
+    cursor: pointer;
+  }
+  header .header-wrapper nav .cross {
+    position: absolute;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
   }
 }
 
@@ -262,7 +317,7 @@ main .wrapper h1 {
   align-self: flex-end;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  gap: 0rem;
   margin-block-start: 4rem;
 }
 .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card {
@@ -284,8 +339,24 @@ main .wrapper h1 {
 .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card:nth-child(even) h3 {
   margin-block: 0.5rem 1.5rem;
 }
+.search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card:nth-child(even) p {
+  color: black;
+}
 .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card img {
   width: 2rem !important;
+}
+@media (max-width: 900px) {
+  .search-by-genre-section .wrapper .search-by-genre-container {
+    width: 100%;
+  }
+  .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    width: 100%;
+  }
+  .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card p {
+    max-width: 40ch;
+  }
 }
 
 .search-by-team-section .wrapper swiper-container {
@@ -314,6 +385,10 @@ main .wrapper h1 {
   aspect-ratio: 9/11;
   max-width: auto;
 }
+.search-by-team-section .wrapper swiper-container swiper-slide a h3 {
+  font-size: 24px;
+  line-height: 1.3;
+}
 
 .search-by-service-section .wrapper swiper-container {
   display: flex;
@@ -341,6 +416,10 @@ main .wrapper h1 {
   aspect-ratio: 9/11;
   max-width: auto;
 }
+.search-by-service-section .wrapper swiper-container swiper-slide a h3 {
+  font-size: 24px;
+  line-height: 1.3;
+}
 
 .search-by-room-section .wrapper .search-by-room-grid {
   display: grid;
@@ -350,6 +429,12 @@ main .wrapper h1 {
 }
 .search-by-room-section .wrapper .search-by-room-grid .search-by-room-card h3 {
   margin-block: 0.5rem 0;
+}
+@media (max-width: 500px) {
+  .search-by-room-section .wrapper .search-by-room-grid {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
 }
 
 .welcome-section .wrapper {
@@ -450,7 +535,7 @@ main .wrapper h1 {
 }
 .andrew-section .wrapper .andrew-titles h2 {
   text-align: center;
-  max-width: 32ch;
+  max-width: 12ch;
 }
 .andrew-section .wrapper .andrew-content {
   display: flex;
@@ -472,6 +557,26 @@ main .wrapper h1 {
 .andrew-section .wrapper .andrew-content .andrew-left button {
   color: black;
   margin-block-start: 2rem;
+}
+@media (max-width: 900px) {
+  .andrew-section .wrapper .andrew-content {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+  }
+  .andrew-section .wrapper .andrew-content .andrew-left,
+  .andrew-section .wrapper .andrew-content .andrew-right {
+    width: 100%;
+  }
+  .andrew-section .wrapper .andrew-content .andrew-left h3,
+  .andrew-section .wrapper .andrew-content .andrew-right h3 {
+    max-width: 26ch;
+  }
+  .andrew-section .wrapper .andrew-content .andrew-left p,
+  .andrew-section .wrapper .andrew-content .andrew-right p {
+    max-width: 40ch;
+  }
 }
 
 .music-cards-section .wrapper {
@@ -582,6 +687,7 @@ main .wrapper h1 {
   background-image: url(../../public/images/sundaybg.png);
   background-blend-mode: darken;
   background-color: #393939;
+  background-size: cover;
 }
 .seekers-section .wrapper {
   display: flex;
@@ -767,7 +873,7 @@ main .wrapper h1 {
 }
 .mike-section .wrapper .mike-titles h2 {
   text-align: center;
-  max-width: 32ch;
+  max-width: 12ch;
 }
 .mike-section .wrapper .mike-content {
   display: flex;
@@ -802,6 +908,42 @@ main .wrapper h1 {
 .mike-section .wrapper .mike-bottom .mike-bottom-right p {
   margin-block-start: 2rem;
 }
+@media (max-width: 900px) {
+  .mike-section .wrapper .mike-content {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+  }
+  .mike-section .wrapper .mike-content .mike-left,
+  .mike-section .wrapper .mike-content .mike-right {
+    width: 100%;
+  }
+  .mike-section .wrapper .mike-content .mike-left h3,
+  .mike-section .wrapper .mike-content .mike-right h3 {
+    max-width: 26ch;
+  }
+  .mike-section .wrapper .mike-content .mike-left p,
+  .mike-section .wrapper .mike-content .mike-right p {
+    max-width: 40ch;
+  }
+  .mike-section .wrapper .mike-bottom {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .mike-section .wrapper .mike-bottom h3 {
+    max-width: 26ch;
+  }
+  .mike-section .wrapper .mike-bottom p {
+    max-width: 40ch;
+  }
+  .mike-section .wrapper .mike-bottom .mike-bottom-left,
+  .mike-section .wrapper .mike-bottom .mike-bottom-right {
+    width: 100%;
+    max-width: 100%;
+    align-self: flex-start;
+  }
+}
 
 .wardens-section .wrapper {
   display: flex;
@@ -831,6 +973,20 @@ main .wrapper h1 {
 .wardens-section .wrapper .wardens-grid .wardens-item h3 {
   margin-block-start: 0.5rem;
 }
+@media (max-width: 900px) {
+  .wardens-section .wrapper .wardens-grid {
+    grid-template-columns: 1fr;
+  }
+  .wardens-section .wrapper .wardens-grid .wardens-item:nth-child(even) {
+    align-items: flex-start;
+  }
+  .wardens-section .wrapper .wardens-grid .wardens-item:nth-child(even) p {
+    text-align: left;
+  }
+  .wardens-section .wrapper .wardens-grid .wardens-item:nth-child(even) h3 {
+    text-align: left;
+  }
+}
 
 .rooms-for-hire-section .wrapper {
   display: flex;
@@ -856,6 +1012,7 @@ main .wrapper h1 {
 }
 .rooms-for-hire-section .wrapper .rooms-for-hire-columns .rooms-column h3 {
   margin-block: 1.5rem 1.25rem;
+  max-width: 12ch;
 }
 .rooms-for-hire-section .wrapper .rooms-for-hire-columns .rooms-column p {
   max-width: 40ch;
@@ -878,6 +1035,18 @@ main .wrapper h1 {
 .rooms-for-hire-section .wrapper .rooms-for-hire-columns .rooms-column ul button {
   color: black;
   margin-block-start: 2rem;
+}
+@media (max-width: 500px) {
+  .rooms-for-hire-section .wrapper .rooms-for-hire-columns {
+    gap: 1rem;
+  }
+}
+@media (max-width: 366px) {
+  .rooms-for-hire-section .wrapper .rooms-for-hire-columns {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
 }
 
 .wedding-cards-section .wrapper {
@@ -905,12 +1074,12 @@ main .wrapper h1 {
   margin-block-start: 2rem;
 }
 @media (max-width: 900px) {
-  .wedding-cards-section .wrapper {
+  .wedding-cards-section .wrapper .wedding-card-grid {
     gap: 2rem;
   }
 }
 @media (max-width: 700px) {
-  .wedding-cards-section .wrapper {
+  .wedding-cards-section .wrapper .wedding-card-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
@@ -983,9 +1152,41 @@ footer .wrapper .footer-bottom a {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  color: black;
 }
 footer .wrapper .footer-bottom a img {
   width: 8rem;
+}
+@media (max-width: 500px) {
+  footer .wrapper .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  footer .wrapper .footer-bottom a {
+    align-items: center;
+  }
+  footer .wrapper .footer-bottom p {
+    text-align: center;
+  }
+}
+@media (max-width: 402px) {
+  footer .wrapper .footer-top ul {
+    flex-direction: column;
+  }
+  footer .wrapper .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  footer .wrapper .footer-bottom a {
+    align-items: center;
+  }
+  footer .wrapper .footer-bottom p {
+    text-align: center;
+  }
 }
 
 .pencil {
@@ -995,4 +1196,8 @@ footer .wrapper .footer-bottom a img {
   left: 0;
   bottom: 0;
   z-index: -1;
+}
+
+html {
+  overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */

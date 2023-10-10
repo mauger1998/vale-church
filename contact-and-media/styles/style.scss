@@ -5,6 +5,7 @@
 @use '../../styles/header';
 @use './main';
 @use './magazine';
+@use './how-to-donate';
 @use '../../styles/footer';
 
 .pencil {
@@ -14,4 +15,7 @@
     left: 0;
     bottom: 0;
     z-index: -1;
+}
+html {
+    overflow-x: hidden;
 }

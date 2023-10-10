@@ -128,7 +128,7 @@ h1 span {
 
 h2 {
   font-size: 48px;
-  line-height: 48px !important;
+  line-height: 62.4px !important;
   color: #081841;
   font-weight: 400;
 }
@@ -141,7 +141,7 @@ h2 span {
 @media (max-width: 800px) {
   h2 {
     font-size: 40px;
-    line-height: 44px !important;
+    line-height: 56px !important;
   }
   h2 span {
     font-size: 96px;
@@ -159,6 +159,12 @@ h3 span {
   font-size: 96px;
   vertical-align: bottom;
   color: #B4780A;
+}
+@media (max-width: 800px) {
+  h3 {
+    font-size: 24px;
+    line-height: 31.2px;
+  }
 }
 
 p {
@@ -180,6 +186,10 @@ button {
 button svg {
   margin-inline-end: -0.25rem;
   width: 32px;
+}
+
+body {
+  position: relative;
 }
 
 header {
@@ -213,9 +223,54 @@ header .header-wrapper nav ul {
 header .header-wrapper nav ul li {
   color: white;
 }
+header .header-wrapper nav img:not(.cross) {
+  width: 2rem;
+  display: none;
+}
+header .header-wrapper nav .cross {
+  width: 2rem;
+  display: none;
+}
 @media (max-width: 1024px) {
   header .header-wrapper nav {
-    display: none;
+    display: flex;
+    flex-direction: column;
+  }
+  header .header-wrapper nav ul {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-block-start: 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.3921568627);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 300px;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    left: 0;
+    top: -2rem;
+    transform: translateX(100%);
+    transition: transform 500ms ease;
+  }
+  header .header-wrapper nav ul.active {
+    transform: translateX(0%);
+    transition: transform 500ms ease;
+  }
+  header .header-wrapper nav ul li {
+    font-size: 24px;
+  }
+  header .header-wrapper nav img:not(.cross) {
+    display: block;
+    cursor: pointer;
+  }
+  header .header-wrapper nav .cross {
+    position: absolute;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
   }
 }
 
@@ -819,9 +874,41 @@ footer .wrapper .footer-bottom a {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  color: black;
 }
 footer .wrapper .footer-bottom a img {
   width: 8rem;
+}
+@media (max-width: 500px) {
+  footer .wrapper .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  footer .wrapper .footer-bottom a {
+    align-items: center;
+  }
+  footer .wrapper .footer-bottom p {
+    text-align: center;
+  }
+}
+@media (max-width: 402px) {
+  footer .wrapper .footer-top ul {
+    flex-direction: column;
+  }
+  footer .wrapper .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  footer .wrapper .footer-bottom a {
+    align-items: center;
+  }
+  footer .wrapper .footer-bottom p {
+    text-align: center;
+  }
 }
 
 .pencil {
@@ -831,4 +918,8 @@ footer .wrapper .footer-bottom a img {
   left: 0;
   bottom: 0;
   z-index: -1;
+}
+
+html {
+  overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */

@@ -45,8 +45,50 @@ footer {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.5rem;
+                color: black;
                 img {
                     width: 8rem;
+                }
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        .wrapper {
+            .footer-bottom {
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+                gap: 4rem;
+
+                a {
+                    align-items: center;
+                }
+
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media (max-width: 402px) {
+        .wrapper {
+            .footer-top {
+                ul {
+                    flex-direction: column;
+                }
+            }
+            .footer-bottom {
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+                gap: 4rem;
+
+                a {
+                    align-items: center;
+                }
+
+                p {
+                    text-align: center;
                 }
             }
         }
