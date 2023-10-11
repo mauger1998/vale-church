@@ -1200,7 +1200,7 @@ footer .wrapper .footer-bottom a img {
     text-align: center;
   }
 }
-@media (max-width: 402px) {
+@media (max-width: 600px) {
   footer .wrapper .footer-top ul {
     flex-direction: column;
   }
