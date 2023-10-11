@@ -228,10 +228,22 @@ header .header-wrapper {
 header .header-wrapper nav ul {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
 }
 header .header-wrapper nav ul li {
   color: white;
+}
+header .header-wrapper nav ul button {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  padding: 0.75rem 2rem;
+  border-radius: 4rem;
+}
+header .header-wrapper nav ul a:last-child button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
 }
 header .header-wrapper nav img:not(.cross) {
   width: 2rem;
@@ -267,6 +279,13 @@ header .header-wrapper nav .cross {
   header .header-wrapper nav ul.active {
     transform: translateX(0%);
     transition: transform 500ms ease;
+  }
+  header .header-wrapper nav ul a:has(button) {
+    min-width: 250px;
+  }
+  header .header-wrapper nav ul a:has(button) button {
+    width: 100%;
+    display: block;
   }
   header .header-wrapper nav ul li {
     font-size: 24px;
