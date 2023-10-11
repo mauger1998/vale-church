@@ -17,6 +17,7 @@ img.icon {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -107,7 +108,7 @@ h1 span {
   vertical-align: bottom;
   width: -moz-max-content;
   width: max-content;
-  color: #B4780A;
+  color: #b4780a;
 }
 @media (max-width: 800px) {
   h1 {
@@ -140,7 +141,7 @@ h2 span {
   font-family: boost;
   font-size: 70px;
   vertical-align: bottom;
-  color: #B4780A;
+  color: #b4780a;
   float: center;
 }
 @media (max-width: 800px) {
@@ -164,7 +165,7 @@ h3 span {
   font-family: boost;
   font-size: 60px;
   vertical-align: bottom;
-  color: #B4780A;
+  color: #b4780a;
 }
 @media (max-width: 800px) {
   h3 {
@@ -239,6 +240,9 @@ header .header-wrapper nav ul button {
   border: 2px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
+}
+header .header-wrapper nav ul a:nth-child(6) {
+  margin-inline-end: -1rem;
 }
 header .header-wrapper nav ul a:last-child button {
   background-color: transparent;

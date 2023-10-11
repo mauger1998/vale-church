@@ -6,7 +6,7 @@
         flex-direction: column;
         align-items: center;
         gap: 6rem;
-        max-width: 1200px;
+        max-width: 1000px;
 
         .wardens-title {
             h2 {
@@ -17,21 +17,74 @@
 
         .wardens-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
 
             .wardens-item {
+                p {
+                    margin-block-start: 2rem;
+                }
                 &:nth-child(even) {
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
+                    align-items: flex-start;
                     p {
-                        text-align: center;
-                        margin-block-end: 2rem;
+                        text-align: left;
                     }
                 }
                 h3 {
                     margin-block-start: 0.5rem;
+                    text-align: left;
+                }
+            }
+        }
+        .mike-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 4rem;
+
+            @media (max-width: 535px) {
+                gap: 2rem;
+            }
+
+            img {
+                width: 4rem;
+                margin-block-end: 1rem;
+                @media (max-width: 535px) {
+                    width: 3rem;
+                }
+            }
+
+            .mike-bottom-left {
+                h3 {
+                    font-family: 'Playfair Display', serif;
+                    max-width: 20ch;
+                    @media (max-width: 469px) {
+                        max-width: 12ch;
+                    }
+                    @media (max-width: 438px) {
+                        max-width: 10ch;
+                    }
+                }
+                p {
+                    margin-block-start: 2rem;
+                }
+            }
+
+            .mike-bottom-right {
+                h3 {
+                    font-family: 'Playfair Display', serif;
+                    max-width: 20ch;
+                    @media (max-width: 469px) {
+                        max-width: 12ch;
+                    }
+                    @media (max-width: 438px) {
+                        max-width: 9ch;
+                    }
+                }
+                p {
+                    margin-block-start: 2rem;
                 }
             }
         }

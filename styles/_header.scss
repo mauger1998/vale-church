@@ -43,6 +43,9 @@ header {
                     border-radius: 4rem;
                 }
                 a {
+                    &:nth-child(6) {
+                        margin-inline-end: -1rem;
+                    }
                     &:last-child {
                         button {
                             background-color: transparent;

@@ -1,23 +1,22 @@
-@use "./variables";
-
+@use './variables';
 
 *,
 *::before,
 *::after {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:variables.$helvetica;
-    font-weight:400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: variables.$helvetica;
+    font-weight: 400;
 }
 
 // Images & Icons
 
 img {
-    width:100%;
+    width: 100%;
 
     &.icon {
-        width:2rem;
+        width: 2rem;
     }
 }
 // Images & Icons End
@@ -25,13 +24,14 @@ img {
 // Links
 a {
     text-decoration: none;
+    color: black;
 }
 
 // Links End
 
 // List
 ul {
-    list-style:none;
+    list-style: none;
 }
 // List End
 
@@ -41,58 +41,52 @@ section,
 main,
 header,
 footer {
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
 
     .wrapper {
-        width:100%;
-        max-width:1440px;
-        padding:8rem 4rem;
+        width: 100%;
+        max-width: 1440px;
+        padding: 8rem 4rem;
 
         &.wrapper-narrow {
-            padding:8rem 8rem;
+            padding: 8rem 8rem;
         }
     }
 
-    @media (max-width:1120px) {
-
+    @media (max-width: 1120px) {
         .wrapper {
             &.wrapper-narrow {
-                padding-inline:6rem;
-            }
-        }
-        
-    }
-    @media (max-width:1024px) {
-
-        .wrapper {
-            &.wrapper-narrow {
-                padding-inline:4rem;
-            }
-        }
-        
-    }
-   
-
-    @media (max-width:700px) {
-        .wrapper {
-            padding-inline:2rem;
-
-            &.wrapper-narrow {
-                padding-inline:2rem;
+                padding-inline: 6rem;
             }
         }
     }
-    @media (max-width:500px) {
+    @media (max-width: 1024px) {
         .wrapper {
-            padding-inline:1rem;
+            &.wrapper-narrow {
+                padding-inline: 4rem;
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        .wrapper {
+            padding-inline: 2rem;
 
             &.wrapper-narrow {
-                padding-inline:1rem;
+                padding-inline: 2rem;
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        .wrapper {
+            padding-inline: 1rem;
+
+            &.wrapper-narrow {
+                padding-inline: 1rem;
             }
         }
     }
 }
-

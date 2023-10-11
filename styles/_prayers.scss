@@ -1,0 +1,74 @@
+@use './variables';
+
+.prayers-section {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6rem;
+        padding-block-end: 12rem;
+
+        .prayers-content {
+            display: grid;
+            gap: 12rem;
+            width: 100%;
+
+            .prayer {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 800px;
+
+                &:nth-child(even) {
+                    place-self: flex-end;
+                }
+                img {
+                    width: 10rem;
+                    position: absolute;
+                    opacity: 0.05;
+                    top: -15%;
+                    left: -3%;
+                    pointer-events: none;
+                }
+                h2 {
+                    margin-block-end: 1rem;
+                    max-width: 26ch;
+                    font-size: variables.$mobile-h1;
+                    margin-block-end: 3rem;
+                    line-height: 1.1 !important;
+                    font-family: 'Playfair Display';
+                }
+                p {
+                    max-width: 50ch;
+                    font-size: variables.$h3;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .wrapper {
+            .prayers-content {
+                gap: 18rem;
+                .prayer {
+                    max-width: 100% !important;
+                    min-width: auto;
+                    width: 100% !important;
+
+                    place-self: start !important;
+                    img {
+                        width: 8rem;
+                        top: -12%;
+                    }
+                    h2 {
+                        font-size: variables.$h2;
+                    }
+                    p {
+                        font-size: variables.$mobile-h3;
+                    }
+                }
+            }
+        }
+    }
+}

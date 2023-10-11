@@ -17,6 +17,7 @@ img.icon {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -107,7 +108,7 @@ h1 span {
   vertical-align: bottom;
   width: -moz-max-content;
   width: max-content;
-  color: #B4780A;
+  color: #b4780a;
 }
 @media (max-width: 800px) {
   h1 {
@@ -140,7 +141,7 @@ h2 span {
   font-family: boost;
   font-size: 70px;
   vertical-align: bottom;
-  color: #B4780A;
+  color: #b4780a;
   float: center;
 }
 @media (max-width: 800px) {
@@ -164,7 +165,7 @@ h3 span {
   font-family: boost;
   font-size: 60px;
   vertical-align: bottom;
-  color: #B4780A;
+  color: #b4780a;
 }
 @media (max-width: 800px) {
   h3 {
@@ -239,6 +240,9 @@ header .header-wrapper nav ul button {
   border: 2px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
+}
+header .header-wrapper nav ul a:nth-child(6) {
+  margin-inline-end: -1rem;
 }
 header .header-wrapper nav ul a:last-child button {
   background-color: transparent;
@@ -693,6 +697,71 @@ main .wrapper h1 {
   }
 }
 
+.prayers-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6rem;
+  padding-block-end: 12rem;
+}
+.prayers-section .wrapper .prayers-content {
+  display: grid;
+  gap: 12rem;
+  width: 100%;
+}
+.prayers-section .wrapper .prayers-content .prayer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 800px;
+}
+.prayers-section .wrapper .prayers-content .prayer:nth-child(even) {
+  place-self: flex-end;
+}
+.prayers-section .wrapper .prayers-content .prayer img {
+  width: 10rem;
+  position: absolute;
+  opacity: 0.05;
+  top: -15%;
+  left: -3%;
+  pointer-events: none;
+}
+.prayers-section .wrapper .prayers-content .prayer h2 {
+  margin-block-end: 1rem;
+  max-width: 26ch;
+  font-size: 64px;
+  margin-block-end: 3rem;
+  line-height: 1.1 !important;
+  font-family: "Playfair Display";
+}
+.prayers-section .wrapper .prayers-content .prayer p {
+  max-width: 50ch;
+  font-size: 32px;
+  font-weight: 400;
+}
+@media (max-width: 1024px) {
+  .prayers-section .wrapper .prayers-content {
+    gap: 18rem;
+  }
+  .prayers-section .wrapper .prayers-content .prayer {
+    max-width: 100% !important;
+    min-width: auto;
+    width: 100% !important;
+    place-self: start !important;
+  }
+  .prayers-section .wrapper .prayers-content .prayer img {
+    width: 8rem;
+    top: -12%;
+  }
+  .prayers-section .wrapper .prayers-content .prayer h2 {
+    font-size: 48px;
+  }
+  .prayers-section .wrapper .prayers-content .prayer p {
+    font-size: 24px;
+  }
+}
+
 .history-section .wrapper {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
@@ -753,17 +822,21 @@ main .wrapper h1 {
   }
 }
 
+.column-section.cms-column-section {
+  margin-block-start: 6rem;
+}
 .column-section:nth-child(odd) .wrapper .featured-column {
   flex-direction: row-reverse;
+}
+.column-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
 }
 .column-section .wrapper .featured-column {
   display: flex;
   align-items: center;
   gap: 6rem;
-  margin-block-end: 12rem;
-}
-.column-section .wrapper .featured-column:first-child {
-  margin-block-start: 12rem;
 }
 .column-section .wrapper .featured-column:nth-child(odd) {
   flex-direction: row-reverse;
@@ -811,32 +884,32 @@ main .wrapper h1 {
   width: 32px;
 }
 @media (max-width: 900px) {
-  .column-section .wrapper {
+  .column-section .wrapper .featured-column {
     flex-direction: column !important;
   }
-  .column-section .wrapper .column-left,
-  .column-section .wrapper .column-right {
+  .column-section .wrapper .featured-column .column-left,
+  .column-section .wrapper .featured-column .column-right {
     align-items: center;
   }
-  .column-section .wrapper .column-left .list,
-  .column-section .wrapper .column-right .list {
+  .column-section .wrapper .featured-column .column-left .list,
+  .column-section .wrapper .featured-column .column-right .list {
     align-items: center;
     gap: 2rem;
     margin-block-start: 3rem;
   }
-  .column-section .wrapper .column-left .list .list-item,
-  .column-section .wrapper .column-right .list .list-item {
+  .column-section .wrapper .featured-column .column-left .list .list-item,
+  .column-section .wrapper .featured-column .column-right .list .list-item {
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
   }
-  .column-section .wrapper .column-left h3,
-  .column-section .wrapper .column-right h3 {
+  .column-section .wrapper .featured-column .column-left h3,
+  .column-section .wrapper .featured-column .column-right h3 {
     text-align: center;
     max-width: 28ch;
   }
-  .column-section .wrapper .column-left p,
-  .column-section .wrapper .column-right p {
+  .column-section .wrapper .featured-column .column-left p,
+  .column-section .wrapper .featured-column .column-right p {
     text-align: center;
     max-width: 50ch;
   }
@@ -865,6 +938,109 @@ main .wrapper h1 {
 @media (max-width: 708px) {
   .involved-section {
     background-position: center;
+  }
+}
+
+.contact-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+}
+.contact-section .wrapper .contact-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact-section .wrapper .contact-titles h2 {
+  max-width: 14ch;
+  text-align: center;
+}
+.contact-section .wrapper .contact-titles p {
+  max-width: 45ch;
+  text-align: center;
+  margin-block-start: 2rem;
+}
+.contact-section .wrapper .contact-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 4rem;
+}
+@media (max-width: 600px) {
+  .contact-section .wrapper .contact-content {
+    gap: 6rem;
+    flex-direction: column-reverse;
+  }
+}
+.contact-section .wrapper .contact-content .contact-right {
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .contact-section .wrapper .contact-content .contact-right {
+    width: 100%;
+  }
+}
+.contact-section .wrapper .contact-content .contact-right form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contact-section .wrapper .contact-content .contact-right form fieldset {
+  border: none;
+  width: 100%;
+}
+.contact-section .wrapper .contact-content .contact-right form fieldset input,
+.contact-section .wrapper .contact-content .contact-right form fieldset textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-block-start: 0.5rem;
+}
+.contact-section .wrapper .contact-content .contact-right form input[type=submit] {
+  padding: 0.75rem 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 4rem;
+  border: 2px solid black;
+}
+.contact-section .wrapper .contact-content .contact-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+  .contact-section .wrapper .contact-content .contact-left {
+    width: 100%;
+  }
+}
+.contact-section .wrapper .contact-content .contact-left h3 {
+  max-width: 12ch;
+}
+.contact-section .wrapper .contact-content .contact-left .list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contact-section .wrapper .contact-content .contact-left .list strong {
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .contact-section .wrapper .contact-content .contact-left .list strong {
+    font-size: 16px;
+  }
+}
+.contact-section .wrapper .contact-content .contact-left .list p {
+  font-size: 16px;
+}
+@media (max-width: 600px) {
+  .contact-section .wrapper .contact-content .contact-left .list p {
+    font-size: 14px;
   }
 }
 

@@ -31,31 +31,32 @@
                 flex-direction: column;
                 align-items: flex-start;
 
-                p:not(:nth-child(3)) {
-                    margin-block: 1.5rem 2rem;
+                .firstP {
+                    margin-block-start: 2rem;
                 }
-                p:last-of-type {
+                .lastP {
+                    margin-block-end: 2rem;
+                }
+
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1.5rem;
+                    margin-block: 2rem;
+
+                    .list-item {
+                        p {
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                & > p:last-of-type {
                     font-weight: 600;
                 }
                 button {
                     color: black;
-                    margin-block-start: 2rem;
-                }
-            }
-        }
-        .mike-bottom {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-            .mike-bottom-left {
-                h3 {
-                    font-family: 'Playfair Display', serif;
-                }
-            }
-
-            .mike-bottom-right {
-                p {
                     margin-block-start: 2rem;
                 }
             }

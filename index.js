@@ -114,3 +114,33 @@ fetchFeatured().then((featuredItems) => {
         })
     })
 })
+
+// Prayers
+async function fetchPrayers() {
+    const response = await fetch(
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22prayers%22%5D+%7B%0A++text%2C%0A++++title%0A++%0A%7D`
+    )
+    const quote = await response.json()
+    return quote
+}
+
+fetchPrayers().then((quote) => {
+    const { result } = quote
+    const prayersContainer = document.querySelector('.prayers-content')
+    prayersContainer.innerHTML = ''
+
+    result.forEach((result) => {
+        const prayer = document.createElement('div')
+        prayer.classList.add('prayer')
+
+        prayer.innerHTML = /*html*/ `
+                        <img
+                            src="public/quote-open-editor-svgrepo-com.svg"
+                            alt="Quotes" />
+                        <h2>${result.title}</h2>
+                        <p>
+                            ${result.text}
+                        </p>`
+        prayersContainer.appendChild(prayer)
+    })
+})

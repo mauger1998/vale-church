@@ -1,6 +1,9 @@
 @use './variables';
 
 .column-section {
+    &.cms-column-section {
+        margin-block-start: 6rem;
+    }
     &:nth-child(odd) {
         .wrapper {
             .featured-column {
@@ -9,17 +12,16 @@
         }
     }
     .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 12rem;
         .featured-column {
-            &:first-child {
-                margin-block-start: 12rem;
-            }
             &:nth-child(odd) {
                 flex-direction: row-reverse;
             }
             display: flex;
             align-items: center;
             gap: 6rem;
-            margin-block-end: 12rem;
 
             .column-right,
             .column-left {
@@ -64,30 +66,32 @@
     }
     @media (max-width: 900px) {
         .wrapper {
-            flex-direction: column !important;
+            .featured-column {
+                flex-direction: column !important;
 
-            .column-left,
-            .column-right {
-                align-items: center;
-
-                .list {
+                .column-left,
+                .column-right {
                     align-items: center;
-                    gap: 2rem;
-                    margin-block-start: 3rem;
-                    .list-item {
-                        flex-direction: column;
+
+                    .list {
                         align-items: center;
-                        gap: 0.25rem;
+                        gap: 2rem;
+                        margin-block-start: 3rem;
+                        .list-item {
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 0.25rem;
+                        }
                     }
-                }
-                h3 {
-                    text-align: center;
-                    max-width: 28ch;
-                }
-                p {
-                    text-align: center;
-                    max-width: 50ch;
-                    // margin-block:0;
+                    h3 {
+                        text-align: center;
+                        max-width: 28ch;
+                    }
+                    p {
+                        text-align: center;
+                        max-width: 50ch;
+                        // margin-block:0;
+                    }
                 }
             }
         }

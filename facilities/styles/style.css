@@ -17,6 +17,7 @@ img.icon {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -107,7 +108,7 @@ h1 span {
   vertical-align: bottom;
   width: -moz-max-content;
   width: max-content;
-  color: #B4780A;
+  color: #b4780a;
 }
 @media (max-width: 800px) {
   h1 {
@@ -140,7 +141,7 @@ h2 span {
   font-family: boost;
   font-size: 70px;
   vertical-align: bottom;
-  color: #B4780A;
+  color: #b4780a;
   float: center;
 }
 @media (max-width: 800px) {
@@ -164,7 +165,7 @@ h3 span {
   font-family: boost;
   font-size: 60px;
   vertical-align: bottom;
-  color: #B4780A;
+  color: #b4780a;
 }
 @media (max-width: 800px) {
   h3 {
@@ -239,6 +240,9 @@ header .header-wrapper nav ul button {
   border: 2px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
+}
+header .header-wrapper nav ul a:nth-child(6) {
+  margin-inline-end: -1rem;
 }
 header .header-wrapper nav ul a:last-child button {
   background-color: transparent;
@@ -915,26 +919,27 @@ main .wrapper h1 {
   flex-direction: column;
   align-items: flex-start;
 }
-.mike-section .wrapper .mike-content .mike-left p:not(:nth-child(3)) {
-  margin-block: 1.5rem 2rem;
+.mike-section .wrapper .mike-content .mike-left .firstP {
+  margin-block-start: 2rem;
 }
-.mike-section .wrapper .mike-content .mike-left p:last-of-type {
+.mike-section .wrapper .mike-content .mike-left .lastP {
+  margin-block-end: 2rem;
+}
+.mike-section .wrapper .mike-content .mike-left .list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-block: 2rem;
+}
+.mike-section .wrapper .mike-content .mike-left .list .list-item p {
+  font-weight: 500;
+}
+.mike-section .wrapper .mike-content .mike-left > p:last-of-type {
   font-weight: 600;
 }
 .mike-section .wrapper .mike-content .mike-left button {
   color: black;
-  margin-block-start: 2rem;
-}
-.mike-section .wrapper .mike-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
-}
-.mike-section .wrapper .mike-bottom .mike-bottom-left h3 {
-  font-family: "Playfair Display", serif;
-}
-.mike-section .wrapper .mike-bottom .mike-bottom-right p {
   margin-block-start: 2rem;
 }
 @media (max-width: 900px) {
@@ -979,7 +984,7 @@ main .wrapper h1 {
   flex-direction: column;
   align-items: center;
   gap: 6rem;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 .wardens-section .wrapper .wardens-title h2 {
   max-width: 12ch;
@@ -987,20 +992,77 @@ main .wrapper h1 {
 }
 .wardens-section .wrapper .wardens-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+}
+.wardens-section .wrapper .wardens-grid .wardens-item p {
+  margin-block-start: 2rem;
 }
 .wardens-section .wrapper .wardens-grid .wardens-item:nth-child(even) {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .wardens-section .wrapper .wardens-grid .wardens-item:nth-child(even) p {
-  text-align: center;
-  margin-block-end: 2rem;
+  text-align: left;
 }
 .wardens-section .wrapper .wardens-grid .wardens-item h3 {
   margin-block-start: 0.5rem;
+  text-align: left;
+}
+.wardens-section .wrapper .mike-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 4rem;
+}
+@media (max-width: 535px) {
+  .wardens-section .wrapper .mike-bottom {
+    gap: 2rem;
+  }
+}
+.wardens-section .wrapper .mike-bottom img {
+  width: 4rem;
+  margin-block-end: 1rem;
+}
+@media (max-width: 535px) {
+  .wardens-section .wrapper .mike-bottom img {
+    width: 3rem;
+  }
+}
+.wardens-section .wrapper .mike-bottom .mike-bottom-left h3 {
+  font-family: "Playfair Display", serif;
+  max-width: 20ch;
+}
+@media (max-width: 469px) {
+  .wardens-section .wrapper .mike-bottom .mike-bottom-left h3 {
+    max-width: 12ch;
+  }
+}
+@media (max-width: 438px) {
+  .wardens-section .wrapper .mike-bottom .mike-bottom-left h3 {
+    max-width: 10ch;
+  }
+}
+.wardens-section .wrapper .mike-bottom .mike-bottom-left p {
+  margin-block-start: 2rem;
+}
+.wardens-section .wrapper .mike-bottom .mike-bottom-right h3 {
+  font-family: "Playfair Display", serif;
+  max-width: 20ch;
+}
+@media (max-width: 469px) {
+  .wardens-section .wrapper .mike-bottom .mike-bottom-right h3 {
+    max-width: 12ch;
+  }
+}
+@media (max-width: 438px) {
+  .wardens-section .wrapper .mike-bottom .mike-bottom-right h3 {
+    max-width: 9ch;
+  }
+}
+.wardens-section .wrapper .mike-bottom .mike-bottom-right p {
+  margin-block-start: 2rem;
 }
 @media (max-width: 900px) {
   .wardens-section .wrapper .wardens-grid {
