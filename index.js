@@ -29,13 +29,24 @@ fetchQuote().then((quote) => {
 
     const quoteText = document.querySelector('.gray-quote h2')
     quoteText.textContent = result[0].Quote
+
+    const words = result[0].emphasisedWords
+
+    words.forEach((word) => {
+        var pattern = new RegExp('(' + word + ')', 'ig')
+        var replaceWith = '<span>$1</span>'
+
+        $('.gray-quote h2').each(function () {
+            $(this).html($(this).html().replace(pattern, replaceWith))
+        })
+    })
 })
 
 // Featured
 
 async function fetchFeatured() {
     const response = await fetch(
-        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22featured%22%5D+%7B%0A++text%2C%0A++title%2C%0A++%22imgUrl%22%3A+image.asset-%3Eurl%0A%7D`
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22featured%22%5D+%7B%0A++text%2C%0A++title%2C%0A++%22imgUrl%22%3A+image.asset-%3Eurl%2C%0A++++emphasisedWord%0A%7D`
     )
     const featuredItems = await response.json()
     return featuredItems
@@ -51,7 +62,6 @@ fetchFeatured().then((featuredItems) => {
     result.forEach((result) => {
         const featuredColumn = document.createElement('div')
         featuredColumn.classList.add('featured-column')
-        console.log(result)
         featuredColumn.innerHTML = /*html*/ `
                     <div class="column-left">
                         <img
@@ -89,6 +99,18 @@ fetchFeatured().then((featuredItems) => {
                         </a>
                     </div>
         `
+        const word = result.emphasisedWord
+
+        console.log(word)
+
+        var pattern = new RegExp('(' + word + ')', 'ig')
+        var replaceWith = '<span>$1</span>'
+        console.log(pattern)
+
         columnSection.appendChild(featuredColumn)
+        $('.column-right h3').each(function () {
+            $(this).html($(this).html().replace(pattern, replaceWith))
+            console.log(this)
+        })
     })
 })
