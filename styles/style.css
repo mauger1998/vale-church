@@ -93,7 +93,7 @@ footer .wrapper.wrapper-narrow {
 
 @font-face {
   font-family: boost;
-  src: url("../BoostardSignature2.ttf");
+  src: url("../Golden Hopes.otf");
 }
 h1 {
   font-size: 96px;
@@ -103,17 +103,21 @@ h1 {
 }
 h1 span {
   font-family: boost;
-  font-size: 320px;
+  font-size: 180px;
   vertical-align: bottom;
+  width: -moz-max-content;
+  width: max-content;
   color: #B4780A;
 }
 @media (max-width: 800px) {
   h1 {
     font-size: 64px;
     line-height: 70.4px;
+    max-width: 14ch !important;
   }
   h1 span {
-    font-size: 156px;
+    font-size: 120px;
+    margin-inline: 0.25rem;
   }
 }
 @media (max-width: 550px) {
@@ -122,7 +126,7 @@ h1 span {
     line-height: 44px;
   }
   h1 span {
-    font-size: 128px;
+    font-size: 80px;
   }
 }
 
@@ -134,9 +138,10 @@ h2 {
 }
 h2 span {
   font-family: boost;
-  font-size: 128px;
+  font-size: 70px;
   vertical-align: bottom;
   color: #B4780A;
+  float: center;
 }
 @media (max-width: 800px) {
   h2 {
@@ -144,7 +149,8 @@ h2 span {
     line-height: 56px !important;
   }
   h2 span {
-    font-size: 96px;
+    font-size: 55px;
+    margin-inline: 0.25rem;
   }
 }
 
@@ -156,7 +162,7 @@ h3 {
 }
 h3 span {
   font-family: boost;
-  font-size: 96px;
+  font-size: 60px;
   vertical-align: bottom;
   color: #B4780A;
 }
@@ -164,6 +170,10 @@ h3 span {
   h3 {
     font-size: 24px;
     line-height: 31.2px;
+  }
+  h3 span {
+    font-size: 50px;
+    margin-inline: 0.25rem;
   }
 }
 
@@ -920,6 +930,7 @@ footer .wrapper .footer-bottom a img {
   z-index: -1;
 }
 
-html {
+html,
+body {
   overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */
