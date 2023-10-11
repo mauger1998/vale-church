@@ -75,7 +75,7 @@ fetchFeatured().then((featuredItems) => {
                         <p>
                             ${result.text}
                         </p>
-                        <a href="facilities#music">
+                        <a href="facilities#search-by-genre">
                             <button>
                                 <svg
                                     width="32"
@@ -94,7 +94,7 @@ fetchFeatured().then((featuredItems) => {
                                         d="M1 1.47363H31V6.97363H32V1.47363V0.473633H31H1H0V1.47363V31.4736V32.4736H1H31H32V31.4736V25.9736H31V31.4736H1V1.47363Z"
                                         fill="black" />
                                 </svg>
-                                MORE ON MUSIC GROUP
+                                MORE ON SERVICES
                             </button>
                         </a>
                     </div>
