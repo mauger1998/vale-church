@@ -35,6 +35,13 @@ main {
             max-width: 101%;
             width: 101%;
             transition: clip-path 500ms ease;
+            overflow: visible;
+
+            span {
+                transition: clip-path 500ms ease;
+                overflow: visible !important;
+                width: 100% !important;
+            }
         }
     }
 }
