@@ -3,7 +3,43 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vale Church Guernsey</title>
+        <title>
+            Welcome to Vale Church - A Beacon of Faith for Over a Millennium
+        </title>
+        <!-- Meta Tags -->
+        <meta
+            name="description"
+            content="Explore Vale Church, a historic place of worship rooted in the inclusive traditions of the Church of England. Join our vibrant community, witness a thousand-year journey through faith, and meet our dedicated Rector, Bev Herve." />
+        <meta
+            name="keywords"
+            content="Vale Church, Inclusive church, Christian tradition, Vale parish, Bev Herve, Spiritual journey, Worship services, Sunday services, Faith community, Vale history, Inclusive church in Vale, Vale Church Bev Herve, Christian tradition in Vale parish, Sunday services at Vale Church, History of Vale Church, Vale faith community, Spiritual journey in Vale, Vale Church worship services, Bev Herve, Rector of Vale Church, Vale parish's Christian heritage" />
+        <meta name="author" content="Island Web Design | Guernsey & Jersey" />
+        <meta
+            property="og:description"
+            content="Explore Vale Church, a historic place of worship rooted in the inclusive traditions of the Church of England. Join our vibrant community, witness a thousand-year journey through faith, and meet our dedicated Rector, Bev Herve." />
+        <meta
+            property="og:title"
+            content="Welcome to Vale Church - A Beacon of Faith for Over a Millennium" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://valechurch.gg/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="" />
+        <meta
+            name="twitter:title"
+            content="Welcome to Vale Church - A Beacon of Faith for Over a Millennium" />
+        <meta
+            name="twitter:description"
+            content="Explore Vale Church, a historic place of worship rooted in the inclusive traditions of the Church of England. Join our vibrant community, witness a thousand-year journey through faith, and meet our dedicated Rector, Bev Herve." />
+        <meta name="twitter:image" content="https://valechurch.gg/" />
+
+        <link rel="canonical" href="https://valechurch.gg/" />
+
+        <meta property="og:image" content="https://valechurch.gg/" />
+        <meta property="og:image:secure_url" content="https://valechurch.gg/" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="600" />
+        <meta property="og:image:alt" content="Vale Church Guernsey" />
 
         <link rel="stylesheet" href="styles/style.css" />
         <script src="index.js" defer></script>
@@ -887,7 +923,7 @@
                 </a>
             </div>
         </section>
-        <section class="contact-section">
+        <section id="contact" class="contact-section">
             <div class="wrapper">
                 <div class="contact-titles">
                     <h2><span>Contact</span> Vale Church Now</h2>
@@ -969,7 +1005,14 @@
                         </div>
                     </div>
                     <div class="contact-right">
-                        <form action="POST">
+                        <form
+                            action="https://formsubmit.co/jordan@islandwebdesign.net"
+                            method="POST">
+                            <input
+                                type="hidden"
+                                name="_next"
+                                value="http://localhost:5501/thank-you" />
+
                             <fieldset>
                                 <label for="name">Name:</label>
                                 <input type="text" name="name" id="name" />
@@ -999,6 +1042,14 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="map-section">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10366.225056031033!2d-2.5391456!3d49.4928885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480d729909220ff7%3A0x1c4aa9f094b51613!2sThe%20Vale%20Church!5e0!3m2!1sen!2sgg!4v1697087660090!5m2!1sen!2sgg"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
         <footer>
             <div class="wrapper">
@@ -1054,5 +1105,11 @@
             </div>
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+            integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     </body>
 </html>

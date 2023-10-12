@@ -331,6 +331,9 @@ main .wrapper p {
 main .wrapper h1 {
   max-width: 101%;
   width: 101%;
+  transition: -webkit-clip-path 500ms ease;
+  transition: clip-path 500ms ease;
+  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
 }
 
 .search-by-genre-section .wrapper {

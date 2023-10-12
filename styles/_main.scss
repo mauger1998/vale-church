@@ -1,38 +1,40 @@
-@use "./variables";
+@use './variables';
 
 main {
-    background-image: linear-gradient(to top, #000000cd, #00000000 100%), url(../public/images/vale-church-hero.png);
-    background-size:cover;
-    background-position:center;
+    background-image: linear-gradient(to top, #000000cd, #00000000 100%),
+        url(../public/images/vale-church-hero.png);
+    background-size: cover;
+    background-position: center;
 
-    @media (max-width:800px) {
-        background-image: linear-gradient(to top, #000000cd, #00000016 100%), url(../public/images/vale-church-hero.png);
+    @media (max-width: 800px) {
+        background-image: linear-gradient(to top, #000000cd, #00000016 100%),
+            url(../public/images/vale-church-hero.png);
     }
-    
+
     .wrapper {
-        display:flex;
+        display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
-        padding-block-end:2rem;
-        height:95vh;
-        max-height:1000px;
+        padding-block-end: 2rem;
+        height: 95vh;
+        max-height: 1000px;
 
-        @media (max-width:800px) {
+        @media (max-width: 800px) {
             justify-content: center;
             align-items: center;
-            height:auto;
-            padding-block:14rem 22rem;
+            height: auto;
+            padding-block: 14rem 22rem;
 
             h1 {
-                text-align:center;
+                text-align: center;
             }
         }
 
         h1 {
-            max-width:101%;
-            width:101%;
-
+            max-width: 101%;
+            width: 101%;
+            transition: clip-path 500ms ease;
         }
     }
 }

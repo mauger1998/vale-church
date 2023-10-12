@@ -341,6 +341,9 @@ main .wrapper {
 main .wrapper h1 {
   max-width: 101%;
   width: 101%;
+  transition: -webkit-clip-path 500ms ease;
+  transition: clip-path 500ms ease;
+  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
 }
 
 .welcome-section .wrapper {
@@ -826,9 +829,6 @@ main .wrapper h1 {
 .column-section.cms-column-section {
   margin-block-start: 6rem;
 }
-.column-section:nth-child(odd) .wrapper .featured-column {
-  flex-direction: row-reverse;
-}
 .column-section .wrapper {
   display: flex;
   flex-direction: column;
@@ -1006,6 +1006,7 @@ main .wrapper h1 {
   color: white;
   border-radius: 4rem;
   border: 2px solid black;
+  cursor: pointer;
 }
 .contact-section .wrapper .contact-content .contact-left {
   width: 50%;
@@ -1131,9 +1132,22 @@ footer .wrapper .footer-bottom a img {
   left: 0;
   bottom: 0;
   z-index: -1;
+  transition: -webkit-clip-path 500ms ease;
+  transition: clip-path 500ms ease;
+  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
 }
 
 html,
 body {
   overflow-x: hidden;
+}
+
+.map-section {
+  min-height: 600px;
+}
+.map-section iframe {
+  height: 100% !important;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
 }/*# sourceMappingURL=style.css.map */

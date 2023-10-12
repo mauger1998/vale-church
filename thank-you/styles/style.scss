@@ -1,0 +1,56 @@
+@use '../../styles/variables';
+@use '../../styles/reset';
+@use '../../styles/fonts';
+@use '../../styles/button';
+@use '../../styles/header';
+
+.pencil {
+    opacity: 0.075;
+    position: absolute;
+    width: 60%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+main {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-block: 12rem 14rem;
+        img {
+            position: absolute;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0.1;
+            object-fit: fill;
+        }
+    }
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span {
+    &.not-gold {
+        color: black !important;
+        font-family: variables.$helvetica !important;
+        font-size: variables.$h2;
+    }
+}
+button {
+    color: black;
+}
