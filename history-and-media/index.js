@@ -50,45 +50,40 @@ allFancyText.forEach((text) => {
 })
 
 // GSAP
-const getBrowserName = () => {
-    let browserInfo = navigator.userAgent
-    let browser
-    if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
-        browser = 'Opera'
-    } else if (browserInfo.includes('Edg')) {
-        browser = 'Edge'
-    } else if (browserInfo.includes('Chrome')) {
-        browser = 'Chrome'
-    } else if (browserInfo.includes('Safari')) {
-        browser = 'Safari'
-    } else if (browserInfo.includes('Firefox')) {
-        browser = 'Firefox'
-    } else {
-        browser = 'unknown'
-    }
-    return browser
-}
+// const getBrowserName = () => {
+//     let browserInfo = navigator.userAgent
+//     let browser
+//     if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
+//         browser = 'Opera'
+//     } else if (browserInfo.includes('Edg')) {
+//         browser = 'Edge'
+//     } else if (browserInfo.includes('Chrome')) {
+//         browser = 'Chrome'
+//     } else if (browserInfo.includes('Safari')) {
+//         browser = 'Safari'
+//     } else if (browserInfo.includes('Firefox')) {
+//         browser = 'Firefox'
+//     } else {
+//         browser = 'unknown'
+//     }
+//     return browser
+// }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const browserName = getBrowserName()
-    if (browserName !== 'Safari') {
-        gsap.set('h1 span', {
-            clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
-        })
-        gsap.set('h1', {
-            clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)',
-        })
+gsap.set('h1 span', {
+    clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
+})
+gsap.set('h1', {
+    clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)',
+})
 
-        gsap.to('h1', {
+gsap.to('h1', {
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+    ease: 'power1.inOut',
+    onComplete: () => {
+        gsap.to('h1 span', {
+            delay: 0.4,
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
-            ease: 'power1.inOut',
-            onComplete: () => {
-                gsap.to('h1 span', {
-                    delay: 0.4,
-                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
-                    ease: 'power3.inOut',
-                })
-            },
+            ease: 'power3.inOut',
         })
-    }
+    },
 })

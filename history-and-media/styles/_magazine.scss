@@ -15,5 +15,9 @@
             width: 100% !important;
             max-width: 900px;
         }
+
+        h2 {
+            transition: clip-path 300ms ease;
+        }
     }
 }

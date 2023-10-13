@@ -10,6 +10,7 @@
         .search-by-genre-titles {
             h2 {
                 max-width: 32ch;
+                transition: clip-path 300ms ease;
             }
         }
 

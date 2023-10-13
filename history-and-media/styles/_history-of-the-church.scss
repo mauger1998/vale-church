@@ -1,0 +1,56 @@
+@use '../../styles/variables';
+
+.history-of-the-church-section {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 700px;
+        gap: 4rem;
+        padding-block-start: 0;
+        position: relative;
+        z-index: 1;
+
+        & > img:first-child {
+            position: absolute;
+            width: 100vw;
+            // height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.1;
+            max-width: 1440px;
+            mix-blend-mode: hard-light;
+            bottom: 0;
+            height: 100%;
+            top: 0;
+            object-fit: cover;
+        }
+        & > img:not(:first-child) {
+            margin-block-start: 4rem;
+        }
+
+        .history-of-the-church-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            width: 100%;
+            @media (max-width: 700px) {
+                gap: 2rem;
+            }
+            @media (max-width: 500px) {
+                gap: 1.5rem;
+            }
+
+            .history-column {
+                width: 100%;
+                h3 {
+                    max-width: 16ch;
+                }
+                p {
+                    max-width: 40ch;
+                    margin-block-start: 2rem;
+                }
+            }
+        }
+    }
+}
