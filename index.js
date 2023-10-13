@@ -4,6 +4,25 @@ const crossIcon = document.querySelector('.cross')
 const dropdown = document.querySelector('nav ul')
 const html = document.querySelector('html')
 
+const getBrowserName = () => {
+    let browserInfo = navigator.userAgent
+    let browser
+    if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
+        browser = 'Opera'
+    } else if (browserInfo.includes('Edg')) {
+        browser = 'Edge'
+    } else if (browserInfo.includes('Chrome')) {
+        browser = 'Chrome'
+    } else if (browserInfo.includes('Safari')) {
+        browser = 'Safari'
+    } else if (browserInfo.includes('Firefox')) {
+        browser = 'Firefox'
+    } else {
+        browser = 'unknown'
+    }
+    return browser
+}
+
 menuIcon.addEventListener('click', () => {
     dropdown.classList.add('active')
     html.style.overflowY = 'hidden'
@@ -115,22 +134,25 @@ fetchFeatured().then((featuredItems) => {
         })
     })
     ScrollTrigger.refresh()
-    const allFancyText = document.querySelectorAll('span:not(h1 span)')
 
-    allFancyText.forEach((text) => {
-        gsap.set(text, {
-            clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
+    if (getBrowserName() !== 'Safari') {
+        const allFancyText = document.querySelectorAll('span:not(h1 span)')
+
+        allFancyText.forEach((text) => {
+            gsap.set(text, {
+                clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
+            })
+            gsap.to(text, {
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'top 90%',
+                    toggleActions: 'play play play reverse',
+                },
+                clipPath: 'polygon(0 0, 115% 0, 100% 100%, -15% 100%)',
+                ease: 'power1.inOut',
+            })
         })
-        gsap.to(text, {
-            scrollTrigger: {
-                trigger: text,
-                start: 'top 90%',
-                toggleActions: 'play play play reverse',
-            },
-            clipPath: 'polygon(0 0, 115% 0, 100% 100%, -15% 100%)',
-            ease: 'power1.inOut',
-        })
-    })
+    }
 })
 
 // Prayers
@@ -165,55 +187,25 @@ fetchPrayers().then((quote) => {
 
 // GSAP
 
-// const getBrowserName = () => {
-//     let browserInfo = navigator.userAgent
-//     let browser
-//     if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
-//         browser = 'Opera'
-//     } else if (browserInfo.includes('Edg')) {
-//         browser = 'Edge'
-//     } else if (browserInfo.includes('Chrome')) {
-//         browser = 'Chrome'
-//     } else if (browserInfo.includes('Safari')) {
-//         browser = 'Safari'
-//     } else if (browserInfo.includes('Firefox')) {
-//         browser = 'Firefox'
-//     } else {
-//         browser = 'unknown'
-//     }
-//     return browser
-// }
-
-gsap.set('h1 span', {
-    clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
-})
-gsap.set('h1', {
-    clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)',
-})
-
-gsap.to('h1', {
-    clipPath: 'polygon(0% 0, 100% 0, 100% 100%, -10% 100%)',
-    ease: 'power1.inOut',
-    onComplete: () => {
-        gsap.to('h1 span', {
-            delay: 0.4,
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, -10% 100%)',
-            ease: 'power1.inOut',
+window.addEventListener('DOMContentLoaded', () => {
+    if (getBrowserName() !== 'Safari') {
+        gsap.set('h1 span', {
+            clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
         })
-    },
+        gsap.set('h1', {
+            clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)',
+        })
+
+        gsap.to('h1', {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+            ease: 'power1.inOut',
+            onComplete: () => {
+                gsap.to('h1 span', {
+                    delay: 0.4,
+                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+                    ease: 'power1.inOut',
+                })
+            },
+        })
+    }
 })
-
-// // Home Welcome Section Illustration
-
-// gsap.set('.welcome-bottom .pencil', {
-//     clipPath: 'polygon(1% 100%, 100% 100%, 100% 100%, 0% 100%)',
-// })
-
-// gsap.to('.welcome-bottom .pencil', {
-//     scrollTrigger: {
-//         trigger: '.welcome-bottom .pencil',
-//         start: 'top 75%',
-//         toggleActions: 'play play play reverse',
-//     },
-//     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-// })

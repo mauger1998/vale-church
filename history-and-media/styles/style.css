@@ -406,12 +406,6 @@ main .wrapper h1 {
   width: 100% !important;
   max-width: 900px;
 }
-.magazine-section .wrapper h2 {
-  transition: -webkit-clip-path 300ms ease;
-  transition: clip-path 300ms ease;
-  transition: clip-path 300ms ease, -webkit-clip-path 300ms ease;
-}
-
 .how-to-donate-section .wrapper {
   display: flex;
   flex-direction: column;

@@ -344,9 +344,6 @@ main .wrapper h1 {
 }
 .search-by-genre-section .wrapper .search-by-genre-titles h2 {
   max-width: 32ch;
-  transition: -webkit-clip-path 300ms ease;
-  transition: clip-path 300ms ease;
-  transition: clip-path 300ms ease, -webkit-clip-path 300ms ease;
 }
 .search-by-genre-section .wrapper .search-by-genre-container {
   display: flex;

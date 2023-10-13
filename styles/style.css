@@ -344,14 +344,6 @@ main .wrapper h1 {
   transition: -webkit-clip-path 500ms ease;
   transition: clip-path 500ms ease;
   transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
-  overflow: visible;
-}
-main .wrapper h1 span {
-  transition: -webkit-clip-path 500ms ease;
-  transition: clip-path 500ms ease;
-  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
-  overflow: visible !important;
-  width: 100% !important;
 }
 
 .welcome-section .wrapper {
@@ -1140,9 +1132,6 @@ footer .wrapper .footer-bottom a img {
   left: 0;
   bottom: 0;
   z-index: -1;
-  transition: -webkit-clip-path 500ms ease;
-  transition: clip-path 500ms ease;
-  transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
 }
 
 html,
