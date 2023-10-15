@@ -79,6 +79,11 @@
             gap: 2rem;
             margin-block: 4rem;
             .search-by-room-card {
+                img {
+                    height: calc(100% - 32px * 1.5);
+                    object-fit: cover;
+                }
+
                 h3 {
                     margin-block: 0.5rem 0;
                 }

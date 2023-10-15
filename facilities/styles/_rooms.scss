@@ -22,7 +22,10 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-
+                img {
+                    aspect-ratio: 2/1.5;
+                    object-fit: cover;
+                }
                 h3 {
                     margin-block: 1.5rem 1.25rem;
                     max-width: 12ch;

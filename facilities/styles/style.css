@@ -464,6 +464,11 @@ main .wrapper h1 {
   gap: 2rem;
   margin-block: 4rem;
 }
+.search-by-room-section .wrapper .search-by-room-grid .search-by-room-card img {
+  height: calc(100% - 48px);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .search-by-room-section .wrapper .search-by-room-grid .search-by-room-card h3 {
   margin-block: 0.5rem 0;
 }
@@ -1104,6 +1109,11 @@ main .wrapper h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.rooms-for-hire-section .wrapper .rooms-for-hire-columns .rooms-column img {
+  aspect-ratio: 2/1.5;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .rooms-for-hire-section .wrapper .rooms-for-hire-columns .rooms-column h3 {
   margin-block: 1.5rem 1.25rem;
