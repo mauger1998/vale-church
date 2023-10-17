@@ -30,26 +30,26 @@
         }
 
         .history-of-the-church-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 4rem;
             width: 100%;
+
+            p {
+                &::first-letter {
+                    -webkit-initial-letter: 2;
+                    initial-letter: 2;
+
+                    margin-inline: 0rem 0.3rem;
+                    // float: left;
+                    padding-inline: 0rem 0.2rem;
+                }
+            }
             @media (max-width: 700px) {
                 gap: 2rem;
             }
             @media (max-width: 500px) {
                 gap: 1.5rem;
-            }
-
-            .history-column {
-                width: 100%;
-                h3 {
-                    max-width: 16ch;
-                }
-                p {
-                    max-width: 40ch;
-                    margin-block-start: 2rem;
-                }
             }
         }
     }
