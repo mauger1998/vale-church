@@ -1,80 +1,76 @@
-@use "./variables";
+@use '../../styles/variables';
 
 .history-section {
     .wrapper {
-        display:grid;
+        display: grid;
         grid-template-columns: 2fr 1.5fr;
-        gap:6rem;
-        position:relative;
+        gap: 6rem;
+        position: relative;
 
         .pencil {
-            width:225px;
-            opacity:0.1;
-            bottom:auto;
+            width: 225px;
+            opacity: 0.1;
+            bottom: auto;
         }
 
         .history-left {
-            display:flex;
+            display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            gap:4rem;
+            gap: 4rem;
             h2 {
-                max-width:20ch;
+                max-width: 20ch;
             }
             .history-content {
-                display:flex;
+                display: flex;
                 align-items: center;
-                gap:4rem;
+                gap: 4rem;
 
                 .history-text {
                     p {
-                        max-width:32ch;
-                        margin-block:0rem 2rem;
+                        max-width: 32ch;
+                        margin-block: 0rem 2rem;
                     }
                     button {
-                        color:black;
+                        color: black;
                     }
                 }
             }
         }
         .history-right {
             img {
-                height:calc(100% + 16rem);
-                width:calc(100% + 4rem);
-                object-fit:cover;
-                margin-top:-8rem;
-                margin-right:-4rem;
+                height: calc(100% + 16rem);
+                width: calc(100% + 4rem);
+                object-fit: cover;
+                margin-top: -8rem;
+                margin-right: -4rem;
             }
         }
     }
-    @media (max-width:900px) {
+    @media (max-width: 900px) {
         .wrapper {
             .history-left {
-                gap:4rem;
+                gap: 4rem;
 
                 .history-content {
-                    gap:2rem;
+                    gap: 2rem;
                 }
-
-                
             }
         }
     }
-    @media (max-width:550px) {
+    @media (max-width: 550px) {
         .wrapper {
             grid-template-columns: 1fr;
 
             .history-left {
-                
             }
 
             .history-right {
-
                 img {
-                    margin-top:0 !important;
-                    margin-inline:-2rem !important;
-                    height:auto;
+                    margin-top: 0 !important;
+                    margin-inline: -2rem !important;
+                    height: auto;
                 }
             }
         }

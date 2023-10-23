@@ -1,10 +1,18 @@
 @use '../../styles/variables';
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: '';
+    position: absolute;
+}
+
 .search-by-team-section {
     .wrapper {
+        overflow: visible;
         swiper-container {
             display: flex;
             // align-items: stretch;
+
             swiper-slide {
                 height: 100%;
             }
@@ -15,9 +23,11 @@
             gap: 0;
             max-width: 1440px;
             align-self: center;
+            overflow: visible !important;
 
             swiper-slide {
                 height: 100%;
+
                 a {
                     color: black;
                     .swiper-image {

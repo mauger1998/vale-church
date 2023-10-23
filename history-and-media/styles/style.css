@@ -183,6 +183,25 @@ p {
   line-height: 1.6;
   font-weight: 200;
 }
+p:not(.tag,
+.no-cap,
+.contact-section p,
+footer p,
+.search-by-genre-section p,
+.search-by-team-section p,
+.bell-section p,
+.seekers-section p,
+.pastoral-section p,
+.mike-section p,
+.rooms-for-hire-section p,
+.involved-section p,
+.how-to-donate-section p,
+.services-section p)::first-letter {
+  -webkit-initial-letter: 2;
+  initial-letter: 2;
+  margin-inline: 0rem 0.3rem;
+  padding-inline: 0rem 0.2rem;
+}
 
 button {
   display: flex;
@@ -334,6 +353,66 @@ main .wrapper h1 {
   transition: -webkit-clip-path 500ms ease;
   transition: clip-path 500ms ease;
   transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+}
+
+.history-section .wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 6rem;
+  position: relative;
+}
+.history-section .wrapper .pencil {
+  width: 225px;
+  opacity: 0.1;
+  bottom: auto;
+}
+.history-section .wrapper .history-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+}
+.history-section .wrapper .history-left h2 {
+  max-width: 20ch;
+}
+.history-section .wrapper .history-left .history-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.history-section .wrapper .history-left .history-content .history-text p {
+  max-width: 32ch;
+  margin-block: 0rem 2rem;
+}
+.history-section .wrapper .history-left .history-content .history-text button {
+  color: black;
+}
+.history-section .wrapper .history-right img {
+  height: calc(100% + 16rem);
+  width: calc(100% + 4rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -8rem;
+  margin-right: -4rem;
+}
+@media (max-width: 900px) {
+  .history-section .wrapper .history-left {
+    gap: 4rem;
+  }
+  .history-section .wrapper .history-left .history-content {
+    gap: 2rem;
+  }
+}
+@media (max-width: 550px) {
+  .history-section .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .history-section .wrapper .history-right img {
+    margin-top: 0 !important;
+    margin-inline: -2rem !important;
+    height: auto;
+  }
 }
 
 .history-of-the-church-section .wrapper {

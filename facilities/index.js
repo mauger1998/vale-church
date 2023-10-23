@@ -17,6 +17,7 @@ const swiperEl = document.querySelector('.swiper-one')
 // swiper parameters
 const swiperParams = {
     slidesPerView: 2.2,
+    navigation: true,
     breakpoints: {
         375: {
             slidesPerView: 3.2,
@@ -49,6 +50,8 @@ const swiperEl2 = document.querySelector('.swiper-two')
 const swiperParams2 = {
     slidesPerView: 2.2,
     spaceBetween: 0,
+    navigation: true,
+
     breakpoints: {
         640: {
             slidesPerView: 5.2,
@@ -113,16 +116,16 @@ window.addEventListener('DOMContentLoaded', () => {
             clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
         })
         gsap.set('h1', {
-            clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)',
+            clipPath: 'polygon(-20% 100%, 100% 100%, 100% 100%, 0 100%)',
         })
 
         gsap.to('h1', {
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+            clipPath: 'polygon(0 0, 100% 0, 100% 200%, -10% 100%)',
             ease: 'power1.inOut',
             onComplete: () => {
                 gsap.to('h1 span', {
                     delay: 0.4,
-                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+                    clipPath: 'polygon(0 0, 100% 0, 100% 150%, -100% 100%)',
                     ease: 'power1.inOut',
                 })
             },

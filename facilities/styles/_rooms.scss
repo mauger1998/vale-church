@@ -26,6 +26,10 @@
                     aspect-ratio: 2/1.5;
                     object-fit: cover;
                 }
+                iframe {
+                    margin-block-end: 2rem;
+                    width: 100%;
+                }
                 h3 {
                     margin-block: 1.5rem 1.25rem;
                     max-width: 12ch;
