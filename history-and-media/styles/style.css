@@ -611,6 +611,10 @@ footer .wrapper .footer-bottom {
   padding-block-start: 4rem;
   border-top: 0.5px solid black;
 }
+footer .wrapper .footer-bottom #open-modal {
+  cursor: pointer !important;
+  text-decoration: underline;
+}
 footer .wrapper .footer-bottom a {
   display: flex;
   flex-direction: column;

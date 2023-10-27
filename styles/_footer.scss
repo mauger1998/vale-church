@@ -40,6 +40,11 @@ footer {
             justify-content: space-between;
             padding-block-start: 4rem;
             border-top: 0.5px solid black;
+
+            #open-modal {
+                cursor: pointer !important;
+                text-decoration: underline;
+            }
             a {
                 display: flex;
                 flex-direction: column;
