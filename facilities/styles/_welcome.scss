@@ -52,8 +52,26 @@
                     margin-block: 2rem 1.5rem;
                     font-weight: 400;
                 }
-                button {
-                    color: black;
+
+                .buttons {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 2rem;
+                    flex-direction: column;
+
+                    a {
+                        button {
+                            color: black;
+                            text-align: left;
+                        }
+
+                        &:nth-of-type(2) {
+                            button {
+                                font-weight: 400;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
                 }
             }
             @media (max-width: 900px) {

@@ -558,8 +558,19 @@ main .wrapper h1 {
   margin-block: 2rem 1.5rem;
   font-weight: 400;
 }
-.welcome-section .wrapper .welcome-bottom .welcome-bottom-left button {
+.welcome-section .wrapper .welcome-bottom .welcome-bottom-left .buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-direction: column;
+}
+.welcome-section .wrapper .welcome-bottom .welcome-bottom-left .buttons a button {
   color: black;
+  text-align: left;
+}
+.welcome-section .wrapper .welcome-bottom .welcome-bottom-left .buttons a:nth-of-type(2) button {
+  font-weight: 400;
+  text-decoration: underline;
 }
 @media (max-width: 900px) {
   .welcome-section .wrapper .welcome-bottom {

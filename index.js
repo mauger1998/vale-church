@@ -225,3 +225,39 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 })
+
+// Email handler for contact form
+
+const contactForm = document.querySelector('.contact-section form')
+const contactFormSelect = document.querySelector('.contact-section form select')
+const contactFormSelectOptions = document.querySelectorAll(
+    '.contact-section form select option'
+)
+
+const formSubmitUrlPrefix = 'https://formsubmit.co/'
+
+contactFormSelect.addEventListener('change', (e) => {
+    let emailSuffix
+    console.log(e.target.value)
+    e.target.value === 'Barbara Mint'
+        ? (emailSuffix = 'safeguarding@valechurch.gg')
+        : e.target.value == 'Bev Hervé'
+        ? (emailSuffix = 'beverley.herve@deanery.gg')
+        : e.target.value === 'Andrew Warren'
+        ? (emailSuffix = 'organist@valechurch.gg')
+        : e.target.value === 'Nicky David'
+        ? (emailSuffix = 'bellringers@valechurch.gg')
+        : e.target.value === 'Steve De Carteret'
+        ? (emailSuffix = 'treasurer@valechurch.gg')
+        : e.target.value === 'Jane Goddard'
+        ? (emailSuffix = 'treasureseekers@valechurch.gg')
+        : e.target.value === 'Beverley Linnecor'
+        ? (emailSuffix = 'pastoral@valechurch.gg')
+        : e.target.value === 'Mike Bubb'
+        ? (emailSuffix = 'rectorswarden@valechurch.gg')
+        : e.target.value === 'Jeremy Smithies'
+        ? (emailSuffix = 'bellringers@valechurch.gg')
+        : (emailSuffix = 'peopleswarden@valechurch.gg')
+
+    contactForm.setAttribute('action', `${formSubmitUrlPrefix}${emailSuffix}`)
+})
