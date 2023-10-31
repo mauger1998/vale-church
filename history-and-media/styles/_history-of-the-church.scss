@@ -54,3 +54,16 @@
         }
     }
 }
+@-moz-document url-prefix() {
+    p {
+        &::first-letter {
+            -webkit-initial-letter: 2;
+            -moz-initial-letter: 2;
+            initial-letter: 2;
+
+            margin-inline: 0rem !important;
+            // float: left;
+            padding-inline: 0rem !important;
+        }
+    }
+}

@@ -25,12 +25,12 @@ const getBrowserName = () => {
 
 menuIcon.addEventListener('click', () => {
     dropdown.classList.add('active')
-    html.style.overflowY = 'hidden'
+    html.classList.add = 'overflow'
 })
 
 crossIcon.addEventListener('click', () => {
     dropdown.classList.remove('active')
-    html.style.overflowY = 'visible'
+    html.classList.remove = 'overflow'
 })
 
 // Modal
@@ -137,16 +137,12 @@ fetchFeatured().then((featuredItems) => {
         `
         const word = result.emphasisedWord
 
-        console.log(word)
-
         var pattern = new RegExp('(' + word + ')', 'ig')
         var replaceWith = '<span>$1</span>'
-        console.log(pattern)
 
         columnSection.appendChild(featuredColumn)
         $('.column-right h3').each(function () {
             $(this).html($(this).html().replace(pattern, replaceWith))
-            console.log(this)
         })
     })
     ScrollTrigger.refresh()
@@ -238,7 +234,6 @@ const formSubmitUrlPrefix = 'https://formsubmit.co/'
 
 contactFormSelect.addEventListener('change', (e) => {
     let emailSuffix
-    console.log(e.target.value)
     e.target.value === 'Barbara Mint'
         ? (emailSuffix = 'safeguarding@valechurch.gg')
         : e.target.value == 'Bev Hervé'
@@ -261,3 +256,47 @@ contactFormSelect.addEventListener('change', (e) => {
 
     contactForm.setAttribute('action', `${formSubmitUrlPrefix}${emailSuffix}`)
 })
+
+// Change select menu depending on which contact button is clicked
+
+function changeSelectMenuOnContactButtonClick() {
+    let urlHash = window.location.href.split('#')[1]
+    contactFormSelectOptions.forEach((option, index) => {
+        if (urlHash === option.id) {
+            contactFormSelect.selectedIndex = index
+            contactForm.scrollIntoView()
+
+            let emailSuffix
+            option.id === 'barbaraMint'
+                ? (emailSuffix = 'safeguarding@valechurch.gg')
+                : option.id == 'bevHerve'
+                ? (emailSuffix = 'beverley.herve@deanery.gg')
+                : option.id === 'andrewWarren'
+                ? (emailSuffix = 'organist@valechurch.gg')
+                : option.id === 'nickyDavid'
+                ? (emailSuffix = 'bellringers@valechurch.gg')
+                : option.id === 'steveDeCarteret'
+                ? (emailSuffix = 'treasurer@valechurch.gg')
+                : option.id === 'janeGoddard'
+                ? (emailSuffix = 'treasureseekers@valechurch.gg')
+                : option.id === 'bevLinnecor'
+                ? (emailSuffix = 'pastoral@valechurch.gg')
+                : option.id === 'mikeBubb'
+                ? (emailSuffix = 'rectorswarden@valechurch.gg')
+                : option.id === 'jeremySmithies'
+                ? (emailSuffix = 'bellringers@valechurch.gg')
+                : (emailSuffix = 'peopleswarden@valechurch.gg')
+
+            contactForm.setAttribute(
+                'action',
+                `${formSubmitUrlPrefix}${emailSuffix}`
+            )
+
+            console.log('Successfully changed email value')
+        }
+    })
+}
+
+window.onload = (event) => {
+    changeSelectMenuOnContactButtonClick()
+}

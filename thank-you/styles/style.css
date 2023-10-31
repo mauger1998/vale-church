@@ -198,11 +198,34 @@ footer p,
 .how-to-donate-section p,
 .services-section p)::first-letter {
   -webkit-initial-letter: 2;
+  -moz-initial-letter: 2;
   initial-letter: 2;
   margin-inline: 0rem 0.3rem;
   padding-inline: 0rem 0.2rem;
 }
 
+@-moz-document url-prefix() {
+  p:not(.tag,
+  .no-cap,
+  .contact-section p,
+  footer p,
+  .search-by-genre-section p,
+  .search-by-team-section p,
+  .bell-section p,
+  .seekers-section p,
+  .pastoral-section p,
+  .mike-section p,
+  .rooms-for-hire-section p,
+  .involved-section p,
+  .how-to-donate-section p,
+  .services-section p)::first-letter {
+    -webkit-initial-letter: 2;
+    -moz-initial-letter: 2;
+    initial-letter: 2;
+    margin-inline: 0rem;
+    padding-inline: 0rem;
+  }
+}
 button {
   display: flex;
   align-items: center;

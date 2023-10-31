@@ -84,6 +84,16 @@
                     align-items: flex-start;
                     gap: 1rem;
 
+                    .list-item {
+                        &:first-child {
+                            .call-us-wrapper {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                            }
+                        }
+                    }
+
                     strong {
                         font-size: 18px;
 

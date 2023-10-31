@@ -86,7 +86,13 @@
                             <li>Services & Facilities</li>
                         </a>
                         <a href="history-and-media/">
-                            <li>History & Magazine</li>
+                            <li>History</li>
+                        </a>
+                        <a href="history-and-media/#magazine">
+                            <li>Magazine</li>
+                        </a>
+                        <a href="facilities/#whats-on">
+                            <li>What's on</li>
                         </a>
                         <a href="#prayers">
                             <li>Prayers</li>
@@ -942,6 +948,35 @@
                         <h3>Contact <span>information</span></h3>
                         <div class="list">
                             <div class="list-item">
+                                <a href="tel:+441481244088">
+                                    <strong>Call Vale Church Now</strong>
+                                    <div class="call-us-wrapper">
+                                        <p>01481 244088</p>
+                                        <?xml version="1.0" encoding="UTF-8"?><svg
+                                            width="16px"
+                                            height="16px"
+                                            stroke-width="1"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            color="#000000">
+                                            <path
+                                                d="M16.2426 5.24268H19.2426M22.2426 5.24268H19.2426M19.2426 5.24268V2.24268M19.2426 5.24268V8.24268"
+                                                stroke="#000000"
+                                                stroke-width="1"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M18.1182 14.702L14 15.5C11.2183 14.1038 9.5 12.5 8.5 10L9.26995 5.8699L7.81452 2L4.0636 2C2.93605 2 2.04814 2.93178 2.21654 4.04668C2.63695 6.83 3.87653 11.8765 7.5 15.5C11.3052 19.3052 16.7857 20.9564 19.802 21.6127C20.9668 21.8662 22 20.9575 22 19.7655L22 16.1812L18.1182 14.702Z"
+                                                stroke="#000000"
+                                                stroke-width="1"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="list-item">
                                 <a href="mailto:beverley.herve@deanery.gg">
                                     <strong>Bev Hervé (Rector)</strong>
                                     <p>beverley.herve@deanery.gg</p>
@@ -994,6 +1029,9 @@
                                     >
                                     <p>pastoral@valechurch.gg</p>
                                 </a>
+                                <a href="mailto:magazine@valechurch.gg">
+                                    <p>magazine@valechurch.gg</p>
+                                </a>
                             </div>
                             <div class="list-item">
                                 <a href="mailto:rectorswarden@valechurch.gg">
@@ -1017,7 +1055,7 @@
                     </div>
                     <div class="contact-right">
                         <form
-                            action="https://formsubmit.co/jordan@islandwebdesign.net"
+                            action="https://formsubmit.co/beverley.herve@deanery.gg"
                             method="POST">
                             <input
                                 type="hidden"
@@ -1048,35 +1086,56 @@
                                     gap: 0.5rem;
                                 ">
                                 <label for="select">Contacting:</label>
-                                <select style="padding: 0.75rem; width: 100%">
-                                    name="people" id="people">
-                                    <option value="Bev Hervé">
+                                <select
+                                    style="padding: 0.75rem; width: 100%"
+                                    name="people"
+                                    id="people">
+                                    <option id="general" value="general">
+                                        General Enquiries
+                                    </option>
+                                    <option id="bevHerve" value="Bev Hervé">
                                         Bev Hervé (Rectors Warden)
                                     </option>
-                                    <option value="Barbara Mint">
+                                    <option
+                                        id="barbaraMint"
+                                        value="Barbara Mint">
                                         Barbara Mint (Safeguarding)
                                     </option>
-                                    <option value="Andrew Warren">
+                                    <option
+                                        id="andrewWarren"
+                                        value="Andrew Warren">
                                         Andrew Warren (Choir & Music Group)
                                     </option>
-                                    <option value="Nicky David">
+                                    <option id="nickyDavid" value="Nicky David">
                                         Nicky David (Tower Secretary)
                                     </option>
-                                    <option value="Steve De Carteret">
+                                    <option
+                                        id="steveDeCarteret"
+                                        value="Steve De Carteret">
                                         Steve De Carteret (Treasurer)
                                     </option>
-                                    <option value="Jane Goddard">
+                                    <option
+                                        id="janeGoddard"
+                                        value="Jane Goddard">
                                         Jane Goddard (Sunday School)
                                     </option>
-                                    <option value="Beverley Linnecor">
-                                        Beverley Linnecor (Pastoral Care)
+                                    <option
+                                        id="bevLinnecor"
+                                        value="Beverley Linnecor">
+                                        Beverley Linnecor (Pastoral Care &
+                                        Magazine)
                                     </option>
-                                    <option value="Mike Bubb">
-                                        Mike Bubb (Church Warden & Tower
-                                        Captain)
+                                    <option id="mikeBubb" value="Mike Bubb">
+                                        Mike Bubb (Church Warden & Tower Captain
+                                        / Room Bookings)
                                     </option>
-                                    <option value="Jeremy Smithies">
+                                    <option
+                                        id="jeremySmithies"
+                                        value="Jeremy Smithies">
                                         Jeremy Smithies (Peoples Warden)
+                                    </option>
+                                    <option id="contact" value="contact">
+                                        Testing (Peoples Warden)
                                     </option>
                                 </select>
                             </fieldset>
