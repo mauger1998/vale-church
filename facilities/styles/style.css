@@ -351,7 +351,7 @@ header .header-wrapper nav .cross {
 }
 
 main {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 60%), url(../../public/images/facilities-hero.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 60%), url(../../public/images/facilities-hero.webp);
   background-size: cover;
   background-position: center;
 }
@@ -789,7 +789,7 @@ main .wrapper h1 {
 }
 
 .seekers-section {
-  background-image: url(../../public/images/sundaybg.png);
+  background-image: url(../../public/images/sundaybg.webp);
   background-blend-mode: darken;
   background-color: #393939;
   background-size: cover;
@@ -1300,7 +1300,7 @@ main .wrapper h1 {
 }
 
 .involved-section {
-  background-image: url(../../public/images/involved-image.png);
+  background-image: url(../../public/images/involved-image.webp);
   background-size: cover;
 }
 .involved-section .wrapper {

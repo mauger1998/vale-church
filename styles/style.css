@@ -351,13 +351,13 @@ header .header-wrapper nav .cross {
 }
 
 main {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 100%), url(../public/images/vale-church-hero.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 100%), url(../public/images/vale-church-hero.webp);
   background-size: cover;
   background-position: center;
 }
 @media (max-width: 800px) {
   main {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0.0862745098) 100%), url(../public/images/vale-church-hero.png);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0.0862745098) 100%), url(../public/images/vale-church-hero.webp);
   }
 }
 main .wrapper {
@@ -528,7 +528,7 @@ main .wrapper h1 {
 }
 
 .faith-quote {
-  background-image: url(../public/images/faith-quote-background-cemetary.png);
+  background-image: url(../public/images/faith-quote-background-cemetary.webp);
   background-size: cover;
 }
 .faith-quote .wrapper {
@@ -923,7 +923,7 @@ main .wrapper h1 {
 }
 
 .involved-section {
-  background-image: url(../public/images/involved-image.png);
+  background-image: url(../public/images/involved-image.webp);
   background-size: cover;
   background-position: center;
 }

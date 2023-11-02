@@ -1,28 +1,26 @@
-@use "../../styles/variables";
+@use '../../styles/variables';
 
 .involved-section {
-    background-image:url(../../public/images/involved-image.png);
-    background-size:cover;
+    background-image: url(../../public/images/involved-image.webp);
+    background-size: cover;
 
     .wrapper {
-        display:flex;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding-block:20rem !important;
-        
+        padding-block: 20rem !important;
+
         h2 {
-            color:white;
+            color: white;
         }
         p {
-            color:white;
-            max-width:40ch;
-            margin-block:2rem 3rem;
+            color: white;
+            max-width: 40ch;
+            margin-block: 2rem 3rem;
         }
-
     }
-    @media (max-width:708px) {
-        background-position:center;
-
+    @media (max-width: 708px) {
+        background-position: center;
     }
 }

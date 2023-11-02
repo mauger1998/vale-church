@@ -1,23 +1,23 @@
-@use "./variables";
+@use './variables';
 
 .faith-quote {
-    background-image:url(../public/images/faith-quote-background-cemetary.png);
-    background-size:cover;
+    background-image: url(../public/images/faith-quote-background-cemetary.webp);
+    background-size: cover;
     .wrapper {
-        padding-block:8rem 26rem;
-        display:flex;
+        padding-block: 8rem 26rem;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap:2rem;
+        gap: 2rem;
 
         h2 {
-            color:white;
-            text-align:center;
-            max-width:18ch;
+            color: white;
+            text-align: center;
+            max-width: 18ch;
 
             span {
-                color:white;
+                color: white;
             }
         }
     }

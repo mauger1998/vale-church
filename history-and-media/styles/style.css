@@ -351,7 +351,7 @@ header .header-wrapper nav .cross {
 }
 
 main {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 60%), url(../../public/images/contact-hero.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 60%), url(../../public/images/contact-hero.webp);
   background-size: cover;
   background-position: center;
 }
@@ -582,7 +582,7 @@ main .wrapper h1 {
 }
 
 .involved-section {
-  background-image: url(../../public/images/involved-image.png);
+  background-image: url(../../public/images/involved-image.webp);
   background-size: cover;
 }
 .involved-section .wrapper {

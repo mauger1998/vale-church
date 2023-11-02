@@ -2,13 +2,13 @@
 
 main {
     background-image: linear-gradient(to top, #000000cd, #00000000 100%),
-        url(../public/images/vale-church-hero.png);
+        url(../public/images/vale-church-hero.webp);
     background-size: cover;
     background-position: center;
 
     @media (max-width: 800px) {
         background-image: linear-gradient(to top, #000000cd, #00000016 100%),
-            url(../public/images/vale-church-hero.png);
+            url(../public/images/vale-church-hero.webp);
     }
 
     .wrapper {
