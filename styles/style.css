@@ -739,7 +739,7 @@ main .wrapper h1 {
   margin-block-start: 1rem;
 }
 .services-section .wrapper .services-row:nth-child(2) {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 25%), url(../public/pews.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 25%), url(../public/pews.webp);
   background-size: cover;
   background-position: center;
   padding: 2rem;
@@ -761,7 +761,7 @@ main .wrapper h1 {
     width: 100% !important;
   }
   .services-section .wrapper .services-row:nth-child(2) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 50%), url(../public/pews.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6784313725), rgba(0, 0, 0, 0) 50%), url(../public/pews.webp);
     padding-block-end: 20rem;
     padding-inline: 1rem;
   }
