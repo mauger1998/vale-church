@@ -54,6 +54,29 @@
         gap: 4rem;
         position: relative;
 
+        dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 800px;
+            z-index: 10;
+
+            button {
+                padding: 0;
+                background-color: variables.$gray;
+                position: absolute;
+                padding: 0.5rem;
+                top: 2rem;
+                right: 2rem;
+
+                img {
+                    width: 2rem;
+                }
+            }
+        }
+
         & > img {
             position: absolute;
             top: 50%;
@@ -68,7 +91,7 @@
             text-align: center;
         }
         button {
-            background-color: #f8a441;
+            background-color: #5d84e0;
             padding: 0.75rem 4rem;
             display: flex;
             gap: 0.5rem;

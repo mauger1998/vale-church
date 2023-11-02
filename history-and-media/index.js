@@ -18,6 +18,21 @@ const getBrowserName = () => {
     }
     return browser
 }
+// Modal
+
+const dialog = document.querySelector('dialog')
+const showButton = document.querySelector('#open-modal')
+const closeButton = document.querySelector('#close-modal')
+
+// "Show the dialog" button opens the dialog modally
+showButton.addEventListener('click', () => {
+    dialog.showModal()
+})
+
+// "Close" button closes the dialog
+closeButton.addEventListener('click', () => {
+    dialog.close()
+})
 
 const menuIcon = document.querySelector('header img:not(.cross)')
 const crossIcon = document.querySelector('.cross')

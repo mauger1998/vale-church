@@ -554,6 +554,26 @@ main .wrapper h1 {
   gap: 4rem;
   position: relative;
 }
+.donate-section .wrapper dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 800px;
+  z-index: 10;
+}
+.donate-section .wrapper dialog button {
+  padding: 0;
+  background-color: #393939;
+  position: absolute;
+  padding: 0.5rem;
+  top: 2rem;
+  right: 2rem;
+}
+.donate-section .wrapper dialog button img {
+  width: 2rem;
+}
 .donate-section .wrapper > img {
   position: absolute;
   top: 50%;
@@ -568,7 +588,7 @@ main .wrapper h1 {
   text-align: center;
 }
 .donate-section .wrapper button {
-  background-color: #f8a441;
+  background-color: #5d84e0;
   padding: 0.75rem 4rem;
   display: flex;
   gap: 0.5rem;
