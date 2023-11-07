@@ -8,7 +8,7 @@ header {
     position: absolute;
     background-color: transparent;
     .header-wrapper {
-        padding: 1.5rem 4rem;
+        padding: 0.5rem 4rem;
         display: flex;
         width: 100%;
         max-width: 1440px;
@@ -24,6 +24,9 @@ header {
         }
 
         .logo-container {
+            img {
+                width: 3rem;
+            }
         }
 
         nav {

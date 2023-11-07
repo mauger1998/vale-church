@@ -250,7 +250,7 @@ header {
   background-color: transparent;
 }
 header .header-wrapper {
-  padding: 1.5rem 4rem;
+  padding: 0.5rem 4rem;
   display: flex;
   width: 100%;
   max-width: 1440px;
@@ -267,6 +267,9 @@ header .header-wrapper {
   header .header-wrapper {
     padding-inline: 1rem;
   }
+}
+header .header-wrapper .logo-container img {
+  width: 3rem;
 }
 header .header-wrapper nav ul {
   display: flex;
