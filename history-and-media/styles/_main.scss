@@ -1,31 +1,31 @@
 @use '../../styles/variables';
 
 main {
-    background-image: linear-gradient(to top, #000000cd, #00000000 60%),
-        url(../../public/images/contact-hero.webp);
-    background-size: cover;
-    background-position: center;
+	background-image: linear-gradient(to top, #000000cd, #00000000 60%),
+		linear-gradient(to bottom, #0000005e, #00000000 50%), url(../../public/images/contact-hero.webp);
+	background-size: cover;
+	background-position: center;
 
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        padding-block-end: 2rem;
-        height: 95vh;
-        max-height: 1000px;
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		padding-block-end: 2rem;
+		height: 95vh;
+		max-height: 1000px;
 
-        p {
-            color: white;
-            align-self: flex-end;
-            max-width: 52%;
-            margin-block-end: -6rem;
-        }
+		p {
+			color: white;
+			align-self: flex-end;
+			max-width: 52%;
+			margin-block-end: -6rem;
+		}
 
-        h1 {
-            max-width: 101%;
-            width: 101%;
-            transition: clip-path 500ms ease;
-        }
-    }
+		h1 {
+			max-width: 101%;
+			width: 101%;
+			transition: clip-path 500ms ease;
+		}
+	}
 }

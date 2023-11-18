@@ -1,69 +1,74 @@
 @use '../../styles/variables';
 
 .history-of-the-church-section {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 700px;
-        gap: 4rem;
-        padding-block-start: 0;
-        position: relative;
-        z-index: 1;
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 700px;
+		padding-block-start: 0;
+		position: relative;
+		z-index: 1;
 
-        & > img:first-child {
-            position: absolute;
-            width: 100vw;
-            // height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.1;
-            max-width: 1440px;
-            mix-blend-mode: hard-light;
-            bottom: 0;
-            height: 100%;
-            top: 0;
-            object-fit: cover;
-        }
-        & > img:not(:first-child) {
-            margin-block-start: 4rem;
-        }
+		& > img:first-child {
+			position: absolute;
+			width: 100vw;
+			// height: 100%;
+			object-fit: cover;
+			z-index: -1;
+			opacity: 0.1;
+			max-width: 1440px;
+			mix-blend-mode: hard-light;
+			bottom: 0;
+			height: 100%;
+			top: 0;
+			object-fit: cover;
+		}
+		& > img:not(:first-child) {
+			margin-block-start: 4rem;
+		}
 
-        .history-of-the-church-content {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-            width: 100%;
+		.history-of-the-church-content {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
 
-            p {
-                &::first-letter {
-                    -webkit-initial-letter: 2;
-                    initial-letter: 2;
+			h3 {
+				margin: 0;
+				margin-block: 2rem 3rem;
+			}
 
-                    margin-inline: 0rem 0.3rem;
-                    // float: left;
-                    padding-inline: 0rem 0.2rem;
-                }
-            }
-            @media (max-width: 700px) {
-                gap: 2rem;
-            }
-            @media (max-width: 500px) {
-                gap: 1.5rem;
-            }
-        }
-    }
+			p {
+				&::first-letter {
+					-webkit-initial-letter: 2;
+					initial-letter: 2;
+					margin-inline: 0rem 0.3rem;
+					// float: left;
+					padding-inline: 0rem 0.2rem;
+				}
+				&:not(:first-of-type) {
+					margin-block-start: 2rem;
+				}
+			}
+			@media (max-width: 700px) {
+				gap: 2rem;
+			}
+			@media (max-width: 500px) {
+				gap: 1.5rem;
+			}
+		}
+	}
 }
 @-moz-document url-prefix() {
-    p {
-        &::first-letter {
-            -webkit-initial-letter: 2;
-            -moz-initial-letter: 2;
-            initial-letter: 2;
+	p {
+		&::first-letter {
+			-webkit-initial-letter: 2;
+			-moz-initial-letter: 2;
+			initial-letter: 2;
 
-            margin-inline: 0rem !important;
-            // float: left;
-            padding-inline: 0rem !important;
-        }
-    }
+			margin-inline: 0rem !important;
+			// float: left;
+			padding-inline: 0rem !important;
+		}
+	}
 }

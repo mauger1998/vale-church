@@ -113,21 +113,23 @@ h1 span {
 @media (max-width: 800px) {
   h1 {
     font-size: 64px;
-    line-height: 70.4px;
+    line-height: 1.1;
     max-width: 14ch !important;
   }
   h1 span {
     font-size: 120px;
     margin-inline: 0.25rem;
+    line-height: 0.7;
   }
 }
+
 @media (max-width: 550px) {
-  h1 {
-    font-size: 40px;
-    line-height: 44px;
+  #home h1 {
+    font-size: 48px;
+    line-height: 52.8px;
   }
-  h1 span {
-    font-size: 80px;
+  #home h1 span {
+    font-size: 96px;
   }
 }
 
@@ -271,20 +273,43 @@ header .header-wrapper {
 header .header-wrapper .logo-container img {
   width: 3rem;
 }
+header .header-wrapper nav {
+  min-width: 80%;
+}
 header .header-wrapper nav ul {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
-header .header-wrapper nav ul li {
+header .header-wrapper nav ul #pencil-texture {
+  display: none;
+}
+header .header-wrapper nav ul a:nth-child(9) {
+  display: none;
+}
+header .header-wrapper nav ul a:nth-child(10) {
+  display: none;
+}
+header .header-wrapper nav ul a li {
   color: white;
 }
-header .header-wrapper nav ul button {
+header .header-wrapper nav ul .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+header .header-wrapper nav ul .buttons button {
   background-color: white;
   color: black;
   border: 2px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
+}
+header .header-wrapper nav ul a {
+  font-size: 16px !important;
 }
 header .header-wrapper nav ul a:nth-child(6) {
   margin-inline-end: -1rem;
@@ -302,10 +327,13 @@ header .header-wrapper nav .cross {
   width: 2rem;
   display: none;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   header .header-wrapper nav {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    min-width: auto;
   }
   header .header-wrapper nav ul {
     position: absolute;
@@ -313,18 +341,41 @@ header .header-wrapper nav .cross {
     align-items: flex-start;
     margin-block-start: 2rem;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.3921568627);
+    background-color: rgba(57, 57, 57, 0.9803921569);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 300px;
     height: 100vh;
     justify-content: center;
     width: 100vw;
+    align-items: center;
     left: 0;
     top: -2rem;
     transform: translateX(100%);
     transition: transform 500ms ease;
     z-index: 100000;
+    gap: 1.5rem;
+  }
+  header .header-wrapper nav ul #pencil-texture {
+    display: block;
+    width: 100%;
+    position: absolute;
+    opacity: 0.075;
+    z-index: -1;
+  }
+  header .header-wrapper nav ul a:nth-child(9) {
+    display: block;
+  }
+  header .header-wrapper nav ul a:nth-child(10) {
+    display: block;
+  }
+  header .header-wrapper nav ul a li {
+    color: white;
+  }
+  header .header-wrapper nav ul .buttons {
+    flex-direction: column;
+    align-items: center;
+    display: none;
   }
   header .header-wrapper nav ul.active {
     transform: translateX(0%);
@@ -354,7 +405,7 @@ header .header-wrapper nav .cross {
 }
 
 main {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 60%), url(../../public/images/facilities-hero.webp);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 60%), linear-gradient(to bottom, rgba(0, 0, 0, 0.368627451), rgba(0, 0, 0, 0) 50%), url(../../public/images/facilities-hero.webp);
   background-size: cover;
   background-position: center;
 }
@@ -581,8 +632,17 @@ main .wrapper h1 {
 }
 .welcome-section .wrapper .welcome-bottom .welcome-bottom-left p {
   max-width: 60ch;
-  margin-block: 2rem 1.5rem;
   font-weight: 400;
+}
+.welcome-section .wrapper .welcome-bottom .welcome-bottom-left p:nth-of-type(1) {
+  margin-block: 1.5rem 1rem;
+}
+.welcome-section .wrapper .welcome-bottom .welcome-bottom-left p:nth-of-type(2) {
+  margin-block: 0 1rem;
+}
+.welcome-section .wrapper .welcome-bottom .welcome-bottom-left p:nth-of-type(3) {
+  margin-block: 0 2rem;
+  font-weight: 500;
 }
 .welcome-section .wrapper .welcome-bottom .welcome-bottom-left .buttons {
   display: flex;
@@ -597,6 +657,7 @@ main .wrapper h1 {
 .welcome-section .wrapper .welcome-bottom .welcome-bottom-left .buttons a:nth-of-type(2) button {
   font-weight: 400;
   text-decoration: underline;
+  font-size: 12px;
 }
 @media (max-width: 900px) {
   .welcome-section .wrapper .welcome-bottom {
@@ -615,6 +676,9 @@ main .wrapper h1 {
     flex-direction: column;
     align-items: center;
     width: 100%;
+  }
+  .welcome-section .wrapper .welcome-bottom .welcome-bottom-left .buttons {
+    align-items: center;
   }
   .welcome-section .wrapper .welcome-bottom .welcome-bottom-left h3 {
     text-align: center;
@@ -660,7 +724,7 @@ main .wrapper h1 {
   margin-block: 1.5rem 2rem;
 }
 .andrew-section .wrapper .andrew-content .andrew-left p:last-of-type {
-  font-weight: 600;
+  font-weight: 500;
 }
 .andrew-section .wrapper .andrew-content .andrew-left button {
   color: black;

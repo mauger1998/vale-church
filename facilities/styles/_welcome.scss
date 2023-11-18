@@ -1,107 +1,122 @@
 @use '../../styles/variables';
 
 .welcome-section {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 6rem;
-        position: relative;
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 6rem;
+		position: relative;
 
-        .pencil {
-            opacity: 0.05;
-            width: 100%;
+		.pencil {
+			opacity: 0.05;
+			width: 100%;
 
-            @media (max-width: 900px) {
-                width: 100%;
-                top: 50%;
-                bottom: auto;
-                right: auto;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
+			@media (max-width: 900px) {
+				width: 100%;
+				top: 50%;
+				bottom: auto;
+				right: auto;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
 
-        .welcome-top {
-            h2 {
-                max-width: 12ch;
-                text-align: center;
-                line-height: 1;
-            }
-        }
-        .welcome-bottom {
-            display: flex;
-            align-items: center;
-            width: 80%;
-            gap: 8rem;
+		.welcome-top {
+			h2 {
+				max-width: 12ch;
+				text-align: center;
+				line-height: 1;
+			}
+		}
+		.welcome-bottom {
+			display: flex;
+			align-items: center;
+			width: 80%;
+			gap: 8rem;
 
-            .welcome-bottom-right {
-                width: 45%;
-                img {
-                    border-radius: 320px 320px 0px 0px;
-                }
-            }
-            .welcome-bottom-left {
-                width: 55%;
-                h3 {
-                    max-width: 40ch;
-                }
-                p {
-                    max-width: 60ch;
-                    margin-block: 2rem 1.5rem;
-                    font-weight: 400;
-                }
+			.welcome-bottom-right {
+				width: 45%;
+				img {
+					border-radius: 320px 320px 0px 0px;
+				}
+			}
+			.welcome-bottom-left {
+				width: 55%;
+				h3 {
+					max-width: 40ch;
+				}
+				p {
+					max-width: 60ch;
+					font-weight: 400;
 
-                .buttons {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 2rem;
-                    flex-direction: column;
+					&:nth-of-type(1) {
+						margin-block: 1.5rem 1rem;
+					}
+					&:nth-of-type(2) {
+						margin-block: 0 1rem;
+					}
+					&:nth-of-type(3) {
+						margin-block: 0 2rem;
+						font-weight: 500;
+					}
+				}
 
-                    a {
-                        button {
-                            color: black;
-                            text-align: left;
-                        }
+				.buttons {
+					display: flex;
+					align-items: flex-start;
+					gap: 2rem;
+					flex-direction: column;
 
-                        &:nth-of-type(2) {
-                            button {
-                                font-weight: 400;
-                                text-decoration: underline;
-                            }
-                        }
-                    }
-                }
-            }
-            @media (max-width: 900px) {
-                gap: 4rem;
-                flex-direction: column-reverse;
-                align-items: center;
+					a {
+						button {
+							color: black;
+							text-align: left;
+						}
 
-                .welcome-bottom-right {
-                    width: 50%;
-                    img {
-                        border-radius: 500px 500px 0px 0px;
-                    }
-                }
-                .welcome-bottom-left {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 100%;
+						&:nth-of-type(2) {
+							button {
+								font-weight: 400;
+								text-decoration: underline;
+								font-size: 12px;
+							}
+						}
+					}
+				}
+			}
+			@media (max-width: 900px) {
+				gap: 4rem;
+				flex-direction: column-reverse;
+				align-items: center;
 
-                    h3 {
-                        text-align: center;
-                        max-width: 28ch;
-                    }
+				.welcome-bottom-right {
+					width: 50%;
+					img {
+						border-radius: 500px 500px 0px 0px;
+					}
+				}
+				.welcome-bottom-left {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 100%;
 
-                    p {
-                        text-align: center;
-                        max-width: 60ch;
-                    }
-                }
-            }
-        }
-    }
+					.buttons {
+						align-items: center;
+					}
+
+					h3 {
+						text-align: center;
+						max-width: 28ch;
+					}
+
+					p {
+						text-align: center;
+						max-width: 60ch;
+					}
+				}
+			}
+		}
+	}
 }
