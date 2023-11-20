@@ -24,6 +24,8 @@ footer {
 
             ul {
                 display: flex;
+                flex-wrap:wrap;
+                max-width:500px;
                 align-items: center;
                 gap: 2rem;
 

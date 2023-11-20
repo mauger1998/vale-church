@@ -1414,6 +1414,8 @@ footer .wrapper .footer-top .logo {
 }
 footer .wrapper .footer-top ul {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
   align-items: center;
   gap: 2rem;
 }
