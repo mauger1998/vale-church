@@ -6,91 +6,91 @@ const dropdownLinks = document.querySelectorAll('nav ul a')
 const html = document.querySelector('html')
 
 const getBrowserName = () => {
-	let browserInfo = navigator.userAgent
-	let browser
-	if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
-		browser = 'Opera'
-	} else if (browserInfo.includes('Edg')) {
-		browser = 'Edge'
-	} else if (browserInfo.includes('Chrome')) {
-		browser = 'Chrome'
-	} else if (browserInfo.includes('Safari')) {
-		browser = 'Safari'
-	} else if (browserInfo.includes('Firefox')) {
-		browser = 'Firefox'
-	} else {
-		browser = 'unknown'
-	}
-	return browser
+    let browserInfo = navigator.userAgent
+    let browser
+    if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
+        browser = 'Opera'
+    } else if (browserInfo.includes('Edg')) {
+        browser = 'Edge'
+    } else if (browserInfo.includes('Chrome')) {
+        browser = 'Chrome'
+    } else if (browserInfo.includes('Safari')) {
+        browser = 'Safari'
+    } else if (browserInfo.includes('Firefox')) {
+        browser = 'Firefox'
+    } else {
+        browser = 'unknown'
+    }
+    return browser
 }
 
 menuIcon.addEventListener('click', () => {
-	dropdown.classList.add('active')
-	html.classList.add = 'overflow'
+    dropdown.classList.add('active')
+    html.classList.add = 'overflow'
 })
 
 crossIcon.addEventListener('click', () => {
-	dropdown.classList.remove('active')
-	html.classList.remove = 'overflow'
+    dropdown.classList.remove('active')
+    html.classList.remove = 'overflow'
 })
 
 dropdownLinks.forEach((link) => {
-	link.addEventListener('click', () => {
-		dropdown.classList.remove('active')
-		html.classList.remove = 'overflow'
-	})
+    link.addEventListener('click', () => {
+        dropdown.classList.remove('active')
+        html.classList.remove = 'overflow'
+    })
 })
 
 // Studio
 
 // Quote Fetch
 async function fetchQuote() {
-	const response = await fetch(
-		`https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22quote%22%5D`
-	)
-	const quote = await response.json()
-	return quote
+    const response = await fetch(
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22quote%22%5D`
+    )
+    const quote = await response.json()
+    return quote
 }
 
 fetchQuote().then((quote) => {
-	const { result } = quote
+    const { result } = quote
 
-	const quoteText = document.querySelector('.gray-quote h2')
-	quoteText.textContent = result[0].Quote
+    const quoteText = document.querySelector('.gray-quote h2')
+    quoteText.textContent = result[0].Quote
 
-	const words = result[0].emphasisedWords
+    const words = result[0].emphasisedWords
 
-	words.forEach((word) => {
-		var pattern = new RegExp('(' + word + ')', 'ig')
-		var replaceWith = '<span>$1</span>'
+    words.forEach((word) => {
+        var pattern = new RegExp('(' + word + ')', 'ig')
+        var replaceWith = '<span>$1</span>'
 
-		$('.gray-quote h2').each(function () {
-			$(this).html($(this).html().replace(pattern, replaceWith))
-		})
-	})
+        $('.gray-quote h2').each(function () {
+            $(this).html($(this).html().replace(pattern, replaceWith))
+        })
+    })
 })
 
 // Featured
 
 async function fetchFeatured() {
-	const response = await fetch(
-		`https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22featured%22%5D+%7B%0A++text%2C%0A++title%2C%0A++%22imgUrl%22%3A+image.asset-%3Eurl%2C%0A++++emphasisedWord%0A%7D`
-	)
-	const featuredItems = await response.json()
-	return featuredItems
+    const response = await fetch(
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22featured%22%5D+%7B%0A++text%2C%0A++title%2C%0A++%22imgUrl%22%3A+image.asset-%3Eurl%2C%0A++++emphasisedWord%0A%7D`
+    )
+    const featuredItems = await response.json()
+    return featuredItems
 }
 
 fetchFeatured().then((featuredItems) => {
-	const { result } = featuredItems
+    const { result } = featuredItems
 
-	const columnSection = document.querySelector('.column-section .wrapper')
+    const columnSection = document.querySelector('.column-section .wrapper')
 
-	columnSection.innerHTML = ''
+    columnSection.innerHTML = ''
 
-	result.forEach((result) => {
-		const featuredColumn = document.createElement('div')
-		featuredColumn.classList.add('featured-column')
-		featuredColumn.innerHTML = /*html*/ `
+    result.forEach((result) => {
+        const featuredColumn = document.createElement('div')
+        featuredColumn.classList.add('featured-column')
+        featuredColumn.innerHTML = /*html*/ `
                     <div class="column-left">
                         <img
                             src="${result.imgUrl}"
@@ -127,57 +127,57 @@ fetchFeatured().then((featuredItems) => {
                         </a>
                     </div>
         `
-		const word = result.emphasisedWord
+        const word = result.emphasisedWord
 
-		var pattern = new RegExp('(' + word + ')', 'ig')
-		var replaceWith = '<span>$1</span>'
+        var pattern = new RegExp('(' + word + ')', 'ig')
+        var replaceWith = '<span>$1</span>'
 
-		columnSection.appendChild(featuredColumn)
-		$('.column-right h3').each(function () {
-			$(this).html($(this).html().replace(pattern, replaceWith))
-		})
-	})
-	ScrollTrigger.refresh()
+        columnSection.appendChild(featuredColumn)
+        $('.column-right h3').each(function () {
+            $(this).html($(this).html().replace(pattern, replaceWith))
+        })
+    })
+    ScrollTrigger.refresh()
 
-	if (getBrowserName() !== 'Safari') {
-		const allFancyText = document.querySelectorAll('span:not(h1 span)')
+    if (getBrowserName() !== 'Safari') {
+        const allFancyText = document.querySelectorAll('span:not(h1 span)')
 
-		allFancyText.forEach((text) => {
-			gsap.set(text, {
-				clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)'
-			})
-			gsap.to(text, {
-				scrollTrigger: {
-					trigger: text,
-					start: 'top 90%',
-					toggleActions: 'play play play reverse'
-				},
-				clipPath: 'polygon(0 0, 115% 0, 100% 100%, -15% 100%)',
-				ease: 'power1.inOut'
-			})
-		})
-	}
+        allFancyText.forEach((text) => {
+            gsap.set(text, {
+                clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
+            })
+            gsap.to(text, {
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'top 90%',
+                    toggleActions: 'play play play reverse',
+                },
+                clipPath: 'polygon(0 0, 115% 0, 100% 100%, -15% 100%)',
+                ease: 'power1.inOut',
+            })
+        })
+    }
 })
 
 // Prayers
 async function fetchPrayers() {
-	const response = await fetch(
-		`https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22prayers%22%5D+%7B%0A++text%2C%0A++++title%0A++%0A%7D`
-	)
-	const quote = await response.json()
-	return quote
+    const response = await fetch(
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22prayers%22%5D+%7B%0A++text%2C%0A++++title%0A++%0A%7D`
+    )
+    const quote = await response.json()
+    return quote
 }
 
 fetchPrayers().then((quote) => {
-	const { result } = quote
-	const prayersContainer = document.querySelector('.prayers-content')
-	prayersContainer.innerHTML = ''
+    const { result } = quote
+    const prayersContainer = document.querySelector('.prayers-content')
+    prayersContainer.innerHTML = ''
 
-	result.forEach((result) => {
-		const prayer = document.createElement('div')
-		prayer.classList.add('prayer')
+    result.forEach((result) => {
+        const prayer = document.createElement('div')
+        prayer.classList.add('prayer')
 
-		prayer.innerHTML = /*html*/ `
+        prayer.innerHTML = /*html*/ `
                         <img
                             src="public/quote-open-editor-svgrepo-com.svg"
                             alt="Quotes" />
@@ -185,109 +185,114 @@ fetchPrayers().then((quote) => {
                         <p>
                             ${result.text}
                         </p>`
-		prayersContainer.appendChild(prayer)
-	})
+        prayersContainer.appendChild(prayer)
+    })
 })
 
 // GSAP
 
 window.addEventListener('DOMContentLoaded', () => {
-	if (getBrowserName() !== 'Safari') {
-		gsap.set('h1 span', {
-			clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)'
-		})
-		gsap.set('h1', {
-			clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)'
-		})
+    if (getBrowserName() !== 'Safari') {
+        gsap.set('h1 span', {
+            clipPath: 'polygon(0 0, 100% 0, 0 0, 0% 100%)',
+        })
+        gsap.set('h1', {
+            clipPath: 'polygon(2% 100%, 100% 100%, 100% 100%, 0 100%)',
+        })
 
-		gsap.to('h1', {
-			clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
-			ease: 'power1.inOut',
-			onComplete: () => {
-				gsap.to('h1 span', {
-					delay: 0.4,
-					clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
-					ease: 'power1.inOut'
-				})
-			}
-		})
-	}
+        gsap.to('h1', {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+            ease: 'power1.inOut',
+            onComplete: () => {
+                gsap.to('h1 span', {
+                    delay: 0.4,
+                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, -10% 100%)',
+                    ease: 'power1.inOut',
+                })
+            },
+        })
+    }
 })
 
 // Email handler for contact form
 
 const contactForm = document.querySelector('.contact-section form')
 const contactFormSelect = document.querySelector('.contact-section form select')
-const contactFormSelectOptions = document.querySelectorAll('.contact-section form select option')
+const contactFormSelectOptions = document.querySelectorAll(
+    '.contact-section form select option'
+)
 
 const formSubmitUrlPrefix = 'https://formsubmit.co/'
 
 contactFormSelect.addEventListener('change', (e) => {
-	let emailSuffix
-	e.target.value === 'Barbara Mint'
-		? (emailSuffix = 'safeguarding@valechurch.gg')
-		: e.target.value == 'Bev Hervé'
-		? (emailSuffix = 'beverley.herve@deanery.gg')
-		: e.target.value === 'Andrew Warren'
-		? (emailSuffix = 'organist@valechurch.gg')
-		: e.target.value === 'Nicky David'
-		? (emailSuffix = 'bellringers@valechurch.gg')
-		: e.target.value === 'Steve De Carteret'
-		? (emailSuffix = 'treasurer@valechurch.gg')
-		: e.target.value === 'Jane Goddard'
-		? (emailSuffix = 'treasureseekers@valechurch.gg')
-		: e.target.value === 'Beverley Linnecor'
-		? (emailSuffix = 'pastoral@valechurch.gg')
-		: e.target.value === 'Mike Bubb'
-		? (emailSuffix = 'rectorswarden@valechurch.gg')
-		: e.target.value === 'Room Bookings'
-		? (emailSuffix = 'bookings@valechurch.gg')
-		: e.target.value === 'Jeremy Smithies'
-		? (emailSuffix = 'peopleswarden@valechurch.gg')
-		: (emailSuffix = 'beverley.herve@deanery.gg')
+    let emailSuffix
+    e.target.value === 'Barbara Minta'
+        ? (emailSuffix = 'safeguarding@valechurch.gg')
+        : e.target.value == 'Bev Hervé'
+        ? (emailSuffix = 'beverley.herve@deanery.gg')
+        : e.target.value === 'Andrew Warren'
+        ? (emailSuffix = 'organist@valechurch.gg')
+        : e.target.value === 'Nicky David'
+        ? (emailSuffix = 'bellringers@valechurch.gg')
+        : e.target.value === 'Steve De Carteret'
+        ? (emailSuffix = 'treasurer@valechurch.gg')
+        : e.target.value === 'Jane Goddard'
+        ? (emailSuffix = 'treasureseekers@valechurch.gg')
+        : e.target.value === 'Beverley Linnecor'
+        ? (emailSuffix = 'pastoral@valechurch.gg')
+        : e.target.value === 'Mike Bubb'
+        ? (emailSuffix = 'rectorswarden@valechurch.gg')
+        : e.target.value === 'Room Bookings'
+        ? (emailSuffix = 'bookings@valechurch.gg')
+        : e.target.value === 'Jeremy Smithies'
+        ? (emailSuffix = 'peopleswarden@valechurch.gg')
+        : (emailSuffix = 'beverley.herve@deanery.gg')
 
-	contactForm.setAttribute('action', `${formSubmitUrlPrefix}${emailSuffix}`)
+    contactForm.setAttribute('action', `${formSubmitUrlPrefix}${emailSuffix}`)
 })
 
 // Change select menu depending on which contact button is clicked
 
 function changeSelectMenuOnContactButtonClick() {
-	let urlHash = window.location.href.split('#')[1]
-	contactFormSelectOptions.forEach((option, index) => {
-		if (urlHash === option.id) {
-			contactFormSelect.selectedIndex = index
-			contactForm.scrollIntoView()
+    let urlHash = window.location.href.split('#')[1]
+    contactFormSelectOptions.forEach((option, index) => {
+        if (urlHash === option.id) {
+            contactFormSelect.selectedIndex = index
+            contactForm.scrollIntoView()
 
-			let emailSuffix
-			option.id === 'barbaraMint'
-				? (emailSuffix = 'safeguarding@valechurch.gg')
-				: option.id == 'bevHerve'
-				? (emailSuffix = 'beverley.herve@deanery.gg')
-				: option.id === 'andrewWarren'
-				? (emailSuffix = 'organist@valechurch.gg')
-				: option.id === 'nickyDavid'
-				? (emailSuffix = 'bellringers@valechurch.gg')
-				: option.id === 'steveDeCarteret'
-				? (emailSuffix = 'treasurer@valechurch.gg')
-				: option.id === 'janeGoddard'
-				? (emailSuffix = 'treasureseekers@valechurch.gg')
-				: option.id === 'bevLinnecor'
-				? (emailSuffix = 'pastoral@valechurch.gg')
-				: option.id === 'mikeBubb'
-				? (emailSuffix = 'rectorswarden@valechurch.gg')
-				: option.id === 'jeremySmithies'
-				? (emailSuffix = 'bellringers@valechurch.gg')
-				: option.id === 'roomBookings'
-				? (emailSuffix = 'bookings@valechurch.gg')
-				: (emailSuffix = 'peopleswarden@valechurch.gg')
+            let emailSuffix
+            option.id === 'barbaraMinta'
+                ? (emailSuffix = 'safeguarding@valechurch.gg')
+                : option.id == 'bevHerve'
+                ? (emailSuffix = 'beverley.herve@deanery.gg')
+                : option.id === 'andrewWarren'
+                ? (emailSuffix = 'organist@valechurch.gg')
+                : option.id === 'nickyDavid'
+                ? (emailSuffix = 'bellringers@valechurch.gg')
+                : option.id === 'steveDeCarteret'
+                ? (emailSuffix = 'treasurer@valechurch.gg')
+                : option.id === 'janeGoddard'
+                ? (emailSuffix = 'treasureseekers@valechurch.gg')
+                : option.id === 'bevLinnecor'
+                ? (emailSuffix = 'pastoral@valechurch.gg')
+                : option.id === 'mikeBubb'
+                ? (emailSuffix = 'rectorswarden@valechurch.gg')
+                : option.id === 'jeremySmithies'
+                ? (emailSuffix = 'bellringers@valechurch.gg')
+                : option.id === 'roomBookings'
+                ? (emailSuffix = 'bookings@valechurch.gg')
+                : (emailSuffix = 'peopleswarden@valechurch.gg')
 
-			contactForm.setAttribute('action', `${formSubmitUrlPrefix}${emailSuffix}`)
+            contactForm.setAttribute(
+                'action',
+                `${formSubmitUrlPrefix}${emailSuffix}`
+            )
 
-			console.log('Successfully changed email value')
-		}
-	})
+            console.log('Successfully changed email value')
+        }
+    })
 }
 
 window.onload = (event) => {
-	changeSelectMenuOnContactButtonClick()
+    changeSelectMenuOnContactButtonClick()
 }

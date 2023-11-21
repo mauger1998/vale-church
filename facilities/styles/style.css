@@ -893,11 +893,6 @@ main .wrapper h1 {
   flex: 1;
   position: relative;
 }
-.seekers-section .wrapper .seekers-content .seekers-right img:first-child {
-  position: absolute;
-  width: clamp(10rem, 18vw, 14rem);
-  bottom: 0;
-}
 .seekers-section .wrapper .seekers-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
