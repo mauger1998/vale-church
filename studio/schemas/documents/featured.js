@@ -1,11 +1,16 @@
 import {AiOutlineStar} from 'react-icons/ai'
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
 export default {
   title: 'Featured',
   name: 'featured',
   type: 'document',
   icon: AiOutlineStar,
+  orderings: [orderRankOrdering],
+
   fields: [
+    orderRankField({type: 'featured'}),
+
     {
       name: 'title',
       title: 'Title',

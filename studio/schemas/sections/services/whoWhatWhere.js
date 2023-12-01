@@ -1,7 +1,10 @@
+import {FaRegBell} from 'react-icons/fa'
+
 export default {
   name: 'whoWhatWhere',
   title: 'Who What Where',
   type: 'object',
+  icon: FaRegBell,
   fields: [
     {
       name: 'mainTitle',

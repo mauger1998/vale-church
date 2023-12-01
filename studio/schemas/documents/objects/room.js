@@ -29,8 +29,20 @@ export default {
             {name: 'icon', title: 'Icon', type: 'customImage'},
             {name: 'title', title: 'Title', type: 'string'},
           ],
+          preview: {
+            select: {
+              title: 'title',
+              media: 'icon',
+            },
+          },
         },
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'roomImage',
+    },
+  },
 }

@@ -1,7 +1,10 @@
-import {BsChatQuote} from 'react-icons/bs'
+import {IoBookOutline} from 'react-icons/io5'
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
+import {AiOutlineStar} from 'react-icons/ai'
 import {SlEvent} from 'react-icons/sl'
 import {MdOutlineChurch} from 'react-icons/md'
 import {SiCloudflarepages} from 'react-icons/si'
+import {LiaPrayingHandsSolid} from 'react-icons/lia'
 
 export const deskStructure = (S, context) =>
   S.list()
@@ -11,18 +14,20 @@ export const deskStructure = (S, context) =>
         .title('Home Page')
         .icon(MdOutlineChurch)
         .child(S.editor().schemaType('home').documentId('9d98e6ba-cf5e-4c46-a194-046c794b37c2')),
-      ...S.documentTypeListItems().filter(
-        (listItem) =>
-          !['quote', 'whatsOnSection', 'prayers', 'home', 'media.tag', 'activities'].includes(
-            listItem.getId(),
-          ),
-      ),
-      ...S.documentTypeListItems().filter(
-        (listItem) =>
-          !['quote', 'whatsOnSection', 'featured', 'media.tag', 'home', 'activities'].includes(
-            listItem.getId(),
-          ),
-      ),
+      orderableDocumentListDeskItem({
+        title: 'Featured Sections',
+        type: 'featured',
+        icon: AiOutlineStar,
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        title: 'Prayers',
+        type: 'prayers',
+        icon: LiaPrayingHandsSolid,
+        S,
+        context,
+      }),
       S.divider(),
       S.listItem()
         .title('Activities Page')
@@ -38,4 +43,9 @@ export const deskStructure = (S, context) =>
             .schemaType('whatsOnSection')
             .documentId('b38e77d0-9f7a-45ff-8673-2d3d68807286'),
         ),
+      S.divider(),
+      S.listItem()
+        .title('History & Magazine Page')
+        .icon(IoBookOutline)
+        .child(S.editor().schemaType('history').documentId('c3883a0e-6bc8-4837-940c-102768e3eea6')),
     ])

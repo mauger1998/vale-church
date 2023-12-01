@@ -1,5 +1,6 @@
 import activities from './documents/activities'
 import featured from './documents/featured'
+import history from './documents/history'
 import home from './documents/home'
 import card from './documents/objects/card'
 import customImage from './documents/objects/customImage'
@@ -11,6 +12,8 @@ import prayers from './documents/prayers'
 import cta from './sections/cta'
 import fullColumn from './sections/fullColumn'
 import getInvolved from './sections/getInvolved'
+import donate from './sections/history/donate'
+import historySection from './sections/history/historySection'
 import quoteSection from './sections/quoteSection'
 import services from './sections/services'
 import cards from './sections/services/cards'
@@ -43,4 +46,7 @@ export const schemaTypes = [
   // Pages
   home,
   activities,
+  donate,
+  historySection,
+  history,
 ]

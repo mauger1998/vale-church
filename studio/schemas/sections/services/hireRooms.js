@@ -19,4 +19,11 @@ export default {
       ],
     },
   ],
+  // preview using the image from the first room
+  preview: {
+    select: {
+      title: 'title',
+      media: 'rooms.0.roomImage',
+    },
+  },
 }

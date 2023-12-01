@@ -14,6 +14,9 @@ export default {
       name: 'sections',
       title: 'Sections',
       type: 'array',
+      options: {
+        sortable: false,
+      },
       of: [
         {type: 'whoWhatWhereCard'},
         {type: 'cards'},

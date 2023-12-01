@@ -1,6 +1,6 @@
 export default {
-  name: 'card',
-  title: 'Card',
+  name: 'historySection',
+  title: 'History Section',
   type: 'object',
   fields: [
     {
@@ -13,7 +13,6 @@ export default {
       title: 'Text',
       type: 'text',
     },
-
     {
       name: 'image',
       title: 'Image',
@@ -23,7 +22,6 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'text',
       media: 'image',
     },
   },

@@ -1,7 +1,10 @@
+import {TbCards} from 'react-icons/tb'
+
 export default {
   name: 'twoColumnWho',
   title: 'Two Column With Who What Where Cards',
   type: 'object',
+  icon: TbCards,
   fields: [
     {
       name: 'mainTitle',
@@ -31,4 +34,11 @@ export default {
       of: [{type: 'whoWhatWhereCard'}],
     },
   ],
+  preview: {
+    select: {
+      title: 'mainTitle',
+      subtitle: 'subTitle',
+      media: 'image' || icon,
+    },
+  },
 }

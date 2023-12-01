@@ -19,4 +19,11 @@ export default {
       ],
     },
   ],
+  // preview using the image from the first card
+  preview: {
+    select: {
+      title: 'title',
+      media: 'cards.0.image',
+    },
+  },
 }

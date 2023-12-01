@@ -252,7 +252,7 @@ fetchSections().then((sections) => {
 
 async function fetchFeatured() {
     const response = await fetch(
-        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22featured%22%5D+%7B%0A++text%2C%0A++title%2C%0A++%22imgUrl%22%3A+image.asset-%3Eurl%2C%0A++++emphasisedWord%0A%7D`
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22featured%22%5D+%7C+order%28orderRank+asc%29+%7B%0A++text%2C%0A++title%2C%0A++%22imgUrl%22%3A+image.asset-%3Eurl%2C%0A++++emphasisedWord%2C%0A++++orderRank%2C%0A%7D`
     )
     const featuredItems = await response.json()
     return featuredItems
@@ -342,7 +342,7 @@ fetchFeatured().then((featuredItems) => {
 // Prayers
 async function fetchPrayers() {
     const response = await fetch(
-        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22prayers%22%5D+%7B%0A++text%2C%0A++++title%0A++%0A%7D`
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22prayers%22%5D+%7C+order%28orderRank+asc%29%7B%0A++text%2C%0A++++title%2C%0A++++orderRank%2C%0A++%0A%7D`
     )
     const quote = await response.json()
     return quote

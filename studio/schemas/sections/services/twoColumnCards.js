@@ -35,4 +35,11 @@ export default {
       of: [{type: 'card'}],
     },
   ],
+  preview: {
+    select: {
+      title: 'mainTitle',
+      subtitle: 'subTitle',
+      media: 'image',
+    },
+  },
 }
