@@ -344,7 +344,7 @@ fetchSections().then((sections) => {
                 <a href="../#janeGoddard">
                     <button>
                         <img
-                            src="/public/images/black-button.svg"
+                            src="../public/images/black-button.svg"
                             alt="Button Icon"
                         />
                         CONTACT JANE NOW

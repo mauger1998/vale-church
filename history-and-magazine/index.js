@@ -210,7 +210,7 @@ fetchSections().then((sections) => {
             newButton.style.marginBlockStart = '2rem'
 
             let buttonImg = document.createElement('img')
-            buttonImg.src = '/public/images/black-button.svg'
+            buttonImg.src = '../public/images/black-button.svg'
             buttonImg.alt = 'Button Icon'
             newButton.appendChild(buttonImg)
 
