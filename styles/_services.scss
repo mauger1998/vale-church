@@ -36,11 +36,11 @@
                         gap: 1.5rem;
                         .services-list-item {
                             display: flex;
-                            align-items: center;
+                            align-items: flex-start;
                             gap: 0.5rem;
 
-                            svg {
-                                width: 3rem !important;
+                            img {
+                                width: 2rem !important;
                             }
 
                             .service-list-item-text {

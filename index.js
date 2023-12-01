@@ -41,33 +41,211 @@ dropdownLinks.forEach((link) => {
     })
 })
 
-// Studio
-
-// Quote Fetch
-async function fetchQuote() {
+// Fetch Sections From Sanity
+async function fetchSections() {
     const response = await fetch(
-        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22quote%22%5D`
+        `https://pxvhzoh0.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27home%27%5D+%7B%0A++sections%5B%5D%7B%0A++++...%2C%0A++++%0A++++++%0A++++++%27imgUrl%27%3A+image.asset-%3Eurl%0A++++%0A++%7D%0A++++%7D%0A`
     )
-    const quote = await response.json()
-    return quote
+    const sectionsData = await response.json()
+    const sections = sectionsData.result[0].sections
+    return sections
 }
 
-fetchQuote().then((quote) => {
-    const { result } = quote
+fetchSections().then((sections) => {
+    const bevSection = document.querySelector('#bev .wrapper')
+    bevSection.innerHTML = ''
+    let words = sections[0].mainTitle.split(' ')
+    words[words.length - 1] = `<span>${words[words.length - 1]}</span>`
+    let mainTitleWithSpan = words.join(' ')
+    let subTitleWords = sections[0].subTitle.split(' ')
+    let wrapIndex = subTitleWords.length >= 5 ? 4 : 2
+    subTitleWords[wrapIndex] = `<span>${subTitleWords[wrapIndex]}</span>`
+    let subTitleSpanWrapped = subTitleWords.join(' ')
+    let faithSection = document.querySelector('.faith-quote .wrapper')
+    faithSection.innerHTML = ''
 
-    const quoteText = document.querySelector('.gray-quote h2')
-    quoteText.textContent = result[0].Quote
+    const sectionHTML = /*html*/ `
+            <div class="welcome-top">
+                <h2>${mainTitleWithSpan}</h2>            
+            </div>
+            <div class="welcome-bottom">
+                <img
+                    class="pencil"
+                    aria-hidden="true"
+                    src="public/images/pencil1.webp"
+                    alt="Background Image"
+                />
+                <div class="welcome-bottom-left">
+                    <h3>${subTitleSpanWrapped}</h3>
+                    <p>
+                        ${sections[0].text}
+                    </p>
+                    <p class="tag">${sections[0].name}</p>
+                </div>
+                <div class="welcome-bottom-right">
+                    <img
+                        src="${sections[0].imgUrl}"
+                        alt="Image"
+                    />
+                </div>
+            </div>
+        `
 
-    const words = result[0].emphasisedWords
+    bevSection.innerHTML += sectionHTML
+    let faithSectionBackground = document.querySelector('.faith-quote')
+    faithSectionBackground.style.backgroundImage = `url(${sections[1].imgUrl})`
 
-    words.forEach((word) => {
-        var pattern = new RegExp('(' + word + ')', 'ig')
-        var replaceWith = '<span>$1</span>'
+    let faithTitleWords = sections[1].title.split(' ')
+    let faithWrapIndex = faithTitleWords.length >= 5 ? 2 : 2
+    faithTitleWords[
+        faithWrapIndex
+    ] = `<span>${faithTitleWords[faithWrapIndex]}</span>`
+    let faithTitleSpanWrapped = faithTitleWords.join(' ')
 
-        $('.gray-quote h2').each(function () {
-            $(this).html($(this).html().replace(pattern, replaceWith))
+    const faithSectionHTML = /*html*/ `
+    <h2>${faithTitleSpanWrapped}</h2>
+    <a href="activities/">
+        <button>
+            <img src="./public/images/button-svg.svg" alt="Button Image" />
+            See All Church Activities and Facilities
+        </button>
+    </a>
+`
+
+    faithSection.innerHTML += faithSectionHTML
+
+    let quoteSection = document.querySelector('.gray-quote .wrapper')
+    quoteSection.innerHTML = ''
+
+    let quoteTitleWords = sections[2].quote.split(' ')
+    let quoteWrapIndex1 = quoteTitleWords.length >= 5 ? 4 : 2
+    quoteTitleWords[
+        quoteWrapIndex1
+    ] = `<span>${quoteTitleWords[quoteWrapIndex1]}</span>`
+    if (quoteTitleWords.length > 7) {
+        let quoteWrapIndex2 = 7
+        quoteTitleWords[
+            quoteWrapIndex2
+        ] = `<span>${quoteTitleWords[quoteWrapIndex2]}</span>`
+    }
+    let quoteTitleSpanWrapped = quoteTitleWords.join(' ')
+
+    const quoteSectionHTML = /*html*/ `
+        <p class="tag">${sections[2].tag}</p>
+        <h2>${quoteTitleSpanWrapped}</h2>
+        <a href="history-and-magazine/#magazine">
+            <button>
+                <img src="./public/images/button-svg.svg" alt="Button Image" />
+                See Church Magazine
+            </button>
+        </a>
+    `
+
+    quoteSection.innerHTML += quoteSectionHTML
+
+    let worshipSection = document.querySelector('.worship-section .wrapper')
+    worshipSection.innerHTML = ''
+
+    let worshipTitleWords = sections[3].title.split(' ')
+    if (worshipTitleWords.length >= 2) {
+        worshipTitleWords[1] = `<span>${worshipTitleWords[1]}</span>`
+    }
+    if (worshipTitleWords.length >= 10) {
+        worshipTitleWords[9] = `<span>${worshipTitleWords[9]}</span>`
+    }
+    let worshipTitleSpanWrapped = worshipTitleWords.join(' ')
+    const worshipSectionHTML = /*html*/ `
+    <img class="pencil" aria-hidden="true" src="public/images/pencil2.webp" alt="Background Image" />
+    <div class="worship-left">
+        <img src="${sections[3].imgUrl}" alt="Vale Church Worship Service" />
+    </div>
+    <div class="worship-right">
+        <h2>${worshipTitleSpanWrapped}</h2>
+        <div class="worship-content">
+            <div class="worship-content-images">
+                <img src="public/images/worship1.webp" alt="Worship at Vale Church" />
+                <img src="public/images/worship2.webp" alt="Worship at Vale Church" />
+                <img src="public/images/worship3.webp" alt="Worship at Vale Church" />
+            </div>
+            <div class="worship-text">
+                <p>${sections[3].text}</p>
+            </div>
+        </div>
+    </div>
+`
+
+    worshipSection.innerHTML += worshipSectionHTML
+
+    let servicesSection = document.querySelector('.services-section .wrapper')
+    servicesSection.innerHTML = ''
+
+    let servicesTitleWords = sections[4].title.split(' ')
+    if (servicesTitleWords.length >= 6) {
+        servicesTitleWords[5] = `<span>${servicesTitleWords[5]}</span>`
+    }
+    let servicesTitleSpanWrapped = servicesTitleWords.join(' ')
+
+    let sundayServicesHTML = sections[4].sundayServices
+        .map((sundayService) => {
+            return /*html*/ `
+        <div class="services-list-item">
+            <img src="public/images/gold-church.svg" alt="${sundayService.title}" />
+            <div class="service-list-item-text">
+                <p class="no-cap">${sundayService.title}</p>
+                <p class="no-cap">${sundayService.description}</p>
+            </div>
+        </div>`
         })
-    })
+        .join('')
+
+    let weekdayServicesHTML = sections[4].weekdayServices
+        .map((weekdayService) => {
+            return /*html*/ `
+        <div class="services-list-item">
+            <img src="public/images/gold-church.svg" alt="${weekdayService.title}" />
+            <div class="service-list-item-text">
+                <p class="no-cap">${weekdayService.title}</p>
+                <p class="no-cap">${weekdayService.description}</p>
+            </div>
+        </div>`
+        })
+        .join('')
+
+    const servicesSectionHTML = /*html*/ `
+    <div class="services-row">
+        <h3>${servicesTitleSpanWrapped}</h3>
+        <div class="services-row-list">
+            <div class="sunday-list">
+                <h3>Sunday services</h3>
+                ${sundayServicesHTML}
+            </div>
+            <div class="weekday-list">
+                <h3>Weekday services</h3>
+                ${weekdayServicesHTML}
+            </div>
+            <a href="#contact">
+                <button>
+                    <img src="public/images/button-svg.svg" alt="Contact Us" />
+                    CONTACT US
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="services-row" style="background-image: url(${sections[4].imgUrl})"></div>
+    `
+
+    servicesSection.innerHTML += servicesSectionHTML
+
+    let involvedSection = document.querySelector('.involved-section .wrapper')
+
+    let involvedTitleWords = sections[5].title.split(' ')
+    if (involvedTitleWords.length >= 2) {
+        involvedTitleWords[1] = `<span>${involvedTitleWords[1]}</span>`
+    }
+    let involvedTitleSpanWrapped = involvedTitleWords.join(' ')
+
+    involvedSection.querySelector('h2').innerHTML = involvedTitleSpanWrapped
+    involvedSection.querySelector('p.no-cap').textContent = sections[5].text
 })
 
 // Featured
@@ -78,6 +256,8 @@ async function fetchFeatured() {
     )
     const featuredItems = await response.json()
     return featuredItems
+
+    // Rev Bev Section
 }
 
 fetchFeatured().then((featuredItems) => {

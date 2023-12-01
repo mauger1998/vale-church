@@ -238,7 +238,8 @@ button {
   border: none;
   background-color: transparent;
 }
-button svg {
+button svg,
+button img {
   margin-inline-end: -0.25rem;
   width: 32px;
 }

@@ -10,7 +10,11 @@ export default {
       title: 'Title',
       name: 'title',
       type: 'string',
-      readOnly: true,
+    },
+    {
+      title: 'Text',
+      name: 'text',
+      type: 'text',
     },
     {
       title: 'Content',
@@ -23,7 +27,4 @@ export default {
       ],
     },
   ],
-  initialValue: {
-    title: 'What`s on section',
-  },
 }

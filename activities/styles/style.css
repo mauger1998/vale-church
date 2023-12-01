@@ -238,7 +238,8 @@ button {
   border: none;
   background-color: transparent;
 }
-button svg {
+button svg,
+button img {
   margin-inline-end: -0.25rem;
   width: 32px;
 }
@@ -500,12 +501,32 @@ main .wrapper h1 {
 
 .search-by-team-section .wrapper {
   overflow: visible;
+  position: relative;
 }
 .search-by-team-section .wrapper swiper-container {
   display: flex;
 }
 .search-by-team-section .wrapper swiper-container swiper-slide {
   height: 100%;
+}
+.search-by-team-section .wrapper .swiper-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block-start: 0rem;
+  margin-inline-start: auto;
+  width: -moz-max-content;
+  width: max-content;
+}
+.search-by-team-section .wrapper .swiper-nav .swiper-button-next {
+  z-index: 10000;
+  width: 3rem;
+  cursor: pointer;
+}
+.search-by-team-section .wrapper .swiper-nav .swiper-button-prev {
+  z-index: 10000;
+  width: 3rem;
+  cursor: pointer;
 }
 .search-by-team-section .wrapper swiper-container {
   margin-block-start: 4rem;
@@ -538,6 +559,25 @@ main .wrapper h1 {
 }
 .search-by-service-section .wrapper swiper-container swiper-slide {
   height: 100%;
+}
+.search-by-service-section .wrapper .swiper-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block-start: 0rem;
+  margin-inline-start: auto;
+  width: -moz-max-content;
+  width: max-content;
+}
+.search-by-service-section .wrapper .swiper-nav .swiper-two-button-next {
+  z-index: 10000;
+  width: 3rem;
+  cursor: pointer;
+}
+.search-by-service-section .wrapper .swiper-nav .swiper-two-button-prev {
+  z-index: 10000;
+  width: 3rem;
+  cursor: pointer;
 }
 .search-by-service-section .wrapper swiper-container {
   margin-block-start: 4rem;
@@ -1341,24 +1381,49 @@ main .wrapper h1 {
 }
 .whats-on-section .wrapper .whats-on-bg .whats-on-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, min(100px, auto));
   margin-block-start: 4rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 .whats-on-section .wrapper .whats-on-bg .whats-on-grid .card {
   padding: 1rem 1rem 2rem;
   background-color: #434141;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
 }
-.whats-on-section .wrapper .whats-on-bg .whats-on-grid .card h3 {
-  text-align: center;
+.whats-on-section .wrapper .whats-on-bg .whats-on-grid .card.margin {
+  margin-top: 4rem;
+}
+.whats-on-section .wrapper .whats-on-bg .whats-on-grid .card h4 {
   margin-block: 1rem 1rem;
   color: white;
 }
 .whats-on-section .wrapper .whats-on-bg .whats-on-grid .card p {
-  text-align: center;
   max-width: 32ch;
-  margin-inline: auto;
   color: white;
+}
+.whats-on-section .wrapper .whats-on-bg .whats-on-grid .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  max-height: 300px;
+  width: calc(100% + 2rem);
+  margin-inline: -1rem;
+  margin-block: -1rem;
+}
+@media (max-width: 800px) {
+  .whats-on-section .wrapper .whats-on-bg .whats-on-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 4rem;
+  }
+  .whats-on-section .wrapper .whats-on-bg .whats-on-grid .card {
+    grid-row: auto;
+    grid-template-rows: auto;
+  }
 }
 
 .involved-section {
@@ -1475,7 +1540,7 @@ footer .wrapper .footer-bottom a img {
   --swiper-navigation-size: 44px;
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 10px;
-  --swiper-navigation-color: black;
+  --swiper-navigation-color: #b4780a;
 }
 
 .pencil {

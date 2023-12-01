@@ -1,18 +1,18 @@
-@use "./variables";
+@use './variables';
 
 button {
-    display:flex;
+    display: flex;
     align-items: center;
-    color:white;
-    font-size:variables.$text;
-    font-weight:500;
-    cursor:pointer;
-    border:none;
-    background-color:transparent;
+    color: white;
+    font-size: variables.$text;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 
-
-    svg {
-        margin-inline-end:-0.25rem;
-        width:32px;
+    svg,
+    img {
+        margin-inline-end: -0.25rem;
+        width: 32px;
     }
 }
