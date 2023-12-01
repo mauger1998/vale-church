@@ -1,3 +1,4 @@
+import activities from './documents/activities'
 import featured from './documents/featured'
 import home from './documents/home'
 import card from './documents/objects/card'
@@ -41,4 +42,5 @@ export const schemaTypes = [
   twoColumn,
   // Pages
   home,
+  activities,
 ]
