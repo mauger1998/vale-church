@@ -1,33 +1,33 @@
-@use "../../styles/variables";
+@use '../../styles/variables';
 
 .music-cards-section {
     .wrapper {
-        display:grid;
+        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap:4rem;
-        position:relative;
+        gap: 4rem;
+        position: relative;
 
         .pencil {
-            opacity:0.05;
-            width:100%;
-            inset:0;
+            opacity: 0.05;
+            width: 100%;
+            inset: 0;
         }
 
         .music-card {
             h3 {
-                margin-block:1rem 1.5rem;
+                margin-block: 1rem 1.5rem;
             }
         }
     }
-    @media (max-width:900px) {
+    @media (max-width: 900px) {
         .wrapper {
-            gap:2rem;
+            gap: 2rem;
         }
     }
-    @media (max-width:700px) {
+    @media (max-width: 900px) {
         .wrapper {
             grid-template-columns: 1fr;
-            gap:4rem;
+            gap: 4rem;
         }
     }
 }

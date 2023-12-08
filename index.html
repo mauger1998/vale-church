@@ -61,6 +61,10 @@
         />
     </head>
     <body>
+        <a id="back-to-top-button">
+            <img src="public/up-lg-svgrepo-com.svg" alt="Back to top arrow" />
+        </a>
+
         <header>
             <div class="header-wrapper">
                 <div class="logo-container">
@@ -99,18 +103,21 @@
                         <a href="activities/#whats-on">
                             <li>What's on</li>
                         </a>
-                        <a href="activities/#rooms-for-hire">
-                            <li>Room Hire</li>
-                        </a>
+
                         <a href="#prayers">
                             <li>Prayers</li>
+                        </a>
+                        <a href="/activities/#barbara">
+                            <li>Safeguarding</li>
                         </a>
                         <a href="#contact">
                             <li>Contact Us</li>
                         </a>
-                        <a href="history-and-magazine/#donate-now">
-                            <li>Donate</li>
+
+                        <a href="/history-and-magazine/#donate-now">
+                            <li>Donate Now</li>
                         </a>
+
                         <div class="buttons">
                             <a href="history-and-magazine#donate-now">
                                 <button>DONATE</button>
@@ -129,6 +136,14 @@
                     EVERYONE IS<br />
                     <span>welcome</span> AT VALE CHURCH
                 </h1>
+                <div class="buttons">
+                    <a href="/activities/#search-team">
+                        <button>WHO'S WHO</button>
+                    </a>
+                    <a href="/activities/#room-for-hire">
+                        <button>ROOM HIRE</button>
+                    </a>
+                </div>
             </div>
         </main>
         <section id="bev" class="welcome-section">
@@ -841,7 +856,7 @@
                                 <p class="no-cap">+ More</p>
                             </div>
                         </div>
-                        <a href="facilities#norman">
+                        <a href="activities/#norman">
                             <button>
                                 <svg
                                     width="32"
@@ -877,7 +892,7 @@
                     you can get involved with. Contact any one of our team
                     members now to find out more.
                 </p>
-                <a href="facilities#search-by-genre">
+                <a href="activities/#search-by-genre">
                     <button>
                         <img
                             src="public/images/button-svg.svg"
@@ -1083,7 +1098,6 @@
                             >
                                 <label for="people">Contacting:</label>
                                 <select
-                                    style="padding: 0.75rem; width: 100%"
                                     name="people"
                                     id="people"
                                     required
@@ -1145,6 +1159,34 @@
                                     >
                                         Room Bookings
                                     </option>
+                                </select>
+                            </fieldset>
+                            <fieldset
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    gap: 0.5rem;
+                                "
+                                id="rooms-bookings-fieldset"
+                            >
+                                <label for="room-bookings-select"
+                                    >Pick A Room:</label
+                                >
+                                <select id="room-bookings-select" name="rooms">
+                                    <option
+                                        id="valeChurchHall"
+                                        value="vale-church-hall"
+                                    >
+                                        The Vale Church Hall
+                                    </option>
+                                    <option
+                                        id="billieAndLeslieNorman"
+                                        value="billie-and-leslie-norman"
+                                    >
+                                        The Billie & Leslie Norman Room
+                                    </option>
+                                    <!-- etc. -->
                                 </select>
                             </fieldset>
                             <fieldset>

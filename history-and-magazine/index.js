@@ -1,5 +1,13 @@
 gsap.registerPlugin(ScrollTrigger)
 
+backToTopButton.addEventListener('click', () => {
+    console.log('clicked')
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
+})
+
 const getBrowserName = () => {
     let browserInfo = navigator.userAgent
     let browser

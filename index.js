@@ -1,4 +1,15 @@
 gsap.registerPlugin(ScrollTrigger)
+
+const backToTopButton = document.querySelector('#back-to-top-button')
+
+backToTopButton.addEventListener('click', () => {
+    console.log('clicked')
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
+})
+
 const menuIcon = document.querySelector('header img:not(.cross, .logo)')
 const crossIcon = document.querySelector('.cross')
 const dropdown = document.querySelector('nav ul')
@@ -191,7 +202,7 @@ fetchSections().then((sections) => {
         <div class="services-list-item">
             <img src="public/images/gold-church.svg" alt="${sundayService.title}" />
             <div class="service-list-item-text">
-                <p class="no-cap">${sundayService.title}</p>
+                <p class="no-cap">${sundayService.time} | ${sundayService.title}</p>
                 <p class="no-cap">${sundayService.description}</p>
             </div>
         </div>`
@@ -204,7 +215,7 @@ fetchSections().then((sections) => {
         <div class="services-list-item">
             <img src="public/images/gold-church.svg" alt="${weekdayService.title}" />
             <div class="service-list-item-text">
-                <p class="no-cap">${weekdayService.title}</p>
+                <p class="no-cap">${weekdayService.time} | ${weekdayService.title}</p>
                 <p class="no-cap">${weekdayService.description}</p>
             </div>
         </div>`
@@ -267,9 +278,10 @@ fetchFeatured().then((featuredItems) => {
 
     columnSection.innerHTML = ''
 
-    result.forEach((result) => {
+    result.forEach((result, index) => {
         const featuredColumn = document.createElement('div')
         featuredColumn.classList.add('featured-column')
+
         featuredColumn.innerHTML = /*html*/ `
                     <div class="column-left">
                         <img
@@ -283,7 +295,7 @@ fetchFeatured().then((featuredItems) => {
                         <p>
                             ${result.text}
                         </p>
-                        <a href="facilities#search-by-genre">
+                        <a href="activities#search-service">
                             <button>
                                 <svg
                                     width="32"
@@ -302,7 +314,7 @@ fetchFeatured().then((featuredItems) => {
                                         d="M1 1.47363H31V6.97363H32V1.47363V0.473633H31H1H0V1.47363V31.4736V32.4736H1H31H32V31.4736V25.9736H31V31.4736H1V1.47363Z"
                                         fill="black" />
                                 </svg>
-                                MORE ON SERVICES
+                                LEARN MORE
                             </button>
                         </a>
                     </div>
@@ -397,9 +409,11 @@ window.addEventListener('DOMContentLoaded', () => {
 // Email handler for contact form
 
 const contactForm = document.querySelector('.contact-section form')
-const contactFormSelect = document.querySelector('.contact-section form select')
+const contactFormSelect = document.querySelector(
+    '.contact-section form select#people'
+)
 const contactFormSelectOptions = document.querySelectorAll(
-    '.contact-section form select option'
+    '.contact-section form select#people option'
 )
 
 const formSubmitUrlPrefix = 'https://formsubmit.co/'
@@ -476,3 +490,27 @@ function changeSelectMenuOnContactButtonClick() {
 window.onload = (event) => {
     changeSelectMenuOnContactButtonClick()
 }
+
+// Get the original select field and the new select field
+const originalSelect = document.querySelector(
+    '.contact-section form select#people'
+)
+const roomBookingsFieldset = document.querySelector('#rooms-bookings-fieldset')
+const roomBookingsSelect = document.querySelector(
+    '#rooms-bookings-fieldset select'
+)
+roomBookingsSelect.disabled = true
+
+// Add an event listener to the original select field
+originalSelect.addEventListener('change', (e) => {
+    // If the selected value is "Room Bookings", show the new select field
+    if (e.target.value === 'Room Bookings') {
+        roomBookingsFieldset.classList.add('appear')
+        roomBookingsSelect.disabled = false
+    } else {
+        // Otherwise, hide the new select field
+        roomBookingsFieldset.classList.remove('appear')
+
+        roomBookingsSelect.disabled = true
+    }
+})

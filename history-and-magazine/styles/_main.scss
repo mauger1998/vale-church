@@ -1,31 +1,46 @@
 @use '../../styles/variables';
 
 main {
-	background-image: linear-gradient(to top, #000000cd, #00000000 60%),
-		linear-gradient(to bottom, #0000005e, #00000000 50%), url(../../public/images/contact-hero.webp);
-	background-size: cover;
-	background-position: center;
+    background-image: linear-gradient(to top, #000000cd, #00000000 60%),
+        linear-gradient(to bottom, #0000005e, #00000000 50%),
+        url(../../public/images/contact-hero.webp);
+    background-size: cover;
+    background-position: center;
 
-	.wrapper {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-items: flex-start;
-		padding-block-end: 2rem;
-		height: 95vh;
-		max-height: 1000px;
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-block-end: 2rem;
+        height: 95vh;
+        max-height: 1000px;
 
-		p {
-			color: white;
-			align-self: flex-end;
-			max-width: 52%;
-			margin-block-end: -6rem;
-		}
-
-		h1 {
-			max-width: 101%;
-			width: 101%;
-			transition: clip-path 500ms ease;
-		}
-	}
+        h1 {
+            max-width: 101%;
+            width: 101%;
+            transition: clip-path 500ms ease;
+        }
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-block: 2rem 0;
+            a {
+                &:nth-child(2) {
+                    button {
+                        background-color: transparent;
+                        color: white;
+                    }
+                }
+                button {
+                    background-color: white;
+                    color: black;
+                    border: 1px solid white;
+                    padding: 0.75rem 2rem;
+                    border-radius: 4rem;
+                }
+            }
+        }
+    }
 }

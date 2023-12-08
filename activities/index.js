@@ -1,5 +1,15 @@
 gsap.registerPlugin(ScrollTrigger)
 
+const backToTopButton = document.querySelector('#back-to-top-button')
+
+backToTopButton.addEventListener('click', () => {
+    console.log('clicked')
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
+})
+
 const menuIcon = document.querySelector('header img:not(.cross, .logo)')
 const crossIcon = document.querySelector('.cross')
 const dropdown = document.querySelector('nav ul')
@@ -264,6 +274,16 @@ fetchSections().then((sections) => {
                 />
                 <h3>${musicCard.title}</h3>
                 <p>${musicCard.text}</p>
+                <a href="../#andrewWarren">
+                    <button style="color:black; margin-block-start:1.5rem;">
+                        <img
+                            src="../public/images/black-button.svg"
+                            alt="Button Icon"
+                        />
+                        CONTACT ANDREW NOW
+                    </button>
+                </a>
+
             </div>`
         })
         .join('')
@@ -344,7 +364,7 @@ fetchSections().then((sections) => {
                 <a href="../#janeGoddard">
                     <button>
                         <img
-                            src="../public/images/black-button.svg"
+                            src="../public/images/button-svg.svg"
                             alt="Button Icon"
                         />
                         CONTACT JANE NOW

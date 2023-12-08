@@ -8,7 +8,7 @@ main {
     background-position: center;
 
     @media (max-width: 800px) {
-        background-image: linear-gradient(to top, #000000cd, #00000016 100%),
+        background-image: linear-gradient(to top, #000000cd, #00000000 100%),
             url(../public/images/facilities-hero.webp);
     }
 
@@ -21,21 +21,51 @@ main {
         height: 95vh;
         max-height: 1000px;
 
-        @media (max-width: 800px) {
-            // justify-content: center;
-            // align-items: center;
-            // height: auto;
-            // padding-block: 14rem 22rem;
-
-            h1 {
-                // text-align: center;
-            }
-        }
-
         h1 {
             max-width: 101%;
             width: 101%;
             transition: clip-path 500ms ease;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-block: 2rem 0;
+            a {
+                &:nth-child(2) {
+                    button {
+                        background-color: transparent;
+                        color: white;
+                    }
+                }
+                button {
+                    background-color: white;
+                    color: black;
+                    border: 1px solid white;
+                    padding: 0.75rem 2rem;
+                    border-radius: 4rem;
+                }
+            }
+        }
+    }
+    @media (max-width: 450px) {
+        .wrapper {
+            .buttons {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+
+                a {
+                    width: 100%;
+
+                    button {
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
         }
     }
 }

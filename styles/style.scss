@@ -81,3 +81,30 @@ dialog {
         cursor: pointer;
     }
 }
+
+#back-to-top-button {
+    position: fixed;
+    padding: 1rem;
+    background-color: white;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    right: 4rem;
+    bottom: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    height: 4rem;
+    width: 4rem;
+    z-index: 1000000000 !important;
+    transition: scale 300ms ease;
+
+    &:hover {
+        scale: 1.05;
+        transition: scale 300ms ease;
+    }
+
+    img {
+        width: 1.5rem;
+    }
+}

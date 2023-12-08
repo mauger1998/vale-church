@@ -183,7 +183,7 @@ h3 span {
 p {
   font-size: 16px;
   line-height: 1.6;
-  font-weight: 200;
+  font-weight: 300;
 }
 p:not(.tag,
 .no-cap,
@@ -280,17 +280,16 @@ header .header-wrapper nav {
 header .header-wrapper nav ul {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   justify-content: flex-end;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 header .header-wrapper nav ul #pencil-texture {
   display: none;
 }
-header .header-wrapper nav ul a:nth-child(9) {
+header .header-wrapper nav ul a:nth-child(10) {
   display: none;
 }
-header .header-wrapper nav ul a:nth-child(10) {
+header .header-wrapper nav ul a:nth-child(11) {
   display: none;
 }
 header .header-wrapper nav ul a li {
@@ -305,20 +304,17 @@ header .header-wrapper nav ul .buttons {
 header .header-wrapper nav ul .buttons button {
   background-color: white;
   color: black;
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
 }
 header .header-wrapper nav ul a {
   font-size: 16px !important;
 }
-header .header-wrapper nav ul a:nth-child(6) {
-  margin-inline-end: -1rem;
-}
 header .header-wrapper nav ul a:last-child button {
   background-color: transparent;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 header .header-wrapper nav img:not(.cross) {
   width: 2rem;
@@ -364,10 +360,10 @@ header .header-wrapper nav .cross {
     opacity: 0.075;
     z-index: -1;
   }
-  header .header-wrapper nav ul a:nth-child(9) {
+  header .header-wrapper nav ul a:nth-child(10) {
     display: block;
   }
-  header .header-wrapper nav ul a:nth-child(10) {
+  header .header-wrapper nav ul a:nth-child(11) {
     display: block;
   }
   header .header-wrapper nav ul a li {
@@ -445,17 +441,22 @@ main .wrapper h1 {
 .search-by-genre-section .wrapper .search-by-genre-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid {
   max-width: 80%;
-  align-self: flex-end;
+  align-self: flex-end !important;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, min(100px, auto));
   gap: 0rem;
   margin-block-start: 4rem;
 }
 .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card {
   padding: 10rem 2rem 2rem 2rem;
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
 }
 .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card:nth-child(odd) {
   background-color: #393939;
@@ -487,6 +488,10 @@ main .wrapper h1 {
     grid-template-columns: 1fr;
     max-width: 100%;
     width: 100%;
+    gap: 1rem;
+  }
+  .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card {
+    display: block;
   }
   .search-by-genre-section .wrapper .search-by-genre-container .search-by-genre-grid .search-by-genre-card p {
     max-width: 40ch;
@@ -810,7 +815,7 @@ main .wrapper h1 {
     gap: 2rem;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .music-cards-section .wrapper {
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -1560,4 +1565,39 @@ footer .wrapper .footer-bottom a img {
 html,
 body {
   overflow-x: hidden;
+}
+
+#back-to-top-button {
+  position: fixed;
+  padding: 1rem;
+  background-color: white;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  right: 4rem;
+  bottom: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  z-index: 1000000000 !important;
+  transition: scale 300ms ease;
+}
+@media (max-width: 700px) {
+  #back-to-top-button {
+    right: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  #back-to-top-button {
+    right: 1rem;
+  }
+}
+#back-to-top-button:hover {
+  scale: 1.05;
+  transition: scale 300ms ease;
+}
+#back-to-top-button img {
+  width: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

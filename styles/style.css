@@ -183,7 +183,7 @@ h3 span {
 p {
   font-size: 16px;
   line-height: 1.6;
-  font-weight: 200;
+  font-weight: 300;
 }
 p:not(.tag,
 .no-cap,
@@ -280,17 +280,16 @@ header .header-wrapper nav {
 header .header-wrapper nav ul {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   justify-content: flex-end;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 header .header-wrapper nav ul #pencil-texture {
   display: none;
 }
-header .header-wrapper nav ul a:nth-child(9) {
+header .header-wrapper nav ul a:nth-child(10) {
   display: none;
 }
-header .header-wrapper nav ul a:nth-child(10) {
+header .header-wrapper nav ul a:nth-child(11) {
   display: none;
 }
 header .header-wrapper nav ul a li {
@@ -305,20 +304,17 @@ header .header-wrapper nav ul .buttons {
 header .header-wrapper nav ul .buttons button {
   background-color: white;
   color: black;
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
 }
 header .header-wrapper nav ul a {
   font-size: 16px !important;
 }
-header .header-wrapper nav ul a:nth-child(6) {
-  margin-inline-end: -1rem;
-}
 header .header-wrapper nav ul a:last-child button {
   background-color: transparent;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 header .header-wrapper nav img:not(.cross) {
   width: 2rem;
@@ -364,10 +360,10 @@ header .header-wrapper nav .cross {
     opacity: 0.075;
     z-index: -1;
   }
-  header .header-wrapper nav ul a:nth-child(9) {
+  header .header-wrapper nav ul a:nth-child(10) {
     display: block;
   }
-  header .header-wrapper nav ul a:nth-child(10) {
+  header .header-wrapper nav ul a:nth-child(11) {
     display: block;
   }
   header .header-wrapper nav ul a li {
@@ -412,7 +408,7 @@ main {
 }
 @media (max-width: 800px) {
   main {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0.0862745098) 100%), url(../public/images/facilities-hero.webp);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8039215686), rgba(0, 0, 0, 0) 100%), url(../public/images/facilities-hero.webp);
   }
 }
 main .wrapper {
@@ -430,6 +426,38 @@ main .wrapper h1 {
   transition: -webkit-clip-path 500ms ease;
   transition: clip-path 500ms ease;
   transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+}
+main .wrapper .buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 2rem 0;
+}
+main .wrapper .buttons a:nth-child(2) button {
+  background-color: transparent;
+  color: white;
+}
+main .wrapper .buttons a button {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  padding: 0.75rem 2rem;
+  border-radius: 4rem;
+}
+@media (max-width: 450px) {
+  main .wrapper .buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  main .wrapper .buttons a {
+    width: 100%;
+  }
+  main .wrapper .buttons a button {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .welcome-section .wrapper {
@@ -574,6 +602,7 @@ main .wrapper h1 {
 .faith-quote {
   background-image: url(../public/images/faith-quote-background-cemetary.webp);
   background-size: cover;
+  background-position: center;
 }
 .faith-quote .wrapper {
   padding-block: 8rem 26rem;
@@ -816,7 +845,7 @@ main .wrapper h1 {
   flex-direction: column;
   align-items: flex-start;
   gap: 6rem;
-  padding-block-end: 12rem;
+  padding-block-end: 0rem;
 }
 .prayers-section .wrapper .prayers-content {
   display: grid;
@@ -1025,7 +1054,7 @@ main .wrapper h1 {
   align-items: center;
   gap: 4rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .contact-section .wrapper .contact-content {
     gap: 6rem;
     flex-direction: column-reverse;
@@ -1034,7 +1063,7 @@ main .wrapper h1 {
 .contact-section .wrapper .contact-content .contact-right {
   width: 50%;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .contact-section .wrapper .contact-content .contact-right {
     width: 100%;
   }
@@ -1055,6 +1084,32 @@ main .wrapper h1 {
   width: 100%;
   padding: 0.75rem;
   margin-block-start: 0.5rem;
+  border-radius: 0 !important;
+  border: 1px solid black;
+}
+.contact-section .wrapper .contact-content .contact-right form fieldset select {
+  border-radius: 0 !important;
+  border: 1px solid black;
+  padding: 0.75rem;
+  width: 100%;
+}
+.contact-section .wrapper .contact-content .contact-right form fieldset select:focus {
+  border: 1px solid #b4780a !important;
+  outline: none;
+}
+.contact-section .wrapper .contact-content .contact-right form fieldset input:focus {
+  border: 1px solid #b4780a !important;
+  outline: none;
+}
+.contact-section .wrapper .contact-content .contact-right form fieldset textarea:focus {
+  border: 1px solid #b4780a !important;
+  outline: none;
+}
+.contact-section .wrapper .contact-content .contact-right form #rooms-bookings-fieldset {
+  display: none !important;
+}
+.contact-section .wrapper .contact-content .contact-right form #rooms-bookings-fieldset.appear {
+  display: block !important;
 }
 .contact-section .wrapper .contact-content .contact-right form input[type=submit] {
   padding: 0.75rem 2rem;
@@ -1071,7 +1126,7 @@ main .wrapper h1 {
   align-items: flex-start;
   gap: 2rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .contact-section .wrapper .contact-content .contact-left {
     width: 100%;
   }
@@ -1093,7 +1148,7 @@ main .wrapper h1 {
 .contact-section .wrapper .contact-content .contact-left .list strong {
   font-size: 18px;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .contact-section .wrapper .contact-content .contact-left .list strong {
     font-size: 16px;
   }
@@ -1250,4 +1305,29 @@ dialog button {
   background-color: #081841;
   margin-block-start: 2rem;
   cursor: pointer;
+}
+
+#back-to-top-button {
+  position: fixed;
+  padding: 1rem;
+  background-color: white;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  right: 4rem;
+  bottom: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  z-index: 1000000000 !important;
+  transition: scale 300ms ease;
+}
+#back-to-top-button:hover {
+  scale: 1.05;
+  transition: scale 300ms ease;
+}
+#back-to-top-button img {
+  width: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

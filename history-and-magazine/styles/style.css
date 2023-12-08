@@ -183,7 +183,7 @@ h3 span {
 p {
   font-size: 16px;
   line-height: 1.6;
-  font-weight: 200;
+  font-weight: 300;
 }
 p:not(.tag,
 .no-cap,
@@ -280,17 +280,16 @@ header .header-wrapper nav {
 header .header-wrapper nav ul {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   justify-content: flex-end;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 header .header-wrapper nav ul #pencil-texture {
   display: none;
 }
-header .header-wrapper nav ul a:nth-child(9) {
+header .header-wrapper nav ul a:nth-child(10) {
   display: none;
 }
-header .header-wrapper nav ul a:nth-child(10) {
+header .header-wrapper nav ul a:nth-child(11) {
   display: none;
 }
 header .header-wrapper nav ul a li {
@@ -305,20 +304,17 @@ header .header-wrapper nav ul .buttons {
 header .header-wrapper nav ul .buttons button {
   background-color: white;
   color: black;
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 0.75rem 2rem;
   border-radius: 4rem;
 }
 header .header-wrapper nav ul a {
   font-size: 16px !important;
 }
-header .header-wrapper nav ul a:nth-child(6) {
-  margin-inline-end: -1rem;
-}
 header .header-wrapper nav ul a:last-child button {
   background-color: transparent;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 header .header-wrapper nav img:not(.cross) {
   width: 2rem;
@@ -364,10 +360,10 @@ header .header-wrapper nav .cross {
     opacity: 0.075;
     z-index: -1;
   }
-  header .header-wrapper nav ul a:nth-child(9) {
+  header .header-wrapper nav ul a:nth-child(10) {
     display: block;
   }
-  header .header-wrapper nav ul a:nth-child(10) {
+  header .header-wrapper nav ul a:nth-child(11) {
     display: block;
   }
   header .header-wrapper nav ul a li {
@@ -419,18 +415,29 @@ main .wrapper {
   height: 95vh;
   max-height: 1000px;
 }
-main .wrapper p {
-  color: white;
-  align-self: flex-end;
-  max-width: 52%;
-  margin-block-end: -6rem;
-}
 main .wrapper h1 {
   max-width: 101%;
   width: 101%;
   transition: -webkit-clip-path 500ms ease;
   transition: clip-path 500ms ease;
   transition: clip-path 500ms ease, -webkit-clip-path 500ms ease;
+}
+main .wrapper .buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 2rem 0;
+}
+main .wrapper .buttons a:nth-child(2) button {
+  background-color: transparent;
+  color: white;
+}
+main .wrapper .buttons a button {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  padding: 0.75rem 2rem;
+  border-radius: 4rem;
 }
 
 .history-section .wrapper {
@@ -509,7 +516,6 @@ main .wrapper h1 {
      object-fit: cover;
   z-index: -1;
   opacity: 0.1;
-  max-width: 1440px;
   mix-blend-mode: hard-light;
   bottom: 0;
   height: 100%;
@@ -783,4 +789,29 @@ footer .wrapper .footer-bottom a img {
 html,
 body {
   overflow-x: hidden;
+}
+
+#back-to-top-button {
+  position: fixed;
+  padding: 1rem;
+  background-color: white;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  right: 4rem;
+  bottom: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  z-index: 1000000000 !important;
+  transition: scale 300ms ease;
+}
+#back-to-top-button:hover {
+  scale: 1.05;
+  transition: scale 300ms ease;
+}
+#back-to-top-button img {
+  width: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

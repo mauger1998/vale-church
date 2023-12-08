@@ -17,15 +17,20 @@
         .search-by-genre-container {
             display: flex;
             flex-direction: column;
+            width: 100%;
             .search-by-genre-grid {
                 max-width: 80%;
-                align-self: flex-end;
+                align-self: flex-end !important;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: repeat(3, min(100px, auto));
                 gap: 0rem;
                 margin-block-start: 4rem;
                 .search-by-genre-card {
                     padding: 10rem 2rem 2rem 2rem;
+                    display: grid;
+                    grid-row: span 3;
+                    grid-template-rows: subgrid;
                     &:nth-child(odd) {
                         background-color: #393939;
 
@@ -61,8 +66,10 @@
                     grid-template-columns: 1fr;
                     max-width: 100%;
                     width: 100%;
+                    gap: 1rem;
 
                     .search-by-genre-card {
+                        display: block;
                         p {
                             max-width: 40ch;
                         }
