@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger)
 
+const backToTopButton = document.querySelector('#back-to-top-button')
+
 backToTopButton.addEventListener('click', () => {
     console.log('clicked')
     window.scrollTo({

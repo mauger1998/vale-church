@@ -205,6 +205,12 @@ fetchSections().then((sections) => {
                         ${sections[0].text}
                     </p>
                     <p class="tag">${sections[0].name}</p>
+                    <a href="../#barbaraMinta">
+                        <button style="color:black;">
+                            <img src="../public/images/black-button.svg" alt="Button Svg" />
+                            CONTACT BARBARA NOW
+                        </button>
+            </a>
                 </div>
                 <div class="welcome-bottom-right">
                     <img
